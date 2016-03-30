@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+  <ItemDefinitionGroup>
+    <CgCompile>
+      <profile>sce_vp_psp2</profile>
+      <gxpFileName>$(IntDir)%(Filename).gxp</gxpFileName>
+      <startSymbol>%(Filename)</startSymbol>
+      <objFileName>$(IntDir)%(Filename).gxp.obj</objFileName>
+    </CgCompile>
+  </ItemDefinitionGroup>
+
+  <Target Name="psp2cgc"
+          Inputs="%(CgCompile.FullPath)"
+          Outputs="%(CgCompile.objFileName)">
+    <PropertyGroup>
+      <psp2cgcCommand>$(SCE_PSP2_SDK_DIR)\host_tools\bin\psp2cgc.exe" --cache --profile %(profile) "%(CgCompile.FullPath)" -o "%(gxpFileName)"&amp;&amp;"$(SCE_PSP2_SDK_DIR)\host_tools\build\bin\psp2bin.exe" "%(gxpFileName)" -b2e PSP2,%(startSymbol) -o "%(objFileName)</psp2cgcCommand>
+    </PropertyGroup>
+    <Exec Command="$(psp2cgcCommand)" />
+    <ItemGroup>
+      <Link Include="%(CgCompile.objFileName)" />
+    </ItemGroup>
+    <Message Importance="high" Text="%(CgCompile.Filename)%(CgCompile.Extension)" />
+  </Target>
+
+  <PropertyGroup>
+    <BuildDependsOn>
+      psp2cgc;
+      $(BuildDependsOn)
+    </BuildDependsOn>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <AvailableItemName Include="CgCompile">
+      <Targets>psp2cgc</Targets>
+    </AvailableItemName>
+    <PropertyPageSchema Include="psp2cgc.xml" />
+  </ItemGroup>
+
+</Project>

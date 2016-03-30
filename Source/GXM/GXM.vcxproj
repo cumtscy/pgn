@@ -1,0 +1,146 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|PSVita">
+      <Configuration>Debug</Configuration>
+      <Platform>PSVita</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|PSVita">
+      <Configuration>Release</Configuration>
+      <Platform>PSVita</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{959DEBD1-6251-438A-81F7-53C89A4C9F6D}</ProjectGuid>
+    <RootNamespace>GL</RootNamespace>
+    <ProjectName>GXM</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|PSVita'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|PSVita'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|PSVita'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|PSVita'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|PSVita'">
+    <IncludePath>..\..\Include;..\..\Extern;$(IncludePath)</IncludePath>
+    <TargetName>PGN_RenderingSystem</TargetName>
+    <LibraryPath>..\..\Lib\$(Configuration)\;$(LibraryPath)</LibraryPath>
+    <OutDir>..\..\$(Configuration)\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|PSVita'">
+    <IncludePath>..\..\Include;..\..\Extern;$(IncludePath)</IncludePath>
+    <TargetName>PGN_RenderingSystem</TargetName>
+    <LibraryPath>..\..\Lib\$(Configuration)\;$(LibraryPath)</LibraryPath>
+    <OutDir>..\..\$(Configuration)\</OutDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|PSVita'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);usePrecompiledShader</PreprocessorDefinitions>
+      <CppLanguageStd>Cpp11</CppLanguageStd>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ImportLibrary>
+      </ImportLibrary>
+      <AdditionalDependencies>libSceGxm_stub.a;PGN_Platform_stub.a;PGN_Utilities_stub.a;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalOptions>-prx-stub-output-dir="..\..\Lib\$(Configuration)\" %(AdditionalOptions)</AdditionalOptions>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|PSVita'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions);usePrecompiledShader</PreprocessorDefinitions>
+      <CppLanguageStd>Cpp11</CppLanguageStd>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <OptimizationLevel>Level3</OptimizationLevel>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <ImportLibrary>
+      </ImportLibrary>
+      <AdditionalDependencies>libSceGxm_stub.a;PGN_Platform_stub.a;PGN_Utilities_stub.a;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalOptions>-prx-stub-output-dir="..\..\Lib\$(Configuration)\" %(AdditionalOptions)</AdditionalOptions>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\Include\PGN\RenderingSystem\OutputMergerState.h" />
+    <ClInclude Include="..\..\Include\PGN\RenderingSystem\Buffer.h" />
+    <ClInclude Include="..\..\Include\PGN\RenderingSystem\CmpFunc.h" />
+    <ClInclude Include="..\..\Include\PGN\RenderingSystem\DepthStencilState.h" />
+    <ClInclude Include="..\..\Include\PGN\RenderingSystem\DepthStencilView.h" />
+    <ClInclude Include="..\..\Include\PGN\RenderingSystem\DomainShader.h" />
+    <ClInclude Include="..\..\Include\PGN\RenderingSystem\PixelFormat.h" />
+    <ClInclude Include="..\..\Include\PGN\RenderingSystem\GeometryShader.h" />
+    <ClInclude Include="..\..\Include\PGN\RenderingSystem\Program.h" />
+    <ClInclude Include="..\..\Include\PGN\RenderingSystem\RenderingSystem.h" />
+    <ClInclude Include="..\..\Include\PGN\RenderingSystem\HullShader.h" />
+    <ClInclude Include="..\..\Include\PGN\RenderingSystem\PixelShader.h" />
+    <ClInclude Include="..\..\Include\PGN\RenderingSystem\RasterizerState.h" />
+    <ClInclude Include="..\..\Include\PGN\RenderingSystem\RenderBuffer.h" />
+    <ClInclude Include="..\..\Include\PGN\RenderingSystem\RenderTargetView.h" />
+    <ClInclude Include="..\..\Include\PGN\RenderingSystem\ResourceView.h" />
+    <ClInclude Include="..\..\Include\PGN\RenderingSystem\Sampler.h" />
+    <ClInclude Include="..\..\Include\PGN\RenderingSystem\Shader.h" />
+    <ClInclude Include="..\..\Include\PGN\RenderingSystem\SyncPoint.h" />
+    <ClInclude Include="..\..\Include\PGN\RenderingSystem\Texture.h" />
+    <ClInclude Include="..\..\Include\PGN\RenderingSystem\VertexInputLayout.h" />
+    <ClInclude Include="..\..\Include\PGN\RenderingSystem\VertexShader.h" />
+    <ClInclude Include="DepthStencilView.h" />
+    <ClInclude Include="Program.h" />
+    <ClInclude Include="RenderBuffer.h" />
+    <ClInclude Include="RenderingSystem.h" />
+    <ClInclude Include="RenderTargetView.h" />
+    <ClInclude Include="ResourceView.h" />
+    <ClInclude Include="Sampler.h" />
+    <ClInclude Include="Shader.h" />
+    <ClInclude Include="SyncPoint.h" />
+    <ClInclude Include="Texture.h" />
+    <ClInclude Include="PixelFormat.h" />
+    <ClInclude Include="VertexInputLayout.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="DepthStencilView.cpp" />
+    <ClCompile Include="OutputMergerState.cpp" />
+    <ClCompile Include="Buffer.cpp" />
+    <ClCompile Include="DepthStencilState.cpp" />
+    <ClCompile Include="Program.cpp" />
+    <ClCompile Include="RasterizerState.cpp" />
+    <ClCompile Include="RenderBuffer.cpp" />
+    <ClCompile Include="RenderingSystem.cpp" />
+    <ClCompile Include="RenderTargetView.cpp" />
+    <ClCompile Include="Sampler.cpp" />
+    <ClCompile Include="Shader.cpp" />
+    <ClCompile Include="SyncPoint.cpp" />
+    <ClCompile Include="Texture.cpp" />
+    <ClCompile Include="VertexInputLayout.cpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

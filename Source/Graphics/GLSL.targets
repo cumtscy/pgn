@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+  <ItemDefinitionGroup>
+    <GLSLCompile>
+      <expandedFileName>%(RootDir)%(Directory)%(Filename).expanded</expandedFileName>
+      <symbolName>%(Filename)</symbolName>
+      <objFileName>%(RootDir)%(Directory)%(Filename).obj</objFileName>
+    </GLSLCompile>
+  </ItemDefinitionGroup>
+
+  <Target Name="IncludeDirectiveProcess"
+          Inputs="%(GLSLCompile.FullPath)"
+          Outputs="%(GLSLCompile.expandedFileName)">
+    <PropertyGroup>
+      <pgnToolsPath>$(MSBuildProjectDirectory)\..\..\Tools\</pgnToolsPath>
+      <IncludeDirectiveProcessorCommand>"$(pgnToolsPath)IncludeDirectiveProcessor.exe" "%(GLSLCompile.FullPath)" "%(expandedFileName)"</IncludeDirectiveProcessorCommand>
+    </PropertyGroup>
+    <Exec Command="$(IncludeDirectiveProcessorCommand)" />
+    <Message Importance="high" Text="%(GLSLCompile.Filename)%(GLSLCompile.Extension)" />
+  </Target>
+
+  <Target Name="Text2COFF"
+          Inputs="%(GLSLCompile.expandedFileName)"
+          Outputs="%(GLSLCompile.objFileName)">
+    <PropertyGroup>
+      <pgnToolsPath>$(MSBuildProjectDirectory)\..\..\Tools\</pgnToolsPath>
+      <Text2COFFCommand>"$(pgnToolsPath)Text2COFF.exe" "%(GLSLCompile.expandedFileName)" -s %(symbolName) "%(objFileName)"</Text2COFFCommand>
+    </PropertyGroup>
+    <Exec Command="$(Text2COFFCommand)" />
+    <ItemGroup>
+      <Link Include="%(GLSLCompile.objFileName)" />
+    </ItemGroup>
+    <Message Importance="high" Text="%(GLSLCompile.Filename)%(GLSLCompile.Extension)" />
+  </Target>
+
+  <PropertyGroup>
+    <BuildDependsOn>
+      IncludeDirectiveProcess;
+      Text2COFF;
+      $(BuildDependsOn)
+    </BuildDependsOn>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <AvailableItemName Include="GLSLCompile">
+      <Targets>IncludeDirectiveProcess</Targets>
+    </AvailableItemName>
+    <PropertyPageSchema Include="GLSL.xml" />
+  </ItemGroup>
+
+</Project>

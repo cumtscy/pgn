@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Rule Name="ConfigurationGLSLShaderCompiler"
+      DisplayName="GLSL Compiler"
+      Order="110"
+      PageTemplate="tool"
+      xmlns="http://schemas.microsoft.com/build/2009/properties">
+
+  <Rule.DataSource>
+    <DataSource Persistence="ProjectFile" ItemType="GLSLCompile" HasConfigurationCondition="true"  />
+  </Rule.DataSource>
+
+  <Rule.Categories>
+    <Category Name="Outputs" DisplayName="Outputs" />
+  </Rule.Categories>
+
+  <StringProperty Name="expandedFileName" Category="Outputs" DisplayName="Expanded File Name" Description="" />
+  <StringProperty Name="symbolName" Category="Outputs" DisplayName="Symbol Name" Description="" />
+  <StringProperty Name="objFileName" Category="Outputs" DisplayName="Object File Name" Description="" />
+
+</Rule>

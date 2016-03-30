@@ -1,0 +1,237 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|PSVita">
+      <Configuration>Debug</Configuration>
+      <Platform>PSVita</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release_AsmOutput|x64">
+      <Configuration>Release_AsmOutput</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|PSVita">
+      <Configuration>Release</Configuration>
+      <Platform>PSVita</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Blob.cpp" />
+    <ClCompile Include="Clock.cpp" />
+    <ClCompile Include="ManagedHeap.cpp" />
+    <ClCompile Include="ResourceManager\AsyncLoader.cpp" />
+    <ClCompile Include="ResourceManager\ResourceHandle.cpp" />
+    <ClCompile Include="ResourceManager\ResourceManager.cpp" />
+    <ClCompile Include="Pool.cpp" />
+    <ClCompile Include="CircularBuffer.cpp" />
+    <ClCompile Include="Heap.cpp" />
+    <ClCompile Include="Pool2.cpp" />
+    <ClCompile Include="Pipeline.cpp" />
+    <ClCompile Include="Text.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\Include\PGN\Utilities\Clock.h" />
+    <ClInclude Include="..\..\Include\PGN\Utilities\HeapAllocator2.h" />
+    <ClInclude Include="..\..\Include\PGN\Utilities\ManagedHeap.h" />
+    <ClInclude Include="..\..\Include\PGN\Utilities\Queue.h" />
+    <ClInclude Include="..\..\Include\PGN\Utilities\ResourceManager\Asset.h" />
+    <ClInclude Include="..\..\Include\PGN\Utilities\ResourceManager\AssetFactory.h" />
+    <ClInclude Include="..\..\Include\PGN\Utilities\ResourceManager\AssetLoader.h" />
+    <ClInclude Include="..\..\Include\PGN\Utilities\ResourceManager\AsyncLoader.h" />
+    <ClInclude Include="..\..\Include\PGN\Utilities\ResourceManager\ResourceHandle.h" />
+    <ClInclude Include="..\..\Include\PGN\Utilities\ResourceManager\ResourceManager.h" />
+    <ClInclude Include="..\..\Include\PGN\Utilities\Pool.h" />
+    <ClInclude Include="..\..\Include\PGN\Utilities\CircularBuffer.h" />
+    <ClInclude Include="..\..\Include\PGN\Utilities\Pool2.h" />
+    <ClInclude Include="..\..\Include\PGN\Utilities\PoolAllocator.h" />
+    <ClInclude Include="..\..\Include\PGN\Utilities\HeapAllocator.h" />
+    <ClInclude Include="..\..\Include\PGN\Utilities\Heap.h" />
+    <ClInclude Include="..\..\Include\PGN\Utilities\Pipeline.h" />
+    <ClInclude Include="..\..\Include\PGN\Utilities\Text.h" />
+    <ClInclude Include="ResourceManager\ResourceHandle.h" />
+    <ClInclude Include="ResourceManager\ResourceManager.h" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{C3905797-D82C-44ED-A090-5E34019BC98C}</ProjectGuid>
+    <RootNamespace>Utilities</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|PSVita'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|PSVita'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release_AsmOutput|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|PSVita'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|PSVita'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release_AsmOutput|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <TargetName>PGN_$(ProjectName)</TargetName>
+    <IncludePath>..\..\Include;$(IncludePath)</IncludePath>
+    <LibraryPath>..\..\Lib\$(Configuration)\;$(LibraryPath)</LibraryPath>
+    <OutDir>..\..\$(Configuration)\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|PSVita'">
+    <TargetName>PGN_$(ProjectName)</TargetName>
+    <IncludePath>..\..\Include;$(IncludePath)</IncludePath>
+    <LibraryPath>..\..\Lib\$(Configuration)\;$(LibraryPath)</LibraryPath>
+    <OutDir>..\..\$(Configuration)\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <TargetName>PGN_$(ProjectName)</TargetName>
+    <IncludePath>..\..\Include;$(IncludePath)</IncludePath>
+    <LibraryPath>..\..\Lib\$(Configuration)\;$(LibraryPath)</LibraryPath>
+    <OutDir>..\..\$(Configuration)\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|PSVita'">
+    <TargetName>PGN_$(ProjectName)</TargetName>
+    <IncludePath>..\..\Include;$(IncludePath)</IncludePath>
+    <LibraryPath>..\..\Lib\$(Configuration)\;$(LibraryPath)</LibraryPath>
+    <OutDir>..\..\$(Configuration)\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release_AsmOutput|x64'">
+    <TargetName>PGN_$(ProjectName)</TargetName>
+    <IncludePath>..\..\Include;$(IncludePath)</IncludePath>
+    <LibraryPath>..\..\Lib\$(Configuration)\;$(LibraryPath)</LibraryPath>
+    <OutDir>..\..\$(Configuration)\</OutDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ImportLibrary>..\..\Lib\$(Configuration)\$(TargetName).lib</ImportLibrary>
+      <AdditionalDependencies>PGN_FileStream.lib;PGN_Platform.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|PSVita'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <CppLanguageStd>Cpp11</CppLanguageStd>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ImportLibrary>
+      </ImportLibrary>
+      <AdditionalDependencies>PGN_FileStream_stub.a;PGN_Platform_stub.a;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalOptions>-prx-stub-output-dir="..\..\Lib\$(Configuration)\" %(AdditionalOptions)</AdditionalOptions>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <ImportLibrary>..\..\Lib\$(Configuration)\$(TargetName).lib</ImportLibrary>
+      <AdditionalDependencies>PGN_FileStream.lib;PGN_Platform.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|PSVita'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <CppLanguageStd>Cpp11</CppLanguageStd>
+      <OptimizationLevel>Level3</OptimizationLevel>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <ImportLibrary>
+      </ImportLibrary>
+      <AdditionalDependencies>PGN_FileStream_stub.a;PGN_Platform_stub.a;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalOptions>-prx-stub-output-dir="..\..\Lib\$(Configuration)\" %(AdditionalOptions)</AdditionalOptions>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release_AsmOutput|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AssemblerOutput>AssemblyAndSourceCode</AssemblerOutput>
+      <WholeProgramOptimization>false</WholeProgramOptimization>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <ImportLibrary>..\..\Lib\$(Configuration)\$(TargetName).lib</ImportLibrary>
+      <AdditionalDependencies>PGN_FileStream.lib;PGN_Platform.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

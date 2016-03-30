@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ProjectSchemaDefinitions
+    xmlns="http://schemas.microsoft.com/build/2009/properties">
+
+    <ContentType
+        Name="GLSL"
+        DisplayName="GLSL Compiler"
+        ItemType="GLSLCompile">
+    </ContentType>
+
+    <ItemType Name="GLSLCompile" DisplayName="GLSL Compiler" />
+
+    <FileExtension Name=".glsl" ContentType="GLSL"/>
+
+</ProjectSchemaDefinitions>

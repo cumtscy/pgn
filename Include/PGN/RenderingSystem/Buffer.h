@@ -1,0 +1,32 @@
+#pragma once
+#include "../Common/Interface.h"
+namespace pgn {
+
+enum BindingType
+{
+	VERTEX_BUFFER,
+	INDEX_BUFFER,
+	CONSTANT_BUFFER
+};
+
+enum BufferUsage
+{
+	STATIC_DRAW, DYNAMIC_DRAW
+};
+
+struct BufferDesc
+{
+	BindingType		bindingType;
+	BufferUsage		usage;
+	int				size;
+};
+
+class Buffer : public Interface
+{
+public:
+	virtual void update(int offset, int size, void* data) = 0;
+	virtual void* map(int offset, int size) = 0;
+	virtual void unmap() = 0;
+};
+
+}

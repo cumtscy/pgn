@@ -1,0 +1,8 @@
+
+EXPORTS
+   LibDescription
+   LibNumberClasses
+   LibClassDesc
+   LibVersion
+   LibInitialize
+   LibShutdown

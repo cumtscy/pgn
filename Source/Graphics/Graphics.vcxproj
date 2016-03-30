@@ -1,0 +1,343 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|PSVita">
+      <Configuration>Debug</Configuration>
+      <Platform>PSVita</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release_AsmOutput|x64">
+      <Configuration>Release_AsmOutput</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|PSVita">
+      <Configuration>Release</Configuration>
+      <Platform>PSVita</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\Include\PGN\Graphics\Camera.h" />
+    <ClInclude Include="..\..\Include\PGN\Graphics\Graphics.h" />
+    <ClInclude Include="..\..\Include\PGN\Graphics\PointLight.h" />
+    <ClInclude Include="..\..\Include\PGN\Graphics\Model.h" />
+    <ClInclude Include="..\..\Include\PGN\Graphics\Entity.h" />
+    <ClInclude Include="..\..\Include\PGN\Graphics\Scene.h" />
+    <ClInclude Include="..\..\Include\PGN\Graphics\SceneEntity.h" />
+    <ClInclude Include="..\..\Include\PGN\Graphics\ScenePointLight.h" />
+    <ClInclude Include="Camera.h" />
+    <ClInclude Include="Graphics.h" />
+    <ClInclude Include="Light.h" />
+    <ClInclude Include="Matrix.h" />
+    <ClInclude Include="PointLight.h" />
+    <ClInclude Include="Model.h" />
+    <ClInclude Include="Entity.h" />
+    <ClInclude Include="Renderer\assets\Asset.h" />
+    <ClInclude Include="Renderer\assets\Mesh.h" />
+    <ClInclude Include="Renderer\assets\MeshFactory.h" />
+    <ClInclude Include="Renderer\assets\Texture.h" />
+    <ClInclude Include="Renderer\assets\TextureFactory.h" />
+    <ClInclude Include="Renderer\CBufRange.h" />
+    <ClInclude Include="Renderer\Geometry.h" />
+    <ClInclude Include="Renderer\GeometryHelper.h" />
+    <ClInclude Include="Renderer\Movable2D.h" />
+    <ClInclude Include="Renderer\CBufAllocator.h" />
+    <ClInclude Include="Renderer\passes\EnvConstEnum.h" />
+    <ClInclude Include="Renderer\passes\EnvDesc.h" />
+    <ClInclude Include="Renderer\passes\ForwardShadingPassEnvDesc.h" />
+    <ClInclude Include="Renderer\passes\GeometryPassEnvDesc.h" />
+    <ClInclude Include="Renderer\passes\LightIndexingPassesEnvDescs.h" />
+    <ClInclude Include="Renderer\passes\LightingPassEnvDesc.h" />
+    <ClInclude Include="Renderer\passes\LightVolumePassesEnvDescs.h" />
+    <ClInclude Include="Renderer\passes\passes.h" />
+    <ClInclude Include="Renderer\passes\RTs\DepthStencilMap.h" />
+    <ClInclude Include="Renderer\passes\RTs\GBufs.h" />
+    <ClInclude Include="Renderer\passes\RTs\LightIndexMap.h" />
+    <ClInclude Include="Renderer\passes\RTs\ResourceViewDesc.h" />
+    <ClInclude Include="Renderer\passes\RTs\RTs.h" />
+    <ClInclude Include="Renderer\passes\ZPrePassEnvDesc.h" />
+    <ClInclude Include="Renderer\techs\PipeStates\common.h" />
+    <ClInclude Include="Renderer\techs\PipeStates\lightIndexingPassesPipeStateDescs.h" />
+    <ClInclude Include="Renderer\techs\PipeStates\lightingPassPipeStateDesc.h" />
+    <ClInclude Include="Renderer\techs\PipeStates\lightVolumePassesPipeStateDescs.h" />
+    <ClInclude Include="Renderer\techs\PipeStates\shaders\commonVSOutput.h" />
+    <ClInclude Include="Renderer\techs\PipeStates\shaders\ForwardShadingPassEnvCBlock.h" />
+    <ClInclude Include="Renderer\techs\PipeStates\shaders\PointLight.h" />
+    <ClInclude Include="Renderer\techs\PipeStates\shaders\commonPS.h" />
+    <ClInclude Include="Renderer\techs\PipeStates\shaders\commonVS2D.h" />
+    <ClInclude Include="Renderer\techs\PipeStates\shaders\commonVS3D.h" />
+    <ClInclude Include="Renderer\techs\PipeStates\skinnedMeshGeometryPassPipeStateDesc.h" />
+    <ClInclude Include="Renderer\techs\PipeStates\skinnedMeshShadingPassPipeStateDesc.h" />
+    <ClInclude Include="Renderer\techs\PipeStates\skinnedMeshZOnlyPassPipeStateDesc.h" />
+    <ClInclude Include="Renderer\techs\PipeStates\staticMeshGeometryPassPipeStateDesc.h" />
+    <ClInclude Include="Renderer\techs\PipeStates\staticMeshShadingPassPipeStateDesc.h" />
+    <ClInclude Include="Renderer\techs\PipeStates\staticMeshZOnlyPassPipeStateDesc.h" />
+    <ClInclude Include="Renderer\techs\PostProcessingTechDesc.h" />
+    <ClInclude Include="Renderer\techs\LightIndexingTechDesc.h" />
+    <ClInclude Include="Renderer\techs\PipeStates\PipeStateDesc.h" />
+    <ClInclude Include="Renderer\techs\SkinnedMeshTechDesc.h" />
+    <ClInclude Include="Renderer\techs\StaticMeshTechDesc.h" />
+    <ClInclude Include="Renderer\techs\TechDesc.h" />
+    <ClInclude Include="Renderer\techs\techs.h" />
+    <ClInclude Include="Renderer\TextureInfo.h" />
+    <ClInclude Include="Renderer\Movable.h" />
+    <ClInclude Include="Renderer\Batch.h" />
+    <ClInclude Include="Renderer\Renderer.h" />
+    <ClInclude Include="Renderer\VertexFormat.h" />
+    <ClInclude Include="Scene.h" />
+    <ClInclude Include="SceneEntity.h" />
+    <ClInclude Include="ScenePointLight.h" />
+    <ClInclude Include="Viewport.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Camera.cpp" />
+    <ClCompile Include="Graphics.cpp" />
+    <ClCompile Include="Light.cpp" />
+    <ClCompile Include="Matrix.cpp" />
+    <ClCompile Include="PointLight.cpp" />
+    <ClCompile Include="Model.cpp" />
+    <ClCompile Include="Entity.cpp" />
+    <ClCompile Include="Renderer\assets\Mesh.cpp" />
+    <ClCompile Include="Renderer\assets\MeshFactory.cpp" />
+    <ClCompile Include="Renderer\assets\Texture.cpp" />
+    <ClCompile Include="Renderer\assets\TextureFactory.cpp" />
+    <ClCompile Include="Renderer\GeometryHelper.cpp" />
+    <ClCompile Include="Renderer\passes\ForwardShadingPassEnvDesc.cpp" />
+    <ClCompile Include="Renderer\passes\GeometryPassEnvDesc.cpp" />
+    <ClCompile Include="Renderer\passes\LightIndexingPassesEnvDescs.cpp" />
+    <ClCompile Include="Renderer\passes\LightingPassEnvDesc.cpp" />
+    <ClCompile Include="Renderer\passes\LightVolumePassesEnvDescs.cpp" />
+    <ClCompile Include="Renderer\passes\passes.cpp" />
+    <ClCompile Include="Renderer\passes\RTs\DepthStencilMap.cpp" />
+    <ClCompile Include="Renderer\passes\RTs\GBufs.cpp" />
+    <ClCompile Include="Renderer\passes\RTs\LightIndexMap.cpp" />
+    <ClCompile Include="Renderer\passes\RTs\RTs.cpp" />
+    <ClCompile Include="Renderer\passes\ZPrePassEnvDesc.cpp" />
+    <ClCompile Include="Renderer\Renderer.cpp" />
+    <ClCompile Include="Renderer\techs\PipeStates\common.cpp" />
+    <ClCompile Include="Renderer\techs\PipeStates\lightIndexingPassesPipeStateDescs.cpp" />
+    <ClCompile Include="Renderer\techs\PipeStates\lightingPassPipeStateDesc.cpp" />
+    <ClCompile Include="Renderer\techs\PipeStates\lightVolumePassesPipeStateDescs.cpp" />
+    <ClCompile Include="Renderer\techs\PipeStates\skinnedMeshGeometryPassPipeStateDesc.cpp" />
+    <ClCompile Include="Renderer\techs\PipeStates\skinnedMeshShadingPassPipeStateDesc.cpp" />
+    <ClCompile Include="Renderer\techs\PipeStates\skinnedMeshZOnlyPassPipeStateDesc.cpp" />
+    <ClCompile Include="Renderer\techs\PipeStates\staticMeshGeometryPassPipeStateDesc.cpp" />
+    <ClCompile Include="Renderer\techs\PipeStates\staticMeshShadingPassPipeStateDesc.cpp" />
+    <ClCompile Include="Renderer\techs\PipeStates\staticMeshZOnlyPassPipeStateDesc.cpp" />
+    <ClCompile Include="Renderer\techs\PostProcessingTechDesc.cpp" />
+    <ClCompile Include="Renderer\techs\LightIndexingTechDesc.cpp" />
+    <ClCompile Include="Renderer\techs\SkinnedMeshTechDesc.cpp" />
+    <ClCompile Include="Renderer\techs\StaticMeshTechDesc.cpp" />
+    <ClCompile Include="Renderer\techs\techs.cpp" />
+    <ClCompile Include="Renderer\VertexFormat.cpp" />
+    <ClCompile Include="Scene.cpp" />
+    <ClCompile Include="SceneEntity.cpp">
+    </ClCompile>
+    <ClCompile Include="ScenePointLight.cpp" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{A8C5A665-9398-4B01-BDF7-4C6FAE0688BE}</ProjectGuid>
+    <RootNamespace>Graphics</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|PSVita'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|PSVita'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release_AsmOutput|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|PSVita'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|PSVita'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release_AsmOutput|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <TargetName>PGN_$(ProjectName)</TargetName>
+    <IncludePath>..\..\Include;$(IncludePath)</IncludePath>
+    <LibraryPath>..\..\Lib\$(Configuration)\;$(LibraryPath)</LibraryPath>
+    <OutDir>..\..\$(Configuration)\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|PSVita'">
+    <TargetName>PGN_$(ProjectName)</TargetName>
+    <IncludePath>..\..\Include;$(IncludePath)</IncludePath>
+    <LibraryPath>..\..\Lib\$(Configuration)\;$(LibraryPath)</LibraryPath>
+    <OutDir>..\..\$(Configuration)\</OutDir>
+    <ExtensionsToDeleteOnClean>*.gxp;*.obj;$(ExtensionsToDeleteOnClean)</ExtensionsToDeleteOnClean>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <TargetName>PGN_$(ProjectName)</TargetName>
+    <IncludePath>..\..\Include;$(IncludePath)</IncludePath>
+    <LibraryPath>..\..\Lib\$(Configuration)\;$(LibraryPath)</LibraryPath>
+    <OutDir>..\..\$(Configuration)\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|PSVita'">
+    <TargetName>PGN_$(ProjectName)</TargetName>
+    <IncludePath>..\..\Include;$(IncludePath)</IncludePath>
+    <LibraryPath>..\..\Lib\$(Configuration)\;$(LibraryPath)</LibraryPath>
+    <OutDir>..\..\$(Configuration)\</OutDir>
+    <ExtensionsToDeleteOnClean>*.gxp;*.obj;$(ExtensionsToDeleteOnClean)</ExtensionsToDeleteOnClean>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release_AsmOutput|x64'">
+    <TargetName>PGN_$(ProjectName)</TargetName>
+    <IncludePath>..\..\Include;$(IncludePath)</IncludePath>
+    <LibraryPath>..\..\Lib\$(Configuration)\;$(LibraryPath)</LibraryPath>
+    <OutDir>..\..\$(Configuration)\</OutDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <AssemblerOutput>AssemblyAndSourceCode</AssemblerOutput>
+      <DisableSpecificWarnings>4250</DisableSpecificWarnings>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ImportLibrary>..\..\Lib\$(Configuration)\$(TargetName).lib</ImportLibrary>
+      <AdditionalDependencies>PGN_FileStream.lib;PGN_Math.lib;PGN_Platform.lib;PGN_RenderingSystem.lib;PGN_SkeletalAnimation.lib;PGN_Utilities.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|PSVita'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <AssemblerOutput>AssemblyAndSourceCode</AssemblerOutput>
+      <DisableSpecificWarnings>
+      </DisableSpecificWarnings>
+      <CppLanguageStd>Cpp11</CppLanguageStd>
+      <PreprocessorDefinitions>usePrecompiledShader;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ImportLibrary>
+      </ImportLibrary>
+      <AdditionalDependencies>PGN_FileStream.lib;PGN_Math.lib;PGN_Platform.lib;PGN_SkeletalAnimation.lib;PGN_Utilities.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalOptions>-prx-stub-output-dir="..\..\Lib\$(Configuration)\" %(AdditionalOptions)</AdditionalOptions>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <DisableSpecificWarnings>4250</DisableSpecificWarnings>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <ImportLibrary>..\..\Lib\$(Configuration)\$(TargetName).lib</ImportLibrary>
+      <AdditionalDependencies>PGN_FileStream.lib;PGN_Math.lib;PGN_Platform.lib;PGN_RenderingSystem.lib;PGN_SkeletalAnimation.lib;PGN_Utilities.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|PSVita'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <DisableSpecificWarnings>
+      </DisableSpecificWarnings>
+      <PreprocessorDefinitions>NDEBUG;usePrecompiledShader;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <CppLanguageStd>Cpp11</CppLanguageStd>
+      <OptimizationLevel>Level3</OptimizationLevel>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <ImportLibrary>
+      </ImportLibrary>
+      <AdditionalDependencies>PGN_FileStream.lib;PGN_Math.lib;PGN_Platform.lib;PGN_SkeletalAnimation.lib;PGN_Utilities.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalOptions>-prx-stub-output-dir="..\..\Lib\$(Configuration)\" %(AdditionalOptions)</AdditionalOptions>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release_AsmOutput|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <AssemblerOutput>AssemblyAndSourceCode</AssemblerOutput>
+      <WholeProgramOptimization>false</WholeProgramOptimization>
+      <DisableSpecificWarnings>4250</DisableSpecificWarnings>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <ImportLibrary>..\..\Lib\$(Configuration)\$(TargetName).lib</ImportLibrary>
+      <AdditionalDependencies>PGN_FileStream.lib;PGN_Math.lib;PGN_Platform.lib;PGN_RenderingSystem.lib;PGN_SkeletalAnimation.lib;PGN_Utilities.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+  <ItemGroup>
+    <PropertyPageSchema Include="CgCompile.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <PropertyPageSchema Include="GLSLCompile.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <GLSLCompile Include="Renderer\techs\PipeStates\shaders\skinnedMeshGeometryPassPS.glsl" />
+    <GLSLCompile Include="Renderer\techs\PipeStates\shaders\skinnedMeshGeometryPassVS.glsl" />
+    <GLSLCompile Include="Renderer\techs\PipeStates\shaders\skinnedMeshShadingPassVS.glsl" />
+  </ItemGroup>
+  <ImportGroup Condition="'$(Platform)'=='PSVita'">
+    <Import Project="psp2cgc.targets" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Platform)'=='x64'">
+    <Import Project="GLSL.targets" />
+  </ImportGroup>
+</Project>

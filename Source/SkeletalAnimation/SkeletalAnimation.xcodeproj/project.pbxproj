@@ -1,0 +1,316 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		57EFEC0718E00D11005F0C59 /* Animation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 57EFEBFA18E00D11005F0C59 /* Animation.cpp */; };
+		57EFEC0818E00D11005F0C59 /* AnimationFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 57EFEBFC18E00D11005F0C59 /* AnimationFactory.cpp */; };
+		57EFEC0918E00D11005F0C59 /* PNA.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 57EFEBFD18E00D11005F0C59 /* PNA.cpp */; };
+		57EFEC0A18E00D11005F0C59 /* PNAFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 57EFEBFF18E00D11005F0C59 /* PNAFactory.cpp */; };
+		57EFEC0B18E00D11005F0C59 /* Skeleton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 57EFEC0118E00D11005F0C59 /* Skeleton.cpp */; };
+		57EFEC0C18E00D11005F0C59 /* SkeletonFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 57EFEC0318E00D11005F0C59 /* SkeletonFactory.cpp */; };
+		57EFEC0D18E00D11005F0C59 /* SkeletonTemplate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 57EFEC0418E00D11005F0C59 /* SkeletonTemplate.cpp */; };
+		57EFEC0E18E00D11005F0C59 /* SkeletonTemplateFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 57EFEC0618E00D11005F0C59 /* SkeletonTemplateFactory.cpp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		57EFEBC618E00C6D005F0C59 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		57EFEBC818E00C6D005F0C59 /* libSkeletalAnimation.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSkeletalAnimation.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		57EFEBF318E00CED005F0C59 /* Animation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Animation.h; path = ../../Include/PGN/SkeletalAnimation/Animation.h; sourceTree = "<group>"; };
+		57EFEBF418E00CED005F0C59 /* AnimationFactory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AnimationFactory.h; path = ../../Include/PGN/SkeletalAnimation/AnimationFactory.h; sourceTree = "<group>"; };
+		57EFEBF518E00CED005F0C59 /* Skeleton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Skeleton.h; path = ../../Include/PGN/SkeletalAnimation/Skeleton.h; sourceTree = "<group>"; };
+		57EFEBF618E00CED005F0C59 /* SkeletonFactory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SkeletonFactory.h; path = ../../Include/PGN/SkeletalAnimation/SkeletonFactory.h; sourceTree = "<group>"; };
+		57EFEBF718E00CED005F0C59 /* SkeletonTemplate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SkeletonTemplate.h; path = ../../Include/PGN/SkeletalAnimation/SkeletonTemplate.h; sourceTree = "<group>"; };
+		57EFEBF818E00CED005F0C59 /* SkeletonTemplateFactory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SkeletonTemplateFactory.h; path = ../../Include/PGN/SkeletalAnimation/SkeletonTemplateFactory.h; sourceTree = "<group>"; };
+		57EFEBF918E00D11005F0C59 /* Anim.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Anim.h; sourceTree = "<group>"; };
+		57EFEBFA18E00D11005F0C59 /* Animation.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Animation.cpp; sourceTree = "<group>"; };
+		57EFEBFB18E00D11005F0C59 /* Animation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Animation.h; sourceTree = "<group>"; };
+		57EFEBFC18E00D11005F0C59 /* AnimationFactory.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = AnimationFactory.cpp; sourceTree = "<group>"; };
+		57EFEBFD18E00D11005F0C59 /* PNA.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PNA.cpp; sourceTree = "<group>"; };
+		57EFEBFE18E00D11005F0C59 /* PNA.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PNA.h; sourceTree = "<group>"; };
+		57EFEBFF18E00D11005F0C59 /* PNAFactory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PNAFactory.cpp; sourceTree = "<group>"; };
+		57EFEC0018E00D11005F0C59 /* PNAFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PNAFactory.h; sourceTree = "<group>"; };
+		57EFEC0118E00D11005F0C59 /* Skeleton.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Skeleton.cpp; sourceTree = "<group>"; };
+		57EFEC0218E00D11005F0C59 /* Skeleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Skeleton.h; sourceTree = "<group>"; };
+		57EFEC0318E00D11005F0C59 /* SkeletonFactory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SkeletonFactory.cpp; sourceTree = "<group>"; };
+		57EFEC0418E00D11005F0C59 /* SkeletonTemplate.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SkeletonTemplate.cpp; sourceTree = "<group>"; };
+		57EFEC0518E00D11005F0C59 /* SkeletonTemplate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkeletonTemplate.h; sourceTree = "<group>"; };
+		57EFEC0618E00D11005F0C59 /* SkeletonTemplateFactory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SkeletonTemplateFactory.cpp; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		57EFEBC518E00C6D005F0C59 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		57EFEBBF18E00C6D005F0C59 = {
+			isa = PBXGroup;
+			children = (
+				57EFEBF218E00CC6005F0C59 /* Include */,
+				57EFEBF118E00CBC005F0C59 /* Source */,
+				57EFEBC918E00C6D005F0C59 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		57EFEBC918E00C6D005F0C59 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				57EFEBC818E00C6D005F0C59 /* libSkeletalAnimation.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		57EFEBF118E00CBC005F0C59 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				57EFEBF918E00D11005F0C59 /* Anim.h */,
+				57EFEBFA18E00D11005F0C59 /* Animation.cpp */,
+				57EFEBFB18E00D11005F0C59 /* Animation.h */,
+				57EFEBFC18E00D11005F0C59 /* AnimationFactory.cpp */,
+				57EFEBFD18E00D11005F0C59 /* PNA.cpp */,
+				57EFEBFE18E00D11005F0C59 /* PNA.h */,
+				57EFEBFF18E00D11005F0C59 /* PNAFactory.cpp */,
+				57EFEC0018E00D11005F0C59 /* PNAFactory.h */,
+				57EFEC0118E00D11005F0C59 /* Skeleton.cpp */,
+				57EFEC0218E00D11005F0C59 /* Skeleton.h */,
+				57EFEC0318E00D11005F0C59 /* SkeletonFactory.cpp */,
+				57EFEC0418E00D11005F0C59 /* SkeletonTemplate.cpp */,
+				57EFEC0518E00D11005F0C59 /* SkeletonTemplate.h */,
+				57EFEC0618E00D11005F0C59 /* SkeletonTemplateFactory.cpp */,
+			);
+			name = Source;
+			sourceTree = "<group>";
+		};
+		57EFEBF218E00CC6005F0C59 /* Include */ = {
+			isa = PBXGroup;
+			children = (
+				57EFEBF318E00CED005F0C59 /* Animation.h */,
+				57EFEBF418E00CED005F0C59 /* AnimationFactory.h */,
+				57EFEBF518E00CED005F0C59 /* Skeleton.h */,
+				57EFEBF618E00CED005F0C59 /* SkeletonFactory.h */,
+				57EFEBF718E00CED005F0C59 /* SkeletonTemplate.h */,
+				57EFEBF818E00CED005F0C59 /* SkeletonTemplateFactory.h */,
+			);
+			name = Include;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		57EFEBC718E00C6D005F0C59 /* SkeletalAnimation */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 57EFEBEB18E00C6D005F0C59 /* Build configuration list for PBXNativeTarget "SkeletalAnimation" */;
+			buildPhases = (
+				57EFEBC418E00C6D005F0C59 /* Sources */,
+				57EFEBC518E00C6D005F0C59 /* Frameworks */,
+				57EFEBC618E00C6D005F0C59 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SkeletalAnimation;
+			productName = SkeletalAnimation;
+			productReference = 57EFEBC818E00C6D005F0C59 /* libSkeletalAnimation.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		57EFEBC018E00C6D005F0C59 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "Pixel Soft";
+			};
+			buildConfigurationList = 57EFEBC318E00C6D005F0C59 /* Build configuration list for PBXProject "SkeletalAnimation" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 57EFEBBF18E00C6D005F0C59;
+			productRefGroup = 57EFEBC918E00C6D005F0C59 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				57EFEBC718E00C6D005F0C59 /* SkeletalAnimation */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		57EFEBC418E00C6D005F0C59 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				57EFEC0918E00D11005F0C59 /* PNA.cpp in Sources */,
+				57EFEC0B18E00D11005F0C59 /* Skeleton.cpp in Sources */,
+				57EFEC0718E00D11005F0C59 /* Animation.cpp in Sources */,
+				57EFEC0D18E00D11005F0C59 /* SkeletonTemplate.cpp in Sources */,
+				57EFEC0C18E00D11005F0C59 /* SkeletonFactory.cpp in Sources */,
+				57EFEC0E18E00D11005F0C59 /* SkeletonTemplateFactory.cpp in Sources */,
+				57EFEC0A18E00D11005F0C59 /* PNAFactory.cpp in Sources */,
+				57EFEC0818E00D11005F0C59 /* AnimationFactory.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		57EFEBE918E00C6D005F0C59 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+					PGN_STATIC_BUILD,
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"$(SRCROOT)/../../Include",
+				);
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SYMROOT = "$(SRCROOT)/../../Build";
+			};
+			name = Debug;
+		};
+		57EFEBEA18E00C6D005F0C59 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					NDEBUG,
+					PGN_STATIC_BUILD,
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"$(SRCROOT)/../../Include",
+				);
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				SYMROOT = "$(SRCROOT)/../../Build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		57EFEBEC18E00C6D005F0C59 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/SkeletalAnimation.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				GCC_PREFIX_HEADER = "";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		57EFEBED18E00C6D005F0C59 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/SkeletalAnimation.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				GCC_PREFIX_HEADER = "";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		57EFEBC318E00C6D005F0C59 /* Build configuration list for PBXProject "SkeletalAnimation" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				57EFEBE918E00C6D005F0C59 /* Debug */,
+				57EFEBEA18E00C6D005F0C59 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		57EFEBEB18E00C6D005F0C59 /* Build configuration list for PBXNativeTarget "SkeletalAnimation" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				57EFEBEC18E00C6D005F0C59 /* Debug */,
+				57EFEBED18E00C6D005F0C59 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 57EFEBC018E00C6D005F0C59 /* Project object */;
+}

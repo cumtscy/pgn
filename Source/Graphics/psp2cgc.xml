@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Rule Name="ConfigurationPlayStationVitaShaderCompiler"
+      DisplayName="Cg Compiler"
+      Order="110"
+      PageTemplate="tool"
+      xmlns="http://schemas.microsoft.com/build/2009/properties">
+
+  <Rule.DataSource>
+    <DataSource Persistence="ProjectFile" ItemType="CgCompile" HasConfigurationCondition="true"  />
+  </Rule.DataSource>
+
+  <Rule.Categories>
+    <Category Name="General" DisplayName="General" />
+    <Category Name="Outputs" DisplayName="Outputs" />
+  </Rule.Categories>
+
+  <EnumProperty Name="profile" Category="General" DisplayName="Shader Type">
+    <EnumValue Name="sce_vp_psp2" DisplayName="Vertex Shader" />
+    <EnumValue Name="sce_fp_psp2" DisplayName="Pixel Shader" />
+  </EnumProperty>
+
+  <StringProperty Name="gxpFileName" Category="Outputs" DisplayName="GXP File Name" Description="" />
+  <StringProperty Name="objFileName" Category="Outputs" DisplayName="Object File Name" Description="" />
+  <StringProperty Name="startSymbol" Category="Outputs" DisplayName="Embedded GXP Symbol" Description="" />
+
+</Rule>

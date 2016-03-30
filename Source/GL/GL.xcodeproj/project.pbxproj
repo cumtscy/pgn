@@ -1,0 +1,374 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5766A4DF1B79F41A006F35B5 /* SyncPoint.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5766A4DD1B79F41A006F35B5 /* SyncPoint.cpp */; };
+		576E8F3619457F4B00FDC5EE /* Buffer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 576E8F2119457F4B00FDC5EE /* Buffer.cpp */; };
+		576E8F3719457F4B00FDC5EE /* DepthStencilState.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 576E8F2319457F4B00FDC5EE /* DepthStencilState.cpp */; };
+		576E8F3819457F4B00FDC5EE /* OutputMergerState.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 576E8F2419457F4B00FDC5EE /* OutputMergerState.cpp */; };
+		576E8F3919457F4B00FDC5EE /* Program.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 576E8F2619457F4B00FDC5EE /* Program.cpp */; };
+		576E8F3A19457F4B00FDC5EE /* RasterizerState.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 576E8F2819457F4B00FDC5EE /* RasterizerState.cpp */; };
+		576E8F3B19457F4B00FDC5EE /* RenderBuffer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 576E8F2919457F4B00FDC5EE /* RenderBuffer.cpp */; };
+		576E8F3C19457F4B00FDC5EE /* RenderingSystem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 576E8F2B19457F4B00FDC5EE /* RenderingSystem.cpp */; };
+		576E8F3D19457F4B00FDC5EE /* ResourceView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 576E8F2D19457F4B00FDC5EE /* ResourceView.cpp */; };
+		576E8F3E19457F4B00FDC5EE /* Sampler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 576E8F2F19457F4B00FDC5EE /* Sampler.cpp */; };
+		576E8F3F19457F4B00FDC5EE /* Shader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 576E8F3019457F4B00FDC5EE /* Shader.cpp */; };
+		576E8F4019457F4B00FDC5EE /* Texture.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 576E8F3219457F4B00FDC5EE /* Texture.cpp */; };
+		576E8F4119457F4B00FDC5EE /* VertexInputLayout.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 576E8F3419457F4B00FDC5EE /* VertexInputLayout.cpp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		57EFEB5D18DFFB19005F0C59 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		5766A4DC1B79F3E8006F35B5 /* SyncPoint.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SyncPoint.h; sourceTree = "<group>"; };
+		5766A4DD1B79F41A006F35B5 /* SyncPoint.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SyncPoint.cpp; sourceTree = "<group>"; };
+		576E8F0C19457F1C00FDC5EE /* Buffer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Buffer.h; path = ../../Include/PGN/RenderingSystem/Buffer.h; sourceTree = "<group>"; };
+		576E8F0D19457F1C00FDC5EE /* CmpFunc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CmpFunc.h; path = ../../Include/PGN/RenderingSystem/CmpFunc.h; sourceTree = "<group>"; };
+		576E8F0E19457F1C00FDC5EE /* DepthStencilState.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = DepthStencilState.h; path = ../../Include/PGN/RenderingSystem/DepthStencilState.h; sourceTree = "<group>"; };
+		576E8F0F19457F1C00FDC5EE /* DepthStencilView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = DepthStencilView.h; path = ../../Include/PGN/RenderingSystem/DepthStencilView.h; sourceTree = "<group>"; };
+		576E8F1019457F1C00FDC5EE /* DomainShader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = DomainShader.h; path = ../../Include/PGN/RenderingSystem/DomainShader.h; sourceTree = "<group>"; };
+		576E8F1119457F1C00FDC5EE /* GeometryShader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = GeometryShader.h; path = ../../Include/PGN/RenderingSystem/GeometryShader.h; sourceTree = "<group>"; };
+		576E8F1219457F1C00FDC5EE /* HullShader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = HullShader.h; path = ../../Include/PGN/RenderingSystem/HullShader.h; sourceTree = "<group>"; };
+		576E8F1319457F1C00FDC5EE /* OutputMergerState.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = OutputMergerState.h; path = ../../Include/PGN/RenderingSystem/OutputMergerState.h; sourceTree = "<group>"; };
+		576E8F1419457F1C00FDC5EE /* PixelFormat.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PixelFormat.h; path = ../../Include/PGN/RenderingSystem/PixelFormat.h; sourceTree = "<group>"; };
+		576E8F1519457F1C00FDC5EE /* PixelShader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PixelShader.h; path = ../../Include/PGN/RenderingSystem/PixelShader.h; sourceTree = "<group>"; };
+		576E8F1619457F1C00FDC5EE /* Program.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Program.h; path = ../../Include/PGN/RenderingSystem/Program.h; sourceTree = "<group>"; };
+		576E8F1719457F1C00FDC5EE /* RasterizerState.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = RasterizerState.h; path = ../../Include/PGN/RenderingSystem/RasterizerState.h; sourceTree = "<group>"; };
+		576E8F1819457F1C00FDC5EE /* RenderBuffer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = RenderBuffer.h; path = ../../Include/PGN/RenderingSystem/RenderBuffer.h; sourceTree = "<group>"; };
+		576E8F1919457F1C00FDC5EE /* RenderingSystem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = RenderingSystem.h; path = ../../Include/PGN/RenderingSystem/RenderingSystem.h; sourceTree = "<group>"; };
+		576E8F1A19457F1C00FDC5EE /* RenderTargetView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = RenderTargetView.h; path = ../../Include/PGN/RenderingSystem/RenderTargetView.h; sourceTree = "<group>"; };
+		576E8F1B19457F1C00FDC5EE /* ResourceView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ResourceView.h; path = ../../Include/PGN/RenderingSystem/ResourceView.h; sourceTree = "<group>"; };
+		576E8F1C19457F1C00FDC5EE /* Sampler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Sampler.h; path = ../../Include/PGN/RenderingSystem/Sampler.h; sourceTree = "<group>"; };
+		576E8F1D19457F1C00FDC5EE /* Shader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Shader.h; path = ../../Include/PGN/RenderingSystem/Shader.h; sourceTree = "<group>"; };
+		576E8F1E19457F1C00FDC5EE /* Texture.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Texture.h; path = ../../Include/PGN/RenderingSystem/Texture.h; sourceTree = "<group>"; };
+		576E8F1F19457F1C00FDC5EE /* VertexInputLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = VertexInputLayout.h; path = ../../Include/PGN/RenderingSystem/VertexInputLayout.h; sourceTree = "<group>"; };
+		576E8F2019457F1C00FDC5EE /* VertexShader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = VertexShader.h; path = ../../Include/PGN/RenderingSystem/VertexShader.h; sourceTree = "<group>"; };
+		576E8F2119457F4B00FDC5EE /* Buffer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Buffer.cpp; sourceTree = "<group>"; };
+		576E8F2219457F4B00FDC5EE /* CmpFunc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CmpFunc.h; sourceTree = "<group>"; };
+		576E8F2319457F4B00FDC5EE /* DepthStencilState.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DepthStencilState.cpp; sourceTree = "<group>"; };
+		576E8F2419457F4B00FDC5EE /* OutputMergerState.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = OutputMergerState.cpp; sourceTree = "<group>"; };
+		576E8F2519457F4B00FDC5EE /* PixelFormat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PixelFormat.h; sourceTree = "<group>"; };
+		576E8F2619457F4B00FDC5EE /* Program.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Program.cpp; sourceTree = "<group>"; };
+		576E8F2719457F4B00FDC5EE /* Program.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Program.h; sourceTree = "<group>"; };
+		576E8F2819457F4B00FDC5EE /* RasterizerState.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RasterizerState.cpp; sourceTree = "<group>"; };
+		576E8F2919457F4B00FDC5EE /* RenderBuffer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RenderBuffer.cpp; sourceTree = "<group>"; };
+		576E8F2A19457F4B00FDC5EE /* RenderBuffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RenderBuffer.h; sourceTree = "<group>"; };
+		576E8F2B19457F4B00FDC5EE /* RenderingSystem.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = RenderingSystem.cpp; sourceTree = "<group>"; };
+		576E8F2C19457F4B00FDC5EE /* RenderingSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RenderingSystem.h; sourceTree = "<group>"; };
+		576E8F2D19457F4B00FDC5EE /* ResourceView.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ResourceView.cpp; sourceTree = "<group>"; };
+		576E8F2E19457F4B00FDC5EE /* ResourceView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResourceView.h; sourceTree = "<group>"; };
+		576E8F2F19457F4B00FDC5EE /* Sampler.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Sampler.cpp; sourceTree = "<group>"; };
+		576E8F3019457F4B00FDC5EE /* Shader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Shader.cpp; sourceTree = "<group>"; };
+		576E8F3119457F4B00FDC5EE /* Shader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Shader.h; sourceTree = "<group>"; };
+		576E8F3219457F4B00FDC5EE /* Texture.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Texture.cpp; sourceTree = "<group>"; };
+		576E8F3319457F4B00FDC5EE /* Texture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Texture.h; sourceTree = "<group>"; };
+		576E8F3419457F4B00FDC5EE /* VertexInputLayout.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = VertexInputLayout.cpp; sourceTree = "<group>"; };
+		576E8F3519457F4B00FDC5EE /* VertexInputLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VertexInputLayout.h; sourceTree = "<group>"; };
+		57EFEB5F18DFFB19005F0C59 /* libGL.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libGL.a; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		57EFEB5C18DFFB19005F0C59 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		57EFEB5618DFFB19005F0C59 = {
+			isa = PBXGroup;
+			children = (
+				57EFEB8918DFFB99005F0C59 /* Include */,
+				57EFEB8818DFFB92005F0C59 /* Source */,
+				57EFEB6018DFFB19005F0C59 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		57EFEB6018DFFB19005F0C59 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				57EFEB5F18DFFB19005F0C59 /* libGL.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		57EFEB8818DFFB92005F0C59 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				576E8F2119457F4B00FDC5EE /* Buffer.cpp */,
+				576E8F2219457F4B00FDC5EE /* CmpFunc.h */,
+				576E8F2319457F4B00FDC5EE /* DepthStencilState.cpp */,
+				576E8F2419457F4B00FDC5EE /* OutputMergerState.cpp */,
+				576E8F2519457F4B00FDC5EE /* PixelFormat.h */,
+				576E8F2619457F4B00FDC5EE /* Program.cpp */,
+				576E8F2719457F4B00FDC5EE /* Program.h */,
+				576E8F2819457F4B00FDC5EE /* RasterizerState.cpp */,
+				576E8F2919457F4B00FDC5EE /* RenderBuffer.cpp */,
+				576E8F2A19457F4B00FDC5EE /* RenderBuffer.h */,
+				576E8F2B19457F4B00FDC5EE /* RenderingSystem.cpp */,
+				576E8F2C19457F4B00FDC5EE /* RenderingSystem.h */,
+				576E8F2D19457F4B00FDC5EE /* ResourceView.cpp */,
+				576E8F2E19457F4B00FDC5EE /* ResourceView.h */,
+				576E8F2F19457F4B00FDC5EE /* Sampler.cpp */,
+				576E8F3019457F4B00FDC5EE /* Shader.cpp */,
+				576E8F3119457F4B00FDC5EE /* Shader.h */,
+				5766A4DD1B79F41A006F35B5 /* SyncPoint.cpp */,
+				576E8F3219457F4B00FDC5EE /* Texture.cpp */,
+				576E8F3319457F4B00FDC5EE /* Texture.h */,
+				576E8F3419457F4B00FDC5EE /* VertexInputLayout.cpp */,
+				576E8F3519457F4B00FDC5EE /* VertexInputLayout.h */,
+			);
+			name = Source;
+			sourceTree = "<group>";
+		};
+		57EFEB8918DFFB99005F0C59 /* Include */ = {
+			isa = PBXGroup;
+			children = (
+				576E8F0C19457F1C00FDC5EE /* Buffer.h */,
+				576E8F0D19457F1C00FDC5EE /* CmpFunc.h */,
+				576E8F0E19457F1C00FDC5EE /* DepthStencilState.h */,
+				576E8F0F19457F1C00FDC5EE /* DepthStencilView.h */,
+				576E8F1019457F1C00FDC5EE /* DomainShader.h */,
+				576E8F1119457F1C00FDC5EE /* GeometryShader.h */,
+				576E8F1219457F1C00FDC5EE /* HullShader.h */,
+				576E8F1319457F1C00FDC5EE /* OutputMergerState.h */,
+				576E8F1419457F1C00FDC5EE /* PixelFormat.h */,
+				576E8F1519457F1C00FDC5EE /* PixelShader.h */,
+				576E8F1619457F1C00FDC5EE /* Program.h */,
+				576E8F1719457F1C00FDC5EE /* RasterizerState.h */,
+				576E8F1819457F1C00FDC5EE /* RenderBuffer.h */,
+				576E8F1919457F1C00FDC5EE /* RenderingSystem.h */,
+				576E8F1A19457F1C00FDC5EE /* RenderTargetView.h */,
+				576E8F1B19457F1C00FDC5EE /* ResourceView.h */,
+				576E8F1C19457F1C00FDC5EE /* Sampler.h */,
+				576E8F1D19457F1C00FDC5EE /* Shader.h */,
+				5766A4DC1B79F3E8006F35B5 /* SyncPoint.h */,
+				576E8F1E19457F1C00FDC5EE /* Texture.h */,
+				576E8F1F19457F1C00FDC5EE /* VertexInputLayout.h */,
+				576E8F2019457F1C00FDC5EE /* VertexShader.h */,
+			);
+			name = Include;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		57EFEB5E18DFFB19005F0C59 /* GL */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 57EFEB8218DFFB19005F0C59 /* Build configuration list for PBXNativeTarget "GL" */;
+			buildPhases = (
+				57EFEB5B18DFFB19005F0C59 /* Sources */,
+				57EFEB5C18DFFB19005F0C59 /* Frameworks */,
+				57EFEB5D18DFFB19005F0C59 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GL;
+			productName = GL;
+			productReference = 57EFEB5F18DFFB19005F0C59 /* libGL.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		57EFEB5718DFFB19005F0C59 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "Pixel Soft";
+			};
+			buildConfigurationList = 57EFEB5A18DFFB19005F0C59 /* Build configuration list for PBXProject "GL" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 57EFEB5618DFFB19005F0C59;
+			productRefGroup = 57EFEB6018DFFB19005F0C59 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				57EFEB5E18DFFB19005F0C59 /* GL */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		57EFEB5B18DFFB19005F0C59 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				576E8F3A19457F4B00FDC5EE /* RasterizerState.cpp in Sources */,
+				576E8F3C19457F4B00FDC5EE /* RenderingSystem.cpp in Sources */,
+				576E8F4119457F4B00FDC5EE /* VertexInputLayout.cpp in Sources */,
+				5766A4DF1B79F41A006F35B5 /* SyncPoint.cpp in Sources */,
+				576E8F3919457F4B00FDC5EE /* Program.cpp in Sources */,
+				576E8F3719457F4B00FDC5EE /* DepthStencilState.cpp in Sources */,
+				576E8F3F19457F4B00FDC5EE /* Shader.cpp in Sources */,
+				576E8F3D19457F4B00FDC5EE /* ResourceView.cpp in Sources */,
+				576E8F3E19457F4B00FDC5EE /* Sampler.cpp in Sources */,
+				576E8F3819457F4B00FDC5EE /* OutputMergerState.cpp in Sources */,
+				576E8F3619457F4B00FDC5EE /* Buffer.cpp in Sources */,
+				576E8F3B19457F4B00FDC5EE /* RenderBuffer.cpp in Sources */,
+				576E8F4019457F4B00FDC5EE /* Texture.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		57EFEB8018DFFB19005F0C59 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+					PGN_STATIC_BUILD,
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"$(SRCROOT)/../../Include",
+				);
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SYMROOT = "$(SRCROOT)/../../Build";
+			};
+			name = Debug;
+		};
+		57EFEB8118DFFB19005F0C59 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					NDEBUG,
+					PGN_STATIC_BUILD,
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"$(SRCROOT)/../../Include",
+				);
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				SYMROOT = "$(SRCROOT)/../../Build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		57EFEB8318DFFB19005F0C59 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/GL.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				GCC_PREFIX_HEADER = "";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		57EFEB8418DFFB19005F0C59 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/GL.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				GCC_PREFIX_HEADER = "";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		57EFEB5A18DFFB19005F0C59 /* Build configuration list for PBXProject "GL" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				57EFEB8018DFFB19005F0C59 /* Debug */,
+				57EFEB8118DFFB19005F0C59 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		57EFEB8218DFFB19005F0C59 /* Build configuration list for PBXNativeTarget "GL" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				57EFEB8318DFFB19005F0C59 /* Debug */,
+				57EFEB8418DFFB19005F0C59 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 57EFEB5718DFFB19005F0C59 /* Project object */;
+}
