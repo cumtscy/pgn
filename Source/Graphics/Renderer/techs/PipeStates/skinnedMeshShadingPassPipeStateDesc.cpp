@@ -1,4 +1,4 @@
-#include "Common.h"
+#include "common.h"
 #include "PipeStateDesc.h"
 
 using namespace pgn;

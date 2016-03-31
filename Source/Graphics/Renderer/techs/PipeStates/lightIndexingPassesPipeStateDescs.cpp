@@ -1,6 +1,6 @@
 #include <PGN/RenderingSystem/DepthStencilState.h>
 #include <PGN/RenderingSystem/OutputMergerState.h>
-#include "Common.h"
+#include "common.h"
 #include "PipeStateDesc.h"
 
 using namespace pgn;
