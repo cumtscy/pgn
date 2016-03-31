@@ -5,40 +5,8 @@
 
 using namespace pgn;
 
-static char lightIndexingPassesVS[] =
-{
-	"	uniform EnvCBlock@0 // enum BindingPoint									\n"
-	"	{																			\n"
-	"		vec3 camPos;															\n"
-	"		mat4 viewProj;															\n"
-	"	};																			\n"
-	"																				\n"
-	"	point light volumn instance constant block decl								\n"
-	"																				\n"
-	"	common vs input decl														\n"
-	"	flat out uint lightIndex;													\n"
-	"																				\n"
-	"	void main()																	\n"
-	"	{																			\n"
-	"		lightIndex = uint(instances[gl_InstanceID].lightIndex);					\n"
-	"																				\n"
-	"		vec3 translation = instances[gl_InstanceID].pos_scale.xyz - camPos;		\n"
-	"		vec3 pos = position * instances[gl_InstanceID].pos_scale.w + translation;\n"
-	"																				\n"
-	"		gl_Position = vec4(pos, 1.0) * viewProj;								\n"
-	"	}																			\n"
-};
-
-static char lightIndexingPassesPS[] =
-{
-	"	flat in uint lightIndex;													\n"
-	"	out uvec4 color[4];															\n"
-	"																				\n"
-	"	void main()																	\n"
-	"	{																			\n"
-	"		color[0] = uvec4(lightIndex);											\n"
-	"	}																			\n"
-};
+extern "C" char lightIndexingPassesVS[];
+extern "C" char lightIndexingPassesPS[];
 
 static DepthStencilStateDesc depthStencilStateDesc =
 {

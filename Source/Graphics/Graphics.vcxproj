@@ -66,12 +66,14 @@
     <ClInclude Include="Renderer\techs\PipeStates\lightIndexingPassesPipeStateDescs.h" />
     <ClInclude Include="Renderer\techs\PipeStates\lightingPassPipeStateDesc.h" />
     <ClInclude Include="Renderer\techs\PipeStates\lightVolumePassesPipeStateDescs.h" />
+    <ClInclude Include="Renderer\techs\PipeStates\shaders\commonVS3DInput.h" />
     <ClInclude Include="Renderer\techs\PipeStates\shaders\commonVSOutput.h" />
     <ClInclude Include="Renderer\techs\PipeStates\shaders\ForwardShadingPassEnvCBlock.h" />
     <ClInclude Include="Renderer\techs\PipeStates\shaders\PointLight.h" />
     <ClInclude Include="Renderer\techs\PipeStates\shaders\commonPS.h" />
     <ClInclude Include="Renderer\techs\PipeStates\shaders\commonVS2D.h" />
     <ClInclude Include="Renderer\techs\PipeStates\shaders\commonVS3D.h" />
+    <ClInclude Include="Renderer\techs\PipeStates\shaders\PointLightVolumnInstanceCBlock.h" />
     <ClInclude Include="Renderer\techs\PipeStates\skinnedMeshGeometryPassPipeStateDesc.h" />
     <ClInclude Include="Renderer\techs\PipeStates\skinnedMeshShadingPassPipeStateDesc.h" />
     <ClInclude Include="Renderer\techs\PipeStates\skinnedMeshZOnlyPassPipeStateDesc.h" />
@@ -330,9 +332,24 @@
     <PropertyPageSchema Include="GLSLCompile.xml" />
   </ItemGroup>
   <ItemGroup>
+    <GLSLCompile Include="Renderer\techs\PipeStates\shaders\lightIndexingPassesPS.glsl" />
+    <GLSLCompile Include="Renderer\techs\PipeStates\shaders\lightIndexingPassesVS.glsl" />
+    <GLSLCompile Include="Renderer\techs\PipeStates\shaders\lightingPassPS.glsl" />
+    <GLSLCompile Include="Renderer\techs\PipeStates\shaders\lightingPassVS.glsl" />
+    <GLSLCompile Include="Renderer\techs\PipeStates\shaders\lightVolumePassesPS.glsl" />
+    <GLSLCompile Include="Renderer\techs\PipeStates\shaders\lightVolumePassesVS.glsl" />
     <GLSLCompile Include="Renderer\techs\PipeStates\shaders\skinnedMeshGeometryPassPS.glsl" />
     <GLSLCompile Include="Renderer\techs\PipeStates\shaders\skinnedMeshGeometryPassVS.glsl" />
+    <GLSLCompile Include="Renderer\techs\PipeStates\shaders\skinnedMeshShadingPassPS.glsl" />
     <GLSLCompile Include="Renderer\techs\PipeStates\shaders\skinnedMeshShadingPassVS.glsl" />
+    <GLSLCompile Include="Renderer\techs\PipeStates\shaders\skinnedMeshZOnlyPassPS.glsl" />
+    <GLSLCompile Include="Renderer\techs\PipeStates\shaders\skinnedMeshZOnlyPassVS.glsl" />
+    <GLSLCompile Include="Renderer\techs\PipeStates\shaders\staticMeshGeometryPassPS.glsl" />
+    <GLSLCompile Include="Renderer\techs\PipeStates\shaders\staticMeshGeometryPassVS.glsl" />
+    <GLSLCompile Include="Renderer\techs\PipeStates\shaders\staticMeshShadingPassPS.glsl" />
+    <GLSLCompile Include="Renderer\techs\PipeStates\shaders\staticMeshShadingPassVS.glsl" />
+    <GLSLCompile Include="Renderer\techs\PipeStates\shaders\staticMeshZOnlyPassPS.glsl" />
+    <GLSLCompile Include="Renderer\techs\PipeStates\shaders\staticMeshZOnlyPassVS.glsl" />
   </ItemGroup>
   <ImportGroup Condition="'$(Platform)'=='PSVita'">
     <Import Project="psp2cgc.targets" />

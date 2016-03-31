@@ -58,7 +58,7 @@ static char pointLightVolumnInstanceCBlockDecl[] =
 	"		highp int lightIndex;									\n"
 	"	};															\n"
 	"																\n"
-	"	uniform PointLightInstanceCBlock@1	// enum BindingPoint	\n"
+	"	uniform PointLightVolumnInstanceCBlock@1	// enum BindingPoint	\n"
 	"	{															\n"
 	"		PointLightVolumnInstance instances[256];				\n"
 	"	};															"

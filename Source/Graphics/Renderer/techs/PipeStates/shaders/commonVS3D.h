@@ -10,6 +10,7 @@ uniform MovableBlock@1				// enum BindingPoint
 {
 	Movable instances[256];
 };
+#include "commonVS3DInput.h"
 
 uniform BoneMatBlock@2				// enum BindingPoint
 {
@@ -26,12 +27,3 @@ uniform MaterialBlock@3				// enum BindingPoint
 {
 	Material materials[256];
 };
-
-in vec3 position;
-in vec3 normal;
-in int numAssignedBones;
-in uvec4 boneIndices;
-in vec4 boneWeights;
-in uint materialIndex;
-in vec2 texCoord0;
-in vec2 texCoord1;
