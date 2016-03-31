@@ -5,10 +5,6 @@ namespace pgn {
 	struct SamplerDesc;
 }
 
-extern char* shaderMacros[];
-extern char* shaderMacroDefs[];
-extern int numShaderMacros;
-
 extern pgn::SamplerDesc* diffuseMapSamplerDesc;
 extern pgn::SamplerDesc* pointSamplerDesc;
 extern pgn::RasterizerStateDesc* commonRasterizerStateDesc;

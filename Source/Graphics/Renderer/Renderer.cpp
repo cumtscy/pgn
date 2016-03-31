@@ -29,14 +29,12 @@
 #include <PGN/Utilities/ResourceManager/AsyncLoader.h>
 #include <PGN/Utilities/ResourceManager/ResourceHandle.h>
 #include <PGN/Utilities/ResourceManager/ResourceManager.h>
-#include <PGN/Utilities/Text.h>
 #include "assets/MeshFactory.h"
 #include "assets/TextureFactory.h"
 #include "CBufAllocator.h"
 #include "GeometryHelper.h"
 #include "passes/EnvDesc.h"
 #include "Renderer.h"
-#include "techs/PipeStates/Common.h"
 #include "techs/PipeStates/PipeStateDesc.h"
 #include "techs/TechDesc.h"
 #include "TextureInfo.h"
@@ -277,8 +275,6 @@ bool Renderer::buildPrograms(void* cacheFileBuf)
 #else
 bool Renderer::buildPrograms(void* cacheFileBuf)
 {
-	pgn::Text* src = cacheFileBuf ? 0 : pgn::Text::create(128 * 1024);
-
 	struct ProgramBlobHead
 	{
 		int size;
@@ -328,20 +324,10 @@ bool Renderer::buildPrograms(void* cacheFileBuf)
 			}
 			else
 			{
-				src->setText(pipeStateDesc->vs);
-
-				for (int k = 0; k < numShaderMacros; k++)
-					src->replace(shaderMacros[k], shaderMacroDefs[k]);
-
-				pgn::ShaderDesc vsDesc = { pgn::VERTEX_SHADER, src->getText() };
+				pgn::ShaderDesc vsDesc = { pgn::VERTEX_SHADER, pipeStateDesc->vs };
 				pipe->vs = rs->createShader(&vsDesc);
 
-				src->setText(pipeStateDesc->ps);
-
-				for (int k = 0; k < numShaderMacros; k++)
-					src->replace(shaderMacros[k], shaderMacroDefs[k]);
-
-				pgn::ShaderDesc psDesc = { pgn::PIXEL_SHADER, src->getText() };
+				pgn::ShaderDesc psDesc = { pgn::PIXEL_SHADER, pipeStateDesc->ps };
 				pipe->ps = rs->createShader(&psDesc);
 
 				program = rs->createProgram(pipe->vs, pipe->ps);
@@ -382,8 +368,6 @@ bool Renderer::buildPrograms(void* cacheFileBuf)
 			pipe->outputMergerState = rs->createOutputMergerState(pipeStateDesc->outputMergerStateDesc);
 		}
 	}
-
-	if (src) src->destroy();
 
 	return true;
 }
