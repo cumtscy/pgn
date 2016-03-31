@@ -1,4 +1,4 @@
-#include "commonVS3D.h"
+#include "CommonVS3D.h"
 
 uniform EnvCBlock@0 // enum BindingPoint
 {

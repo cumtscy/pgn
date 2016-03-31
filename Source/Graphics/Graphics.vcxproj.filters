@@ -240,6 +240,21 @@
     <ClInclude Include="Renderer\techs\PipeStates\shaders\PointLightVolumnInstanceCBlock.h">
       <Filter>Source Files\Renderer\techs\PipeStates\shaders</Filter>
     </ClInclude>
+    <ClInclude Include="Renderer\techs\PipeStates\shaders\CommonPS.h">
+      <Filter>Source Files\Renderer\techs\PipeStates\shaders</Filter>
+    </ClInclude>
+    <ClInclude Include="Renderer\techs\PipeStates\shaders\CommonVS2D.h">
+      <Filter>Source Files\Renderer\techs\PipeStates\shaders</Filter>
+    </ClInclude>
+    <ClInclude Include="Renderer\techs\PipeStates\shaders\CommonVS3D.h">
+      <Filter>Source Files\Renderer\techs\PipeStates\shaders</Filter>
+    </ClInclude>
+    <ClInclude Include="Renderer\techs\PipeStates\shaders\CommonVS3DInput.h">
+      <Filter>Source Files\Renderer\techs\PipeStates\shaders</Filter>
+    </ClInclude>
+    <ClInclude Include="Renderer\techs\PipeStates\shaders\CommonVSOutput.h">
+      <Filter>Source Files\Renderer\techs\PipeStates\shaders</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Model.cpp">

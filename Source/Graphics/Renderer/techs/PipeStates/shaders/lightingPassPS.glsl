@@ -1,4 +1,4 @@
-#include "commonPS.h"
+#include "CommonPS.h"
 #include "PointLight.h"
 
 uniform EnvCBlock@0 // enum BindingPoint

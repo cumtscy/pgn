@@ -1,4 +1,4 @@
-#include "commonPS.h"
+#include "CommonPS.h"
 
 flat in lowp float Ks;
 flat in lowp float shininess;

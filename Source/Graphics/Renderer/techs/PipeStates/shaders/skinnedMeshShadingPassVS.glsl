@@ -1,4 +1,4 @@
-#include "commonVS3D.h"
+#include "CommonVS3D.h"
 #include "ForwardShadingPassEnvCBlock.h"
 
 out vec3 wpos;

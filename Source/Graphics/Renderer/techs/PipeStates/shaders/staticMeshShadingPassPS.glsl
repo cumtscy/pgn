@@ -1,4 +1,4 @@
-#include "commonPS.h"
+#include "CommonPS.h"
 #include "ForwardShadingPassEnvCBlock.h"
 
 in highp vec3 wpos;

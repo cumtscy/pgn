@@ -1,4 +1,4 @@
-#include "commonVS3DInput.h"
+#include "CommonVS3DInput.h"
 #include "PointLightVolumnInstanceCBlock.h"
 
 uniform EnvCBlock@0 // enum BindingPoint
