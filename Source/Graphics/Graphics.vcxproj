@@ -66,13 +66,8 @@
     <ClInclude Include="Renderer\techs\PipeStates\lightIndexingPassesPipeStateDescs.h" />
     <ClInclude Include="Renderer\techs\PipeStates\lightingPassPipeStateDesc.h" />
     <ClInclude Include="Renderer\techs\PipeStates\lightVolumePassesPipeStateDescs.h" />
-    <ClInclude Include="Renderer\techs\PipeStates\shaders\commonVS3DInput.h" />
-    <ClInclude Include="Renderer\techs\PipeStates\shaders\commonVSOutput.h" />
     <ClInclude Include="Renderer\techs\PipeStates\shaders\ForwardShadingPassEnvCBlock.h" />
     <ClInclude Include="Renderer\techs\PipeStates\shaders\PointLight.h" />
-    <ClInclude Include="Renderer\techs\PipeStates\shaders\commonPS.h" />
-    <ClInclude Include="Renderer\techs\PipeStates\shaders\commonVS2D.h" />
-    <ClInclude Include="Renderer\techs\PipeStates\shaders\commonVS3D.h" />
     <ClInclude Include="Renderer\techs\PipeStates\shaders\PointLightVolumnInstanceCBlock.h" />
     <ClInclude Include="Renderer\techs\PipeStates\skinnedMeshGeometryPassPipeStateDesc.h" />
     <ClInclude Include="Renderer\techs\PipeStates\skinnedMeshShadingPassPipeStateDesc.h" />
