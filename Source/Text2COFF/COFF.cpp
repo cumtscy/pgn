@@ -1,8 +1,8 @@
-#include "COFF.h"
 #include <cassert>
 #include <ctime>
 #include <string>
 #include <vector>
+#include "COFF.h"
 
 class Section
 {
