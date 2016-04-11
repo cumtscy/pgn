@@ -36,7 +36,6 @@ class File : public COFF::File
 {
 	std::vector<Section> sections;
 	std::vector<Symbol> symbols;
-	std::vector<char> strings;
 	std::vector<char> coffFileBuf;
 public:
 	File();
@@ -45,7 +44,6 @@ public:
 	virtual int addSection(char name[], int sizeData, void* data);
 	virtual void addSymbol(const char name[], int section, int offset);
 	virtual void serialize(char** buf, int* size);
-	int addString(std::string str);
 };
 
 COFF::File* COFF::File::create()
@@ -183,6 +181,17 @@ void File::serialize(char** buf, int* size)
 
 	coffFileHeader.pointerToSymbolTable = offset;
 
+	std::vector<char> strings;
+
+	auto addString = [&strings](std::string str)
+	{
+		int oldSize = (int)strings.size();
+		strings.resize(oldSize + str.length() + 1);
+		memcpy(&strings[oldSize], str.c_str(), str.length() + 1);
+
+		return offsetof(StringTable, data) + oldSize;
+	};
+
 	for (size_t i = 0; i < symbols.size(); i++)
 	{
 		Symbol* symbol = &symbols[i];
@@ -195,7 +204,7 @@ void File::serialize(char** buf, int* size)
 		else
 		{
 			record->zeroes_offset[0] = 0;
-			record->zeroes_offset[1] = addString(symbol->name);
+			record->zeroes_offset[1] = (int)addString(symbol->name);
 		}
 
 		record->value = symbol->offset;
@@ -229,13 +238,4 @@ void File::serialize(char** buf, int* size)
 
 	*buf = &coffFileBuf[0];
 	*size = (int)coffFileBuf.size();
-}
-
-int File::addString(std::string str)
-{
-	int oldSize = (int)strings.size();
-	strings.resize(oldSize + str.length() + 1);
-	memcpy(&strings[oldSize], str.c_str(), str.length() + 1);
-
-	return offsetof(StringTable, data) + oldSize;
 }
