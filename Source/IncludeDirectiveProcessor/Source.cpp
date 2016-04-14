@@ -1,7 +1,7 @@
 #include <fstream>
 #include <regex>
 
-void main(int argc, char *argv[])
+int main(int argc, char *argv[])
 {
 	std::string src;
 	std::string dst;
@@ -63,4 +63,6 @@ void main(int argc, char *argv[])
 	os.open(dst, std::ios_base::binary);
 	os.write(s.c_str(), s.length());
 	os.close();
+    
+    return 0;
 }

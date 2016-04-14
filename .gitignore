@@ -30,6 +30,8 @@ Build
 Source/FileStream/FileStream.xcodeproj/xcuserdata
 Source/GL/GL.xcodeproj/xcuserdata
 Source/Graphics/Graphics.xcodeproj/xcuserdata
+Source/IncludeDirectiveProcessor/IncludeDirectiveProcessor.xcodeproj/project.xcworkspace
+Source/IncludeDirectiveProcessor/IncludeDirectiveProcessor.xcodeproj/xcuserdata
 Source/iOS/iOS.xcodeproj/xcuserdata
 Source/iOSTest/iOSTest.xcodeproj/project.xcworkspace
 Source/iOSTest/iOSTest.xcodeproj/xcuserdata
