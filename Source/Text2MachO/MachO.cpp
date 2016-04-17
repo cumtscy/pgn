@@ -115,8 +115,8 @@ void File::serialize(char** buf, int* size)
     int sizeCmds = sizeof(segment_command_64) * segments.size() + sizeof(section_64) * numSects + sizeof(symtab_command);
     
     machOFileHeader.magic = MH_MAGIC_64;
-    machOFileHeader.cputype = CPU_TYPE_X86_64;
-    machOFileHeader.cpusubtype = CPU_SUBTYPE_X86_64_ALL;
+    machOFileHeader.cputype = CPU_TYPE_ARM64;
+    machOFileHeader.cpusubtype = CPU_SUBTYPE_ARM_ALL;
     machOFileHeader.filetype = MH_OBJECT;
     machOFileHeader.ncmds = segments.size() + symbols.size();
     machOFileHeader.sizeofcmds = sizeCmds;
