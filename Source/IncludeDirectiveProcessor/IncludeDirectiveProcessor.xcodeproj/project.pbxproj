@@ -201,6 +201,7 @@
 		C2A76B381CBF9C3900874E42 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CONFIGURATION_BUILD_DIR = "$(SRCROOT)/../../Tools";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -208,6 +209,7 @@
 		C2A76B391CBF9C3900874E42 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CONFIGURATION_BUILD_DIR = "$(SRCROOT)/../../Tools";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
