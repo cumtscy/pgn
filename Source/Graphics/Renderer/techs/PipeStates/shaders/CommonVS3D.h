@@ -1,3 +1,4 @@
+#include "CommonVS3DInput.h"
 #include "CommonVSOutput.h"
 
 struct Movable
@@ -10,7 +11,6 @@ uniform MovableBlock@1				// enum BindingPoint
 {
 	Movable instances[256];
 };
-#include "CommonVS3DInput.h"
 
 uniform BoneMatBlock@2				// enum BindingPoint
 {
