@@ -111,7 +111,7 @@ int __stdcall WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdL
 
 	pgn::Model* model = graphics->createModel();
 	model->setMesh("casual02_f_highpoly.PNM");
-	model->setDiffuseMap(0, "casual02_f_25.PNT");
+	model->setDiffuseMap(0, "casual02_f_25.etc2.PNT");
 	entity->setModel(model);
 
 	pgn::Entity* entity2 = graphics->createEntity();

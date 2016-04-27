@@ -3,6 +3,11 @@
 #include <regex>
 #include <string>
 
+#define GL_COMPRESSED_RGB_S3TC_DXT1_EXT   0x83F0
+#define GL_COMPRESSED_RGBA_S3TC_DXT1_EXT  0x83F1
+#define GL_COMPRESSED_RGBA_S3TC_DXT3_EXT  0x83F2
+#define GL_COMPRESSED_RGBA_S3TC_DXT5_EXT  0x83F3
+
 #define GL_COMPRESSED_RGB8_ETC2           0x9274
 #define GL_COMPRESSED_RGB8_PUNCHTHROUGH_ALPHA1_ETC2 0x9276
 #define GL_COMPRESSED_RGBA8_ETC2_EAC      0x9278
@@ -67,6 +72,16 @@ void main(int argc, char* argv[])
 
 	switch (ktxHeader->glInternalFormat)
 	{
+	case GL_COMPRESSED_RGB_S3TC_DXT1_EXT:
+	case GL_COMPRESSED_RGBA_S3TC_DXT1_EXT:
+		pntHeader.format = pgn::PNTHeader::DXT1;
+		break;
+	case GL_COMPRESSED_RGBA_S3TC_DXT3_EXT:
+		pntHeader.format = pgn::PNTHeader::DXT3;
+		break;
+	case GL_COMPRESSED_RGBA_S3TC_DXT5_EXT:
+		pntHeader.format = pgn::PNTHeader::DXT5;
+		break;
 	case GL_COMPRESSED_RGB8_ETC2:
 		pntHeader.format = pgn::PNTHeader::RGB8_ETC2;
 		break;
