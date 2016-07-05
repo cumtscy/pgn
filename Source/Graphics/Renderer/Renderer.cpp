@@ -377,6 +377,12 @@ void Renderer::beginDraw(pgn::Window* wnd, RendererConfig* _cfg)
 {
 	cfg = *_cfg;
 
+	for (int i = 0; i < numPasses; i++)
+		isPassActive[i] = false;
+
+	for (int i = 0; i < cfg.numActivePasses; i++)
+		isPassActive[cfg.activePasses[i]] = true;
+
 	pgn::Display display = wnd->getDisplay();
 
 	rc->beginDraw(display, 2);
@@ -957,6 +963,8 @@ FrameContext* Renderer::beginSubmit()
 
 void Renderer::submit(PassEnum passEnum, TechEnum techEnum, Batch* batch)
 {
+	if (!isPassActive[passEnum]) return;
+
 	BatchGroupPtr* ppBatchGroup = &frameContext->batches[passEnum][techEnum][batch->geom->vertexFormat];
 	BatchGroup* batchGroup = ppBatchGroup->p;
 	if (!batchGroup)
@@ -1206,6 +1214,12 @@ void Renderer::render(FrameContext* frameContext)
 					}
 				}
 
+				//batchGroup.clear();
+			}
+
+			for (auto& batchGroupMapEntry : batchGroupMap)
+			{
+				BatchGroup& batchGroup = *batchGroupMapEntry.second.p;
 				batchGroup.clear();
 			}
 		}

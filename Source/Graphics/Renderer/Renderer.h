@@ -179,6 +179,7 @@ public:
 	pgn::Heap* heap;
 
 	RendererConfig cfg;
+	bool isPassActive[numPasses];
 
 	pgn::RenderingSystem* rs;
 
