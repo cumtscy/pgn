@@ -66,6 +66,6 @@ void RenderingContext::endDraw()
 void RenderingContext::beginFrame()
 {
 	glBindFramebuffer(GL_DRAW_FRAMEBUFFER, 0);
-	unsigned backBuf = GL_BACK;
+	unsigned backBuf = GL_BACK_LEFT;
 	glDrawBuffers(1, &backBuf);
 }
