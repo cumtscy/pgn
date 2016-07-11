@@ -1085,6 +1085,7 @@ void Renderer::render(FrameContext* frameContext)
 	};
 
 	rs->clearRenderTargetView(0, 0.0f, 0.0f, 0.0f, 1.0f);
+	rs->clearDepthStencilView(0, true, 1.0f, false, 0);
 
 	for (int i = 0; i < cfg.numActivePasses; i++)
 	{
@@ -1131,8 +1132,6 @@ void Renderer::render(FrameContext* frameContext)
 		}
 		else
 		{
-			rs->clearDepthStencilView(0, true, 1.0f, false, 0);
-
 			rs->beginFrame();
 			rs->setViewport(viewport.left, viewport.top, viewport.width, viewport.height, viewport.fullHeight, 0.0f, 1.0f);
 		}
