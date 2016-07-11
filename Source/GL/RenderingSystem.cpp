@@ -8,17 +8,13 @@
 RenderingSystem::RenderingSystem(pgn::RenderingContext* rc)
 {
 	this->rc = rc;
-	glGenFramebuffers(1, &offscreenFB);
-	//glBindFramebuffer(GL_DRAW_FRAMEBUFFER, offscreenFB);	// fbo不能在多个线程的多个rc中共用。
-															// 单线程多rc和多线程单rc的情况不确定。
-															// 如果在这里创建offscreenFB，
-															// 另一个线程绑定offscreenFB的时候会出错，
-															// 即使先在这儿解绑也不行。
+	offscreenFB = 0;
 }
 
 void RenderingSystem::dispose()
 {
-	glDeleteFramebuffers(1, &offscreenFB);
+	if (offscreenFB)
+		glDeleteFramebuffers(1, &offscreenFB);
 }
 
 pgn::RenderingSystem* pgn::RenderingSystem::create(RenderingContext* rc)
@@ -38,6 +34,9 @@ void RenderingSystem::beginFrame()
 
 void RenderingSystem::beginFrame(int numRenderTargets, pgn::RenderTargetView* renderTargets[], pgn::DepthStencilView* depthStencilView)
 {
+	if (!offscreenFB)
+		glGenFramebuffers(1, &offscreenFB);
+
 	glBindFramebuffer(GL_DRAW_FRAMEBUFFER, offscreenFB);
 
 	if (numRenderTargets)
