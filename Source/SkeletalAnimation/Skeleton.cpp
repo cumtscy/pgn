@@ -44,14 +44,14 @@ void Skeleton::updatePose(int dt, pgn::SkeletonTemplate* _templ, pgn::Float4x3* 
 
 		pgn::Float4 quat[maxNumBones];
 		pgn::Float4 pos[maxNumBones];
-		unsigned short rotAffectedBy[maxNumBones];
-		unsigned short posAffectedBy[maxNumBones];
+		unsigned short layerMasksRot[maxNumBones];
+		unsigned short layerMasksPos[maxNumBones];
 
 		SkeletonTemplate* templ = (SkeletonTemplate*)_templ;
 		size_t numBones = templ->bones.size();
 
-		memset(rotAffectedBy, 0, sizeof(rotAffectedBy[0]) * numBones);
-		memset(posAffectedBy, 0, sizeof(posAffectedBy[0]) * numBones);
+		memset(layerMasksRot, 0, sizeof(layerMasksRot[0]) * numBones);
+		memset(layerMasksPos, 0, sizeof(layerMasksPos[0]) * numBones);
 
 		for (int i = 0; i < numAnimLayers; i++)
 		{
@@ -60,7 +60,7 @@ void Skeleton::updatePose(int dt, pgn::SkeletonTemplate* _templ, pgn::Float4x3* 
 
 			if (!anim)
 			{
-				rotAffectedBy[0] |= 1 << i; // 防止在动画还没加载好的时候被认为是不活跃的层。
+				layerMasksRot[0] |= 1 << i; // 防止在动画还没加载好的时候被认为是不活跃的层。
 				continue;
 			}
 
@@ -102,15 +102,15 @@ void Skeleton::updatePose(int dt, pgn::SkeletonTemplate* _templ, pgn::Float4x3* 
 					pgn::Float4 r;
 					pgn::slerp(&r, a, b, (time - t0) / (float)(t1 - t0));
 
-					if (rotAffectedBy[j] && weight != 1.0f)
+					if (layerMasksRot[j] && weight != 1.0f)
 					{
 						pgn::slerp(&quat[j], &quat[j], &r, weight);
-						rotAffectedBy[j] |= 1 << i;
+						layerMasksRot[j] |= 1 << i;
 					}
 					else
 					{
 						quat[j] = r;
-						rotAffectedBy[j] = 1 << i;
+						layerMasksRot[j] = 1 << i;
 					}
 				}
 
@@ -128,15 +128,15 @@ void Skeleton::updatePose(int dt, pgn::SkeletonTemplate* _templ, pgn::Float4x3* 
 					pgn::Float4 r;
 					pgn::lerp(&r, a, b, (time - t0) / (float)(t1 - t0));
 
-					if (posAffectedBy[j] && weight != 1.0f)
+					if (layerMasksPos[j] && weight != 1.0f)
 					{
 						pgn::lerp(&pos[j], &pos[j], &r, weight);
-						posAffectedBy[j] |= 1 << i;
+						layerMasksPos[j] |= 1 << i;
 					}
 					else
 					{
 						pos[j] = r;
-						posAffectedBy[j] = 1 << i;
+						layerMasksPos[j] = 1 << i;
 					}
 				}
 
@@ -160,10 +160,10 @@ void Skeleton::updatePose(int dt, pgn::SkeletonTemplate* _templ, pgn::Float4x3* 
 		{
 			Bone* bone = &*itBone;
 
-			if (!rotAffectedBy[i])
+			if (!layerMasksRot[i])
 				quat[i] = bone->defaultRot;
 
-			if (!posAffectedBy[i])
+			if (!layerMasksPos[i])
 				pos[i] = bone->defaultPos;
 
 			pgn::Float4x4 localMat;
@@ -188,8 +188,8 @@ void Skeleton::updatePose(int dt, pgn::SkeletonTemplate* _templ, pgn::Float4x3* 
 		unsigned short activeLayerMask = 0;
 		for (size_t i = 0; i < numBones; i++)
 		{
-			activeLayerMask |= rotAffectedBy[i];
-			activeLayerMask |= posAffectedBy[i];
+			activeLayerMask |= layerMasksRot[i];
+			activeLayerMask |= layerMasksPos[i];
 		}
 
 		int numActiveLayers = 0;
