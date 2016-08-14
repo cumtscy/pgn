@@ -21,7 +21,7 @@ struct AnimLayer
 class Skeleton : public pgn::Skeleton
 {
 	pgn::Pool* pool;
-	static const int maxNumAnimLayers = 16;
+	static const int maxNumAnimLayers = 8;
 	AnimLayer animLayers[maxNumAnimLayers];
 	int numAnimLayers;
 public:

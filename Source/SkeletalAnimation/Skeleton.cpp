@@ -44,8 +44,8 @@ void Skeleton::updatePose(int dt, pgn::SkeletonTemplate* _templ, pgn::Float4x3* 
 
 		pgn::Float4 quat[maxNumBones];
 		pgn::Float4 pos[maxNumBones];
-		unsigned short layerMasksRot[maxNumBones];
-		unsigned short layerMasksPos[maxNumBones];
+		unsigned char layerMasksRot[maxNumBones];
+		unsigned char layerMasksPos[maxNumBones];
 
 		assert(sizeof(layerMasksRot[0]) * 8 == maxNumAnimLayers);
 		assert(sizeof(layerMasksPos[0]) * 8 == maxNumAnimLayers);
