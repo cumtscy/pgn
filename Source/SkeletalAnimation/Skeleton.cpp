@@ -47,6 +47,9 @@ void Skeleton::updatePose(int dt, pgn::SkeletonTemplate* _templ, pgn::Float4x3* 
 		unsigned short layerMasksRot[maxNumBones];
 		unsigned short layerMasksPos[maxNumBones];
 
+		assert(sizeof(layerMasksRot[0]) * 8 == maxNumAnimLayers);
+		assert(sizeof(layerMasksPos[0]) * 8 == maxNumAnimLayers);
+
 		SkeletonTemplate* templ = (SkeletonTemplate*)_templ;
 		size_t numBones = templ->bones.size();
 
