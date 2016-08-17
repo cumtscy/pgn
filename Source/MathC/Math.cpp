@@ -54,7 +54,7 @@ void pgn::slerp(Float4* _result, Float4* _a, Float4* _b, float t)
 {
 	Float4& r = *_result;
 	Float4& a = *_a;
-	Float4& b = *_b;
+	Float4 b = *_b;
 
 	float cosOmega = a[0] * b[0] + a[1] * b[1] + a[2] * b[2] + a[3] * b[3];
 
