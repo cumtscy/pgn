@@ -27,12 +27,14 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\Include\PGN\FatMan\LinearTransformations.h" />
     <ClInclude Include="..\..\Include\PGN\FatMan\SkeletalAnimation\Animation.h" />
     <ClInclude Include="..\..\Include\PGN\FatMan\SkeletalAnimation\AnimationFactory.h" />
     <ClInclude Include="..\..\Include\PGN\FatMan\SkeletalAnimation\Skeleton.h" />
     <ClInclude Include="..\..\Include\PGN\FatMan\SkeletalAnimation\SkeletonFactory.h" />
     <ClInclude Include="..\..\Include\PGN\FatMan\SkeletalAnimation\SkeletonTemplate.h" />
     <ClInclude Include="..\..\Include\PGN\FatMan\SkeletalAnimation\SkeletonTemplateFactory.h" />
+    <ClInclude Include="LinearTransformations\sinCosTable.h" />
     <ClInclude Include="SkeletalAnimation\Anim.h" />
     <ClInclude Include="SkeletalAnimation\Animation.h" />
     <ClInclude Include="SkeletalAnimation\PNA.h" />
@@ -41,6 +43,8 @@
     <ClInclude Include="SkeletalAnimation\SkeletonTemplate.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="LinearTransformations\LinearTransformations.cpp" />
+    <ClCompile Include="LinearTransformations\sinCosTable.cpp" />
     <ClCompile Include="SkeletalAnimation\Animation.cpp" />
     <ClCompile Include="SkeletalAnimation\AnimationFactory.cpp" />
     <ClCompile Include="SkeletalAnimation\PNA.cpp" />

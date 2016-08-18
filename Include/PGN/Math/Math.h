@@ -3,6 +3,16 @@
 #include "../Common/DllInterface.h"
 namespace pgn {
 
+struct Float2
+{
+	_aligned(8, float v[2]);
+
+	float& operator[](int i)
+	{
+		return v[i];
+	}
+};
+
 struct Float3
 {
 	_aligned(16, float v[3]);
