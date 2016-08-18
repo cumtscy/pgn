@@ -1,5 +1,5 @@
 #pragma once
-#include "../Common/Interface.h"
+#include "../../Common/Interface.h"
 namespace pgn {
 
 class SkeletonTemplate : public Interface

@@ -98,7 +98,7 @@
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <ImportLibrary>..\..\Lib\$(Configuration)\$(TargetName).lib</ImportLibrary>
-      <AdditionalDependencies>PGN_FileStream.lib;PGN_Graphics.lib;PGN_Platform.lib;PGN_SkeletalAnimation.lib;PGN_Utilities.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>PGN_FatMan.lib;PGN_FileStream.lib;PGN_Graphics.lib;PGN_Platform.lib;PGN_Utilities.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalOptions>/ignore:4248 %(AdditionalOptions)</AdditionalOptions>
     </Link>
   </ItemDefinitionGroup>
@@ -116,7 +116,7 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <ImportLibrary>..\..\Lib\$(Configuration)\$(TargetName).lib</ImportLibrary>
-      <AdditionalDependencies>PGN_FileStream.lib;PGN_Graphics.lib;PGN_Platform.lib;PGN_SkeletalAnimation.lib;PGN_Utilities.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>PGN_FatMan.lib;PGN_FileStream.lib;PGN_Graphics.lib;PGN_Platform.lib;PGN_Utilities.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalOptions>/ignore:4248 %(AdditionalOptions)</AdditionalOptions>
     </Link>
   </ItemDefinitionGroup>
@@ -136,7 +136,7 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <ImportLibrary>..\..\Lib\$(Configuration)\$(TargetName).lib</ImportLibrary>
-      <AdditionalDependencies>PGN_FileStream.lib;PGN_Graphics.lib;PGN_Platform.lib;PGN_SkeletalAnimation.lib;PGN_Utilities.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>PGN_FatMan.lib;PGN_FileStream.lib;PGN_Graphics.lib;PGN_Platform.lib;PGN_Utilities.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalOptions>/ignore:4248 %(AdditionalOptions)</AdditionalOptions>
     </Link>
   </ItemDefinitionGroup>

@@ -1,4 +1,9 @@
 #include <PGN/Platform/DebugHeap.h>
+#include <PGN/FatMan/SkeletalAnimation/Animation.h>
+#include <PGN/FatMan/SkeletalAnimation/AnimationFactory.h>
+#include <PGN/FatMan/SkeletalAnimation/Skeleton.h>
+#include <PGN/FatMan/SkeletalAnimation/SkeletonFactory.h>
+#include <PGN/FatMan/SkeletalAnimation/SkeletonTemplate.h>
 #include <PGN/FileStream/StdFileStream.h>
 #include <PGN/Graphics/Camera.h>
 #include <PGN/Graphics/Entity.h>
@@ -10,11 +15,6 @@
 #include <PGN/Graphics/ScenePointLight.h>
 #include <PGN/Math/Math.h>
 #include <PGN/Platform/Graphics/Window.h>
-#include <PGN/SkeletalAnimation/Animation.h>
-#include <PGN/SkeletalAnimation/AnimationFactory.h>
-#include <PGN/SkeletalAnimation/Skeleton.h>
-#include <PGN/SkeletalAnimation/SkeletonFactory.h>
-#include <PGN/SkeletalAnimation/SkeletonTemplate.h>
 #include <PGN/Utilities/Clock.h>
 #include "MainForm.h"
 

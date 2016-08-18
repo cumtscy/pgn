@@ -1,4 +1,4 @@
-#include <PGN/SkeletalAnimation/Skeleton.h>
+#include <PGN/FatMan/SkeletalAnimation/Skeleton.h>
 
 namespace pgn {
 	class ResourceHandle;

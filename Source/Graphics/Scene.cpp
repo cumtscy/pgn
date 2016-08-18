@@ -1,6 +1,6 @@
 #include <PGN/Common/debug_new.h>
-#include <PGN/SkeletalAnimation/Skeleton.h>
-#include <PGN/SkeletalAnimation/SkeletonTemplate.h>
+#include <PGN/FatMan/SkeletalAnimation/Skeleton.h>
+#include <PGN/FatMan/SkeletalAnimation/SkeletonTemplate.h>
 #include <PGN/Utilities/HeapAllocator.h>
 #include <PGN/Utilities/ResourceManager/ResourceHandle.h>
 #include <PGN/Utilities/ResourceManager/ResourceManager.h>

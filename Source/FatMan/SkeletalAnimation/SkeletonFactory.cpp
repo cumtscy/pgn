@@ -1,5 +1,5 @@
 #define PGN_DLL_EXPORT
-#include <PGN/SkeletalAnimation/SkeletonFactory.h>
+#include <PGN/FatMan/SkeletalAnimation/SkeletonFactory.h>
 #undef PGN_DLL_EXPORT
 
 #include <PGN/Common/debug_new.h>

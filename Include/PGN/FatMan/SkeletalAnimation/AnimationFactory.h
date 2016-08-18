@@ -1,6 +1,6 @@
 #pragma once
-#include "../Common/DllInterface.h"
-#include "../Common/Interface.h"
+#include "../../Common/DllInterface.h"
+#include "../../Common/Interface.h"
 namespace pgn {
 
 class Animation;

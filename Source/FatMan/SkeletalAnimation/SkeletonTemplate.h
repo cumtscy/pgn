@@ -1,6 +1,6 @@
 #include <list>
+#include <PGN/FatMan/SkeletalAnimation/SkeletonTemplate.h>
 #include <PGN/Math/Math.h>
-#include <PGN/SkeletalAnimation/SkeletonTemplate.h>
 #include <PGN/Utilities/Pool.h>
 #include <PGN/Utilities/PoolAllocator.h>
 

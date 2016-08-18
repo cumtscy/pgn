@@ -1,5 +1,5 @@
 #include <new>
-#include <PGN/SkeletalAnimation/SkeletonTemplateFactory.h>
+#include <PGN/FatMan/SkeletalAnimation/SkeletonTemplateFactory.h>
 #include <PGN/Utilities/Pool.h>
 #include "Mesh.h"
 #include "MeshFactory.h"

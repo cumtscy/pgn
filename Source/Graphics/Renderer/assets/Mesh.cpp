@@ -1,11 +1,11 @@
 #include <PGN/Assets/PNM.h>
+#include <PGN/FatMan/SkeletalAnimation/SkeletonTemplate.h>
+#include <PGN/FatMan/SkeletalAnimation/SkeletonTemplateFactory.h>
 #include <PGN/FileStream/FileStream.h>
 #include <PGN/Math/Math.h>
 #include <PGN/RenderingSystem/Buffer.h>
 #include <PGN/RenderingSystem/RenderingSystem.h>
 #include <PGN/RenderingSystem/VertexInputLayout.h>
-#include <PGN/SkeletalAnimation/SkeletonTemplate.h>
-#include <PGN/SkeletalAnimation/SkeletonTemplateFactory.h>
 #include <PGN/Utilities/CircularBuffer.h>
 #include "../GeometryHelper.h"
 #include "Mesh.h"
