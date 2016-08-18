@@ -21,6 +21,10 @@
       <Configuration>Release</Configuration>
       <Platform>x64</Platform>
     </ProjectConfiguration>
+    <ProjectConfiguration Include="Release_AsmOutput|PSVita">
+      <Configuration>Release_AsmOutput</Configuration>
+      <Platform>PSVita</Platform>
+    </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Math.cpp" />

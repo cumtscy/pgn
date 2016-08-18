@@ -21,6 +21,10 @@
       <Configuration>Release</Configuration>
       <Platform>x64</Platform>
     </ProjectConfiguration>
+    <ProjectConfiguration Include="Release_AsmOutput|PSVita">
+      <Configuration>Release_AsmOutput</Configuration>
+      <Platform>PSVita</Platform>
+    </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{BC1C568B-3590-4113-A3F4-64483FAAEB03}</ProjectGuid>
