@@ -4,7 +4,6 @@
 namespace pgn {
 
 class Skeleton;
-class SkeletonTemplate;
 
 class SkeletonFactory : public Interface
 {

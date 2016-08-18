@@ -3,9 +3,9 @@
 #include "../Common/Interface.h"
 namespace pgn {
 
+struct Float4;
 struct Float4x3;
 class SkeletonTemplate;
-struct Float4;
 
 class SkeletonTemplateFactory : public Interface
 {
