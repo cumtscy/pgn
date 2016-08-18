@@ -1,4 +1,5 @@
 #include <PGN/Platform/DebugHeap.h>
+#include <PGN/FatMan/LinearTransformations.h>
 #include <PGN/FatMan/SkeletalAnimation/Animation.h>
 #include <PGN/FatMan/SkeletalAnimation/AnimationFactory.h>
 #include <PGN/FatMan/SkeletalAnimation/Skeleton.h>
@@ -38,6 +39,8 @@ pgn::Float4x3 worldMat2 =
 	0, 1, 0, 0,
 	0, 0, 1, 0,
 };
+
+pgn::Float4x3 viewMat3;
 
 pgn::Float3 pos =
 {
@@ -133,7 +136,6 @@ int __stdcall WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdL
 
 	pgn::SceneEntity* sceneEntity = scene->add(entity, true);
 	sceneEntity->setScale(0.01f, 0.01f);
-	sceneEntity->setWorldMat(&worldMat);
 
 	pgn::SceneEntity* sceneEntity2 = scene->add(entity, true);
 	sceneEntity2->setScale(0.01f, 0.01f);
@@ -143,14 +145,64 @@ int __stdcall WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdL
 	sceneEntity3->setScale(15.0f, 15.0f);
 	sceneEntity3->setWorldMat(&worldMat);
 
+	int yaw = 0;
+
+	System::Windows::Forms::Keys prevKey = System::Windows::Forms::Keys::None;
+	int keyInterval = 0;
+
 	while (!mainForm->IsDisposed)
 	//while (wnd->processMessages())
 	{
-		System::Windows::Forms::Application::DoEvents();
 		int _t = (int)clock->getTickCount();
 		int dt = _t - t;
+		int animDt = 0;
+
+		System::Windows::Forms::Application::DoEvents();
+		System::Windows::Forms::Keys key = mainForm->key;
+
+		keyInterval += dt;
+
+		if (key == System::Windows::Forms::Keys::OemPeriod)
+			animDt = dt;
+
+		if (key == System::Windows::Forms::Keys::Oemcomma)
+			animDt = -dt;
+
+		if (key == System::Windows::Forms::Keys::Space
+			&& key != prevKey
+			)
+		{
+			skel->playAnimation(anim);
+		}
+
+		if (key == System::Windows::Forms::Keys::Left
+			//&& key != prevKey
+			)
+		{
+			yaw += keyInterval / 36;
+			keyInterval %= 36;
+		}
+
+		if (key == System::Windows::Forms::Keys::Right
+			//&& key != prevKey
+			)
+		{
+			yaw -= keyInterval / 36;
+			keyInterval %= 36;
+		}
+
+		if (key == System::Windows::Forms::Keys::None)
+			keyInterval = 0;
+
+		prevKey = key;
+
 		t = _t;
-		skel->updatePose(dt);
+		skel->updatePose(animDt);
+
+		yaw = (yaw % pgn::turnDiv + pgn::turnDiv) % pgn::turnDiv;
+		pgn::computeWorldMat(&viewMat3, 0, 0, 0, yaw);
+		sceneEntity->setWorldMat(&viewMat3);
+
 		camera->setViewport(0, 0, mainForm->ClientSize.Width, mainForm->ClientSize.Height, mainForm->ClientSize.Height);
 		//camera->setViewport(0, 0, wnd->getClientWidth(), wnd->getClientHeight(), wnd->getClientHeight());
 		scene->commit(camera);
