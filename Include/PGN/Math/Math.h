@@ -85,7 +85,7 @@ PGN_DLL_INTERFACE void mul(Float4x4* result, Float4x4* a, Float4x4* b);
 PGN_DLL_INTERFACE void mul(Float4x3* result, Float4x4* a, Float4x3* b);
 PGN_DLL_INTERFACE void mul(Float4x3* result, Float4x3* a, Float4x3* b); // 3x3æÿ’Û≥À∑®
 
-PGN_DLL_INTERFACE void lerp(Float4* result, Float4* a, Float4* b, float t);
+PGN_DLL_INTERFACE void lerp(Float3* result, Float3* a, Float3* b, float t);
 PGN_DLL_INTERFACE void slerp(Float4* result, Float4* a, Float4* b, float t);
 
 PGN_DLL_INTERFACE void quatToMat(Float4x3* m, Float4* q);

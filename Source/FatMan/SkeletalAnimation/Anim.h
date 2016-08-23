@@ -12,7 +12,7 @@ class BoneAnim
 {
 public:
 	std::map<int, pgn::Float4, std::less<int>, RotKeyAllocator> rotKeyMap;
-	std::map<int, pgn::Float4, std::less<int>, PosKeyAllocator> posKeyMap;
+	std::map<int, pgn::Float3, std::less<int>, PosKeyAllocator> posKeyMap;
 
 	BoneAnim(RotKeyAllocator& rotKeyAllocator, PosKeyAllocator& posKeyAllocator)
 		: rotKeyMap(rotKeyAllocator)

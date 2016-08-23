@@ -37,11 +37,11 @@ void pgn::mul(Float4x3* _result, Float4x3* _a, Float4x3* _b)
 			r[col][row] = a[0][row] * b[col][0] + a[1][row] * b[col][1] + a[2][row] * b[col][2];
 }
 
-void pgn::lerp(Float4* _result, Float4* _a, Float4* _b, float t)
+void pgn::lerp(Float3* _result, Float3* _a, Float3* _b, float t)
 {
-	Float4& r = *_result;
-	Float4& a = *_a;
-	Float4& b = *_b;
+	Float3& r = *_result;
+	Float3& a = *_a;
+	Float3& b = *_b;
 
 	float k0 = 1.0f - t;
 	float k1 = t;

@@ -15,7 +15,7 @@ public:
 	SkeletonTemplateFactory();
 	virtual void dispose();
 	virtual void _free();
-	virtual pgn::SkeletonTemplate* createSkeletonTemplate(int numBones, pgn::Float4x3* offsetMats, pgn::Float4 defaultRot[], pgn::Float4 defaultPos[], unsigned char parentIndices[]);
+	virtual pgn::SkeletonTemplate* createSkeletonTemplate(int numBones, pgn::Float4x3* offsetMats, pgn::Float4 defaultRot[], pgn::Float3 defaultPos[], unsigned char parentIndices[]);
 };
 
 SkeletonTemplateFactory::SkeletonTemplateFactory()
@@ -38,7 +38,7 @@ void SkeletonTemplateFactory::_free()
 	delete this;
 }
 
-pgn::SkeletonTemplate* SkeletonTemplateFactory::createSkeletonTemplate(int numBones, pgn::Float4x3* offsetMats, pgn::Float4 defaultRot[], pgn::Float4 defaultPos[], unsigned char parentIndices[])
+pgn::SkeletonTemplate* SkeletonTemplateFactory::createSkeletonTemplate(int numBones, pgn::Float4x3* offsetMats, pgn::Float4 defaultRot[], pgn::Float3 defaultPos[], unsigned char parentIndices[])
 {
 	return new(skeletonTemplatePool->alloc()) SkeletonTemplate(numBones, offsetMats, defaultRot, defaultPos, parentIndices, skeletonTemplatePool, boneAllocator);
 }

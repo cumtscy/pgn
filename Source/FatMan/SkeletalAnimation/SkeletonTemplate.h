@@ -8,7 +8,7 @@ struct Bone
 {
 	pgn::Float4x4 offsetMat;
 	pgn::Float4 defaultRot;
-	pgn::Float4 defaultPos;
+	pgn::Float3 defaultPos;
 	unsigned char parentIndex;
 };
 
@@ -20,7 +20,7 @@ public:
 	pgn::Pool* pool;
 	std::list<Bone, BoneAllocator> bones;
 
-	SkeletonTemplate(int numBones, pgn::Float4x3* offsetMats, pgn::Float4 defaultRot[], pgn::Float4 defaultPos[], unsigned char parentIndices[], pgn::Pool* pool, BoneAllocator& boneAllocator);
+	SkeletonTemplate(int numBones, pgn::Float4x3* offsetMats, pgn::Float4 defaultRot[], pgn::Float3 defaultPos[], unsigned char parentIndices[], pgn::Pool* pool, BoneAllocator& boneAllocator);
 	virtual void dispose();
 	virtual void _free();
 	virtual int getNumBones();

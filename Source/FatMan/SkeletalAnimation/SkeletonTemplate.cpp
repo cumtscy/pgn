@@ -1,7 +1,7 @@
 #include <cstring>
 #include "SkeletonTemplate.h"
 
-SkeletonTemplate::SkeletonTemplate(int numBones, pgn::Float4x3* offsetMats, pgn::Float4 defaultRot[], pgn::Float4 defaultPos[], unsigned char parentIndices[], pgn::Pool* pool, BoneAllocator& boneAllocator)
+SkeletonTemplate::SkeletonTemplate(int numBones, pgn::Float4x3* offsetMats, pgn::Float4 defaultRot[], pgn::Float3 defaultPos[], unsigned char parentIndices[], pgn::Pool* pool, BoneAllocator& boneAllocator)
 	: bones(boneAllocator)
 {
 	this->pool = pool;

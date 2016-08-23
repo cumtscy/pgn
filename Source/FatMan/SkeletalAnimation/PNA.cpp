@@ -44,7 +44,7 @@ bool PNA::cook(void* rawData)
 
 		int numPosKeys = rawBoneAnim->numPosKeys;
 		int* posKeyTimes = (int*)((char*)rawData + rawBoneAnim->posKeyTimesChunkOffset);
-		pgn::Float4* posKeys = (pgn::Float4*)((char*)rawData + rawBoneAnim->posKeysChunkOffset);
+		pgn::Float3* posKeys = (pgn::Float3*)((char*)rawData + rawBoneAnim->posKeysChunkOffset);
 
 		for (int j = 0; j < numPosKeys; j++)
 			boneAnim->posKeyMap[posKeyTimes[j]] = posKeys[j];

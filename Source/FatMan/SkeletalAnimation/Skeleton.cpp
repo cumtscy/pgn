@@ -43,7 +43,7 @@ void Skeleton::updatePose(int dt, pgn::SkeletonTemplate* _templ, pgn::Float4x3* 
 		const int maxNumBones = 128;
 
 		pgn::Float4 quat[maxNumBones];
-		pgn::Float4 pos[maxNumBones];
+		pgn::Float3 pos[maxNumBones];
 		unsigned char layerMasksRot[maxNumBones];
 		unsigned char layerMasksPos[maxNumBones];
 
@@ -122,13 +122,13 @@ void Skeleton::updatePose(int dt, pgn::SkeletonTemplate* _templ, pgn::Float4x3* 
 				{
 					auto it = posKeyMap.upper_bound(time);
 					int t1 = it->first;
-					pgn::Float4* b = &it->second;
+					pgn::Float3* b = &it->second;
 
 					it--;
 					int t0 = it->first;
-					pgn::Float4* a = &it->second;
+					pgn::Float3* a = &it->second;
 
-					pgn::Float4 r;
+					pgn::Float3 r;
 					pgn::lerp(&r, a, b, (time - t0) / (float)(t1 - t0));
 
 					if (layerMasksPos[j] && weight != 1.0f)

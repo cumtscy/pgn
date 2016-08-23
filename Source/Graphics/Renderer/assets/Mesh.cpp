@@ -20,7 +20,7 @@ Mesh::Mesh(pgn::AssetFactory* factory, SubsetAllocator& subsetAllocator, pgn::Sk
 bool Mesh::cook(void* rawData)
 {
 	pgn::PNMHeader* header = (pgn::PNMHeader*)rawData;
-	geom.skeletonTemplate = header->numBones ? skeletonFactory->createSkeletonTemplate(header->numBones, (pgn::Float4x3*)((char*)header + header->offsetMatsChunkOffset), (pgn::Float4*)((char*)header + header->defaultRotChunkOffset), (pgn::Float4*)((char*)header + header->defaultPosChunkOffset), (unsigned char*)((char*)header + header->parentIndicesChunkOffset)) : 0;
+	geom.skeletonTemplate = header->numBones ? skeletonFactory->createSkeletonTemplate(header->numBones, (pgn::Float4x3*)((char*)header + header->offsetMatsChunkOffset), (pgn::Float4*)((char*)header + header->defaultRotChunkOffset), (pgn::Float3*)((char*)header + header->defaultPosChunkOffset), (unsigned char*)((char*)header + header->parentIndicesChunkOffset)) : 0;
 	return true;
 }
 
