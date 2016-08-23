@@ -130,3 +130,25 @@ void pgn::sub(Float4* results, Float4* a, Float4* b, int count)
 		results[i][3] = a[i][3] - b[i][3];
 	}
 }
+
+inline pgn::Float2 operator-(pgn::Float2& a, pgn::Float2& b)
+{
+	return pgn::Float2(a[0] - b[0], a[1] - b[1]);
+}
+
+inline float cross(pgn::Float2& a, pgn::Float2& b)
+{
+	return a[0] * b[1] - a[1] * b[0];
+}
+
+bool pgn::pointInCCWTriangle(Float2* _p, Float2* _a, Float2* _b, Float2* _c)
+{
+	Float2& p = *_p;
+	Float2& a = *_a;
+	Float2& b = *_b;
+	Float2& c = *_c;
+
+	return cross(p - a, b - a) >= 0.0f
+		&& cross(p - b, c - b) >= 0.0f
+		&& cross(p - c, a - c) >= 0.0f;
+}

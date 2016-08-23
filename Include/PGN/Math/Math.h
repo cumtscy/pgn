@@ -7,6 +7,12 @@ struct Float2
 {
 	_aligned(8, float v[2]);
 
+	Float2(float x, float y)
+	{
+		v[0] = x;
+		v[1] = y;
+	}
+
 	float& operator[](int i)
 	{
 		return v[i];
@@ -92,5 +98,7 @@ PGN_DLL_INTERFACE void quatToMat(Float4x3* m, Float4* q);
 
 PGN_DLL_INTERFACE void add(Float4* results, Float4* a, Float4* b, int count);
 PGN_DLL_INTERFACE void sub(Float4* results, Float4* a, Float4* b, int count);
+
+PGN_DLL_INTERFACE bool pointInCCWTriangle(Float2* p, Float2* a, Float2* b, Float2* c);
 
 }
