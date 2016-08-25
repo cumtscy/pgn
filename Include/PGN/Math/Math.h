@@ -101,4 +101,6 @@ PGN_DLL_INTERFACE void sub(Float4* results, Float4* a, Float4* b, int count);
 
 PGN_DLL_INTERFACE bool pointInCCWTriangle(Float2* p, Float2* a, Float2* b, Float2* c);
 
+PGN_DLL_INTERFACE void closestPtSegmentSegment(Float2* p1, Float2* q1, Float2* p2, Float2* q2, Float2* c1, Float2* c2);
+
 }

@@ -2,6 +2,7 @@
 #include <PGN/Math/Math.h>
 #undef PGN_DLL_EXPORT
 
+#include <float.h>
 #include <math.h>
 
 void pgn::mul(Float4x4* _result, Float4x4* _a, Float4x4* _b)
@@ -131,14 +132,36 @@ void pgn::sub(Float4* results, Float4* a, Float4* b, int count)
 	}
 }
 
+inline pgn::Float2 operator+(pgn::Float2& a, pgn::Float2& b)
+{
+	return pgn::Float2(a[0] + b[0], a[1] + b[1]);
+}
+
 inline pgn::Float2 operator-(pgn::Float2& a, pgn::Float2& b)
 {
 	return pgn::Float2(a[0] - b[0], a[1] - b[1]);
 }
 
+inline pgn::Float2 operator*(pgn::Float2& v, float t)
+{
+	return pgn::Float2(v[0] * t, v[1] * t);
+}
+
+inline float dot(pgn::Float2& a, pgn::Float2& b)
+{
+	return a[0] * b[0] + a[1] * b[1];
+}
+
 inline float cross(pgn::Float2& a, pgn::Float2& b)
 {
 	return a[0] * b[1] - a[1] * b[0];
+}
+
+inline float clamp(float n, float min, float max)
+{
+	if (n < min) return min;
+	if (n > max) return max;
+	return n;
 }
 
 bool pgn::pointInCCWTriangle(Float2* _p, Float2* _a, Float2* _b, Float2* _c)
@@ -151,4 +174,57 @@ bool pgn::pointInCCWTriangle(Float2* _p, Float2* _a, Float2* _b, Float2* _c)
 	return cross(p - a, b - a) >= 0.0f
 		&& cross(p - b, c - b) >= 0.0f
 		&& cross(p - c, a - c) >= 0.0f;
+}
+
+void pgn::closestPtSegmentSegment(Float2* _p1, Float2* _q1, Float2* _p2, Float2* _q2, Float2* _c1, Float2* _c2)
+{
+	Float2& p1 = *_p1;
+	Float2& q1 = *_q1;
+	Float2& p2 = *_p2;
+	Float2& q2 = *_q2;
+	Float2& c1 = *_c1;
+	Float2& c2 = *_c2;
+
+	Float2 d1 = q1 - p1;
+	Float2 d2 = q2 - p2;
+	Float2 r = p1 - p2;
+	float a = dot(d1, d1);
+	float e = dot(d2, d2);
+	float f = dot(d2, r);
+	float s, t;
+	if (a <= FLT_EPSILON && e <= FLT_EPSILON) {
+		c1 = p1;
+		c2 = p2;
+	}
+	if (a <= FLT_EPSILON) {
+		s = 0.0f;
+		t = f / e;
+		t = clamp(t, 0.0f, 1.0f);
+	}
+	else {
+		float c = dot(d1, r);
+		if (e <= FLT_EPSILON) {
+			t = 0.0f;
+			s = clamp(-c / a, 0.0f, 1.0f);
+		}
+		else {
+			float b = dot(d1, d2);
+			float denom = a*e - b*b;
+			if (denom != 0.0f)
+				s = clamp((b*f - c*e) / denom, 0.0f, 1.0f);
+			else
+				s = 0.0f;
+			t = (b*s + f) / e;
+			if (t < 0.0f) {
+				t = 0.0f;
+				s = clamp(-c / a, 0.0f, 1.0f);
+			}
+			else if (t > 1.0f) {
+				t = 1.0f;
+				s = clamp((b - c) / a, 0.0f, 1.0f);
+			}
+		}
+	}
+	c1 = p1 + d1 * s;
+	c2 = p2 + d2 * t;
 }
