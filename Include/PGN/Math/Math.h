@@ -7,6 +7,11 @@ struct Float2
 {
 	_aligned(8, float v[2]);
 
+	Float2()
+	{
+
+	}
+
 	Float2(float x, float y)
 	{
 		v[0] = x;

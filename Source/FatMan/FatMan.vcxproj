@@ -27,6 +27,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\Include\PGN\FatMan\CollisionDetection\BasicPrimitiveTests.h" />
     <ClInclude Include="..\..\Include\PGN\FatMan\LinearTransformations.h" />
     <ClInclude Include="..\..\Include\PGN\FatMan\SkeletalAnimation\Animation.h" />
     <ClInclude Include="..\..\Include\PGN\FatMan\SkeletalAnimation\AnimationFactory.h" />
@@ -43,6 +44,7 @@
     <ClInclude Include="SkeletalAnimation\SkeletonTemplate.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="CollisionDetection\BasicPrimitiveTests.cpp" />
     <ClCompile Include="LinearTransformations\LinearTransformations.cpp" />
     <ClCompile Include="LinearTransformations\sinCosTable.cpp" />
     <ClCompile Include="SkeletalAnimation\Animation.cpp" />
