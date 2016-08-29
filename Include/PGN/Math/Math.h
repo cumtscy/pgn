@@ -108,4 +108,7 @@ PGN_DLL_INTERFACE bool pointInCCWTriangle(Float2* p, Float2* a, Float2* b, Float
 
 PGN_DLL_INTERFACE void closestPtSegmentSegment(Float2* p1, Float2* q1, Float2* p2, Float2* q2, Float2* c1, Float2* c2);
 
+PGN_DLL_INTERFACE void precomputeYTriangle(Float2* Axz, Float2* Bxz, Float2* Cxz, float Ay, float By, float Cy, Float4* intermediateVars1, Float2* intermediateVars2);
+PGN_DLL_INTERFACE float computeYTriangle(Float4* intermediateVars1, Float2* intermediateVars2, Float2* xz);
+
 }

@@ -228,3 +228,41 @@ void pgn::closestPtSegmentSegment(Float2* _p1, Float2* _q1, Float2* _p2, Float2*
 	c1 = p1 + d1 * s;
 	c2 = p2 + d2 * t;
 }
+
+void pgn::precomputeYTriangle(Float2* _Axz, Float2* _Bxz, Float2* _Cxz, float Ay, float By, float Cy, Float4* intermediateVars1, Float2* intermediateVars2)
+{
+	Float2& Axz = *_Axz;
+	Float2& Bxz = *_Bxz;
+	Float2& Cxz = *_Cxz;
+
+	float Bx_Ax = Bxz[0] - Axz[0];
+	float Bz_Az = Bxz[1] - Axz[1];
+	float Cx_Ax = Cxz[0] - Axz[0];
+	float Cz_Az = Cxz[1] - Axz[1];
+
+	float denom1 = Bx_Ax * Cz_Az - Bz_Az * Cx_Ax;
+	float denom2 = Cx_Ax * Bz_Az - Cz_Az * Bx_Ax;
+
+	Float4 vars1;
+	vars1[0] = Cz_Az / denom1;
+	vars1[1] = -Cx_Ax / denom1;
+	vars1[2] = Bz_Az / denom2;
+	vars1[3] = -Bx_Ax / denom2;
+
+	*intermediateVars1 = vars1;
+
+	(*intermediateVars2)[0] = By - Ay;
+	(*intermediateVars2)[1] = Cy - Ay;
+}
+
+float pgn::computeYTriangle(Float4* _intermediateVars1, Float2* _intermediateVars2, Float2* _xz)
+{
+	Float4& vars1 = *_intermediateVars1;
+	Float2& vars2 = *_intermediateVars2;
+	Float2& xz = *_xz;
+
+	float s = vars1[0] * xz[0] + vars1[1] * xz[1];
+	float t = vars1[2] * xz[0] + vars1[3] * xz[1];
+
+	return s * vars2[0] + t * vars2[1];
+}
