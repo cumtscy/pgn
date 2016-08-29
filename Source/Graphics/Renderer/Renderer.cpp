@@ -1046,7 +1046,7 @@ void Renderer::render(FrameContext* frameContext)
 	modView[2][3] = 0;
 
 	pgn::Float4x4 viewProj;
-	pgn::mul(&viewProj, &modView, &proj);
+	pgn::mul(&modView, &proj, &viewProj);
 
 	pgn::Float4x4 invProj =
 	{

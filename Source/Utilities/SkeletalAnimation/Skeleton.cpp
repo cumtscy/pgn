@@ -105,11 +105,11 @@ void Skeleton::updatePose(int dt, pgn::SkeletonTemplate* _templ, pgn::Float4x3* 
 					pgn::Float4* a = &it->second;
 
 					pgn::Float4 r;
-					pgn::slerp(&r, a, b, (time - t0) / (float)(t1 - t0));
+					pgn::slerp(a, b, (time - t0) / (float)(t1 - t0), &r);
 
 					if (layerMasksRot[j] && weight != 1.0f)
 					{
-						pgn::slerp(&quat[j], &quat[j], &r, weight);
+						pgn::slerp(&quat[j], &r, weight, &quat[j]);
 						layerMasksRot[j] |= 1 << i;
 					}
 					else
@@ -131,11 +131,11 @@ void Skeleton::updatePose(int dt, pgn::SkeletonTemplate* _templ, pgn::Float4x3* 
 					pgn::Float3* a = &it->second;
 
 					pgn::Float3 r;
-					pgn::lerp(&r, a, b, (time - t0) / (float)(t1 - t0));
+					pgn::lerp(a, b, (time - t0) / (float)(t1 - t0), &r);
 
 					if (layerMasksPos[j] && weight != 1.0f)
 					{
-						pgn::lerp(&pos[j], &pos[j], &r, weight);
+						pgn::lerp(&pos[j], &r, weight, &pos[j]);
 						layerMasksPos[j] |= 1 << i;
 					}
 					else
@@ -173,7 +173,7 @@ void Skeleton::updatePose(int dt, pgn::SkeletonTemplate* _templ, pgn::Float4x3* 
 
 			pgn::Float4x4 localMat;
 
-			pgn::quatToMat(&localMat.float4x3, &quat[i]);
+			pgn::quatToMat(&quat[i], &localMat.float4x3);
 
 			localMat[0][3] = pos[i][0];
 			localMat[1][3] = pos[i][1];
@@ -184,8 +184,8 @@ void Skeleton::updatePose(int dt, pgn::SkeletonTemplate* _templ, pgn::Float4x3* 
 			localMat[3][2] = 0.0f;
 			localMat[3][3] = 1.0f;
 
-			pgn::mul(&combinedMats[i], &localMat, &combinedMats[bone->parentIndex]);
-			pgn::mul(&boneMats[i], &bone->offsetMat, &combinedMats[i]);
+			pgn::mul(&localMat, &combinedMats[bone->parentIndex], &combinedMats[i]);
+			pgn::mul(&bone->offsetMat, &combinedMats[i], &boneMats[i]);
 
 			itBone++;
 		}

@@ -5,44 +5,44 @@
 #include <float.h>
 #include <math.h>
 
-void pgn::mul(Float4x4* _result, Float4x4* _a, Float4x4* _b)
+void pgn::mul(Float4x4* _a, Float4x4* _b, Float4x4* _result)
 {
-	Float4x4& r = *_result;
 	Float4x4& a = *_a;
 	Float4x4& b = *_b;
+	Float4x4& r = *_result;
 
 	for(int row = 0; row < 4; row++)
 		for(int col = 0; col < 4; col++)
 			r[col][row] = a[0][row] * b[col][0] + a[1][row] * b[col][1] + a[2][row] * b[col][2] + a[3][row] * b[col][3];
 }
 
-void pgn::mul(Float4x3* _result, Float4x4* _a, Float4x3* _b)
+void pgn::mul(Float4x4* _a, Float4x3* _b, Float4x3* _result)
 {
-	Float4x3& r = *_result;
 	Float4x4& a = *_a;
 	Float4x3& b = *_b;
+	Float4x3& r = *_result;
 
 	for (int row = 0; row < 4; row++)
 	for (int col = 0; col < 3; col++)
 		r[col][row] = a[0][row] * b[col][0] + a[1][row] * b[col][1] + a[2][row] * b[col][2] + a[3][row] * b[col][3];
 }
 
-void pgn::mul(Float4x3* _result, Float4x3* _a, Float4x3* _b)
+void pgn::mul(Float4x3* _a, Float4x3* _b, Float4x3* _result)
 {
-	Float4x3& r = *_result;
 	Float4x3& a = *_a;
 	Float4x3& b = *_b;
+	Float4x3& r = *_result;
 
 	for(int row = 0; row < 3; row++)
 		for(int col = 0; col < 3; col++)
 			r[col][row] = a[0][row] * b[col][0] + a[1][row] * b[col][1] + a[2][row] * b[col][2];
 }
 
-void pgn::lerp(Float3* _result, Float3* _a, Float3* _b, float t)
+void pgn::lerp(Float3* _a, Float3* _b, float t, Float3* _result)
 {
-	Float3& r = *_result;
 	Float3& a = *_a;
 	Float3& b = *_b;
+	Float3& r = *_result;
 
 	float k0 = 1.0f - t;
 	float k1 = t;
@@ -51,11 +51,11 @@ void pgn::lerp(Float3* _result, Float3* _a, Float3* _b, float t)
 	r[2] = a[2] * k0 + b[2] * k1;
 }
 
-void pgn::slerp(Float4* _result, Float4* _a, Float4* _b, float t)
+void pgn::slerp(Float4* _a, Float4* _b, float t, Float4* _result)
 {
-	Float4& r = *_result;
 	Float4& a = *_a;
 	Float4 b = *_b;
+	Float4& r = *_result;
 
 	float cosOmega = a[0] * b[0] + a[1] * b[1] + a[2] * b[2] + a[3] * b[3];
 
@@ -90,10 +90,10 @@ void pgn::slerp(Float4* _result, Float4* _a, Float4* _b, float t)
 	r[3] = a[3] * k0 + b[3] * k1;
 }
 
-void pgn::quatToMat(Float4x3* _m, Float4* _q)
+void pgn::quatToMat(Float4* _q, Float4x3* _m)
 {
-	Float4x3& m = *_m;
 	Float4& q = *_q;
+	Float4x3& m = *_m;
 
 	float _2xx = 2.0f * q[0] * q[0];
 	float _2xy = 2.0f * q[0] * q[1];
@@ -110,7 +110,7 @@ void pgn::quatToMat(Float4x3* _m, Float4* _q)
 	m[0][2] = _2xz + _2yw;			m[1][2] = _2yz - _2xw;			m[2][2] = 1.0f - _2xx - _2yy;
 }
 
-void pgn::add(Float4* results, Float4* a, Float4* b, int count)
+void pgn::add(Float4* a, Float4* b, Float4* results, int count)
 {
 	for (int i = 0; i < count; i++)
 	{
@@ -121,7 +121,7 @@ void pgn::add(Float4* results, Float4* a, Float4* b, int count)
 	}
 }
 
-void pgn::sub(Float4* results, Float4* a, Float4* b, int count)
+void pgn::sub(Float4* a, Float4* b, Float4* results, int count)
 {
 	for (int i = 0; i < count; i++)
 	{

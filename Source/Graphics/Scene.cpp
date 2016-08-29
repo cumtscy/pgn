@@ -165,12 +165,12 @@ void Scene::commit(pgn::Camera* _camera)
 	int n = numScenePointLights / 4;
 	if (numScenePointLights % 4) n++;
 
-	pgn::sub((pgn::Float4*)minX, (pgn::Float4*)pos[0], (pgn::Float4*)r, n);
-	pgn::add((pgn::Float4*)maxX, (pgn::Float4*)pos[0], (pgn::Float4*)r, n);
-	pgn::sub((pgn::Float4*)minY, (pgn::Float4*)pos[1], (pgn::Float4*)r, n);
-	pgn::add((pgn::Float4*)maxY, (pgn::Float4*)pos[1], (pgn::Float4*)r, n);
-	pgn::sub((pgn::Float4*)minZ, (pgn::Float4*)pos[2], (pgn::Float4*)r, n);
-	pgn::add((pgn::Float4*)maxZ, (pgn::Float4*)pos[2], (pgn::Float4*)r, n);
+	pgn::sub((pgn::Float4*)pos[0], (pgn::Float4*)r, (pgn::Float4*)minX, n);
+	pgn::add((pgn::Float4*)pos[0], (pgn::Float4*)r, (pgn::Float4*)maxX, n);
+	pgn::sub((pgn::Float4*)pos[1], (pgn::Float4*)r, (pgn::Float4*)minY, n);
+	pgn::add((pgn::Float4*)pos[1], (pgn::Float4*)r, (pgn::Float4*)maxY, n);
+	pgn::sub((pgn::Float4*)pos[2], (pgn::Float4*)r, (pgn::Float4*)minZ, n);
+	pgn::add((pgn::Float4*)pos[2], (pgn::Float4*)r, (pgn::Float4*)maxZ, n);
 
 	for (auto& set : lightDisjointSets)
 		set.clear();

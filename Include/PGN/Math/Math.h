@@ -92,17 +92,17 @@ struct Float3x2
 	}
 };
 
-PGN_DLL_INTERFACE void mul(Float4x4* result, Float4x4* a, Float4x4* b);
-PGN_DLL_INTERFACE void mul(Float4x3* result, Float4x4* a, Float4x3* b);
-PGN_DLL_INTERFACE void mul(Float4x3* result, Float4x3* a, Float4x3* b); // 3x3æÿ’Û≥À∑®
+PGN_DLL_INTERFACE void mul(Float4x4* a, Float4x4* b, Float4x4* result);
+PGN_DLL_INTERFACE void mul(Float4x4* a, Float4x3* b, Float4x3* result);
+PGN_DLL_INTERFACE void mul(Float4x3* a, Float4x3* b, Float4x3* result); // 3x3æÿ’Û≥À∑®
 
-PGN_DLL_INTERFACE void lerp(Float3* result, Float3* a, Float3* b, float t);
-PGN_DLL_INTERFACE void slerp(Float4* result, Float4* a, Float4* b, float t);
+PGN_DLL_INTERFACE void lerp(Float3* a, Float3* b, float t, Float3* result);
+PGN_DLL_INTERFACE void slerp(Float4* a, Float4* b, float t, Float4* result);
 
-PGN_DLL_INTERFACE void quatToMat(Float4x3* m, Float4* q);
+PGN_DLL_INTERFACE void quatToMat(Float4* q, Float4x3* m);
 
-PGN_DLL_INTERFACE void add(Float4* results, Float4* a, Float4* b, int count);
-PGN_DLL_INTERFACE void sub(Float4* results, Float4* a, Float4* b, int count);
+PGN_DLL_INTERFACE void add(Float4* a, Float4* b, Float4* results, int count);
+PGN_DLL_INTERFACE void sub(Float4* a, Float4* b, Float4* results, int count);
 
 PGN_DLL_INTERFACE bool pointInCCWTriangle(Float2* p, Float2* a, Float2* b, Float2* c);
 
