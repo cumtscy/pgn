@@ -1,5 +1,7 @@
 #include <PGN/Math/Math.h>
+#define PGN_STATIC_IMPORT
 #include <PGN/Utilities/ResourceManager/ResourceHandle.h>
+#undef PGN_STATIC_IMPORT
 #include <string.h>
 #include "Anim.h"
 #include "Animation.h"

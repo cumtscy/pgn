@@ -19,6 +19,21 @@
     <Filter Include="Source Files\ResourceManager">
       <UniqueIdentifier>{70220178-8360-458e-9114-4cc6d8219b39}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\SkeletalAnimation">
+      <UniqueIdentifier>{77e92bd1-fcbf-48a7-be97-81359de47725}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\CollisionDetection">
+      <UniqueIdentifier>{38aa75d0-b7a3-4787-9759-1cbd9d80f0cf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\SkeletalAnimation">
+      <UniqueIdentifier>{3f4afd77-53b2-4985-86d7-6058b4724f83}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\LinearTransformations">
+      <UniqueIdentifier>{d892b292-15ed-44f8-9086-0ab689534a39}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\CollisionDetection">
+      <UniqueIdentifier>{8dbca402-a26c-4f60-ae44-8cc0c18a9ba6}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Text.cpp">
@@ -56,6 +71,39 @@
     </ClCompile>
     <ClCompile Include="ManagedHeap.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SkeletalAnimation\Animation.cpp">
+      <Filter>Source Files\SkeletalAnimation</Filter>
+    </ClCompile>
+    <ClCompile Include="SkeletalAnimation\AnimationFactory.cpp">
+      <Filter>Source Files\SkeletalAnimation</Filter>
+    </ClCompile>
+    <ClCompile Include="SkeletalAnimation\PNA.cpp">
+      <Filter>Source Files\SkeletalAnimation</Filter>
+    </ClCompile>
+    <ClCompile Include="SkeletalAnimation\PNAFactory.cpp">
+      <Filter>Source Files\SkeletalAnimation</Filter>
+    </ClCompile>
+    <ClCompile Include="SkeletalAnimation\Skeleton.cpp">
+      <Filter>Source Files\SkeletalAnimation</Filter>
+    </ClCompile>
+    <ClCompile Include="SkeletalAnimation\SkeletonFactory.cpp">
+      <Filter>Source Files\SkeletalAnimation</Filter>
+    </ClCompile>
+    <ClCompile Include="SkeletalAnimation\SkeletonTemplate.cpp">
+      <Filter>Source Files\SkeletalAnimation</Filter>
+    </ClCompile>
+    <ClCompile Include="SkeletalAnimation\SkeletonTemplateFactory.cpp">
+      <Filter>Source Files\SkeletalAnimation</Filter>
+    </ClCompile>
+    <ClCompile Include="LinearTransformations\LinearTransformations.cpp">
+      <Filter>Source Files\LinearTransformations</Filter>
+    </ClCompile>
+    <ClCompile Include="LinearTransformations\sinCosTable.cpp">
+      <Filter>Source Files\LinearTransformations</Filter>
+    </ClCompile>
+    <ClCompile Include="CollisionDetection\BasicPrimitiveTests.cpp">
+      <Filter>Source Files\CollisionDetection</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -118,6 +166,51 @@
     </ClInclude>
     <ClInclude Include="..\..\Include\PGN\Utilities\ManagedHeap.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Include\PGN\Utilities\SkeletalAnimation\Animation.h">
+      <Filter>Header Files\SkeletalAnimation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Include\PGN\Utilities\SkeletalAnimation\AnimationFactory.h">
+      <Filter>Header Files\SkeletalAnimation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Include\PGN\Utilities\SkeletalAnimation\Skeleton.h">
+      <Filter>Header Files\SkeletalAnimation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Include\PGN\Utilities\SkeletalAnimation\SkeletonFactory.h">
+      <Filter>Header Files\SkeletalAnimation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Include\PGN\Utilities\SkeletalAnimation\SkeletonTemplate.h">
+      <Filter>Header Files\SkeletalAnimation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Include\PGN\Utilities\SkeletalAnimation\SkeletonTemplateFactory.h">
+      <Filter>Header Files\SkeletalAnimation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Include\PGN\Utilities\LinearTransformations.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Include\PGN\Utilities\CollisionDetection\BasicPrimitiveTests.h">
+      <Filter>Header Files\CollisionDetection</Filter>
+    </ClInclude>
+    <ClInclude Include="SkeletalAnimation\Anim.h">
+      <Filter>Source Files\SkeletalAnimation</Filter>
+    </ClInclude>
+    <ClInclude Include="SkeletalAnimation\Animation.h">
+      <Filter>Source Files\SkeletalAnimation</Filter>
+    </ClInclude>
+    <ClInclude Include="SkeletalAnimation\PNA.h">
+      <Filter>Source Files\SkeletalAnimation</Filter>
+    </ClInclude>
+    <ClInclude Include="SkeletalAnimation\PNAFactory.h">
+      <Filter>Source Files\SkeletalAnimation</Filter>
+    </ClInclude>
+    <ClInclude Include="SkeletalAnimation\Skeleton.h">
+      <Filter>Source Files\SkeletalAnimation</Filter>
+    </ClInclude>
+    <ClInclude Include="SkeletalAnimation\SkeletonTemplate.h">
+      <Filter>Source Files\SkeletalAnimation</Filter>
+    </ClInclude>
+    <ClInclude Include="LinearTransformations\sinCosTable.h">
+      <Filter>Source Files\LinearTransformations</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

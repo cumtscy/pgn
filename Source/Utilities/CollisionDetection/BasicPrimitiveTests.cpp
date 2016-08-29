@@ -1,5 +1,5 @@
 #define PGN_DLL_EXPORT
-#include <PGN/FatMan/CollisionDetection/BasicPrimitiveTests.h>
+#include <PGN/Utilities/CollisionDetection/BasicPrimitiveTests.h>
 #undef PGN_DLL_EXPORT
 
 #include <math.h>

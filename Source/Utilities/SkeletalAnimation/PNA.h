@@ -1,4 +1,6 @@
+#define PGN_STATIC_IMPORT
 #include <PGN/Utilities/ResourceManager/Asset.h>
+#undef PGN_STATIC_IMPORT
 #include "Anim.h"
 
 class PNA : public pgn::Asset

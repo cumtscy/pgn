@@ -1,5 +1,7 @@
+#define PGN_STATIC_IMPORT
 #include <PGN/Utilities/ResourceManager/ResourceHandle.h>
 #include <PGN/Utilities/ResourceManager/ResourceManager.h>
+#undef PGN_STATIC_IMPORT
 #include "Animation.h"
 
 Animation::Animation(pgn::Pool* pool, pgn::ResourceManager* animMgr)

@@ -1,10 +1,12 @@
 #define PGN_DLL_EXPORT
-#include <PGN/FatMan/SkeletalAnimation/AnimationFactory.h>
+#include <PGN/Utilities/SkeletalAnimation/AnimationFactory.h>
 #undef PGN_DLL_EXPORT
 
 #include <PGN/Common/debug_new.h>
+#define PGN_STATIC_IMPORT
 #include <PGN/Utilities/ResourceManager/AsyncLoader.h>
 #include <PGN/Utilities/ResourceManager/ResourceManager.h>
+#undef PGN_STATIC_IMPORT
 #include "Animation.h"
 #include "PNAFactory.h"
 

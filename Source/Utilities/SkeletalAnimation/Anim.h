@@ -2,8 +2,10 @@
 #include <list>
 #include <map>
 #include <PGN/Math/Math.h>
+#define PGN_STATIC_IMPORT
 #include <PGN/Utilities/Pool.h>
 #include <PGN/Utilities/PoolAllocator.h>
+#undef PGN_STATIC_IMPORT
 
 typedef pgn::PoolAllocator<std::pair<int, pgn::Float4>, pgn::Pool> RotKeyAllocator;
 typedef pgn::PoolAllocator<std::pair<int, pgn::Float4>, pgn::Pool> PosKeyAllocator;

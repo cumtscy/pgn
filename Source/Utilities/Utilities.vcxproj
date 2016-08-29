@@ -29,6 +29,9 @@
   <ItemGroup>
     <ClCompile Include="Blob.cpp" />
     <ClCompile Include="Clock.cpp" />
+    <ClCompile Include="CollisionDetection\BasicPrimitiveTests.cpp" />
+    <ClCompile Include="LinearTransformations\LinearTransformations.cpp" />
+    <ClCompile Include="LinearTransformations\sinCosTable.cpp" />
     <ClCompile Include="ManagedHeap.cpp" />
     <ClCompile Include="ResourceManager\AsyncLoader.cpp" />
     <ClCompile Include="ResourceManager\ResourceHandle.cpp" />
@@ -38,11 +41,21 @@
     <ClCompile Include="Heap.cpp" />
     <ClCompile Include="Pool2.cpp" />
     <ClCompile Include="Pipeline.cpp" />
+    <ClCompile Include="SkeletalAnimation\Animation.cpp" />
+    <ClCompile Include="SkeletalAnimation\AnimationFactory.cpp" />
+    <ClCompile Include="SkeletalAnimation\PNA.cpp" />
+    <ClCompile Include="SkeletalAnimation\PNAFactory.cpp" />
+    <ClCompile Include="SkeletalAnimation\Skeleton.cpp" />
+    <ClCompile Include="SkeletalAnimation\SkeletonFactory.cpp" />
+    <ClCompile Include="SkeletalAnimation\SkeletonTemplate.cpp" />
+    <ClCompile Include="SkeletalAnimation\SkeletonTemplateFactory.cpp" />
     <ClCompile Include="Text.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Include\PGN\Utilities\Clock.h" />
+    <ClInclude Include="..\..\Include\PGN\Utilities\CollisionDetection\BasicPrimitiveTests.h" />
     <ClInclude Include="..\..\Include\PGN\Utilities\HeapAllocator2.h" />
+    <ClInclude Include="..\..\Include\PGN\Utilities\LinearTransformations.h" />
     <ClInclude Include="..\..\Include\PGN\Utilities\ManagedHeap.h" />
     <ClInclude Include="..\..\Include\PGN\Utilities\Queue.h" />
     <ClInclude Include="..\..\Include\PGN\Utilities\ResourceManager\Asset.h" />
@@ -58,9 +71,22 @@
     <ClInclude Include="..\..\Include\PGN\Utilities\HeapAllocator.h" />
     <ClInclude Include="..\..\Include\PGN\Utilities\Heap.h" />
     <ClInclude Include="..\..\Include\PGN\Utilities\Pipeline.h" />
+    <ClInclude Include="..\..\Include\PGN\Utilities\SkeletalAnimation\Animation.h" />
+    <ClInclude Include="..\..\Include\PGN\Utilities\SkeletalAnimation\AnimationFactory.h" />
+    <ClInclude Include="..\..\Include\PGN\Utilities\SkeletalAnimation\Skeleton.h" />
+    <ClInclude Include="..\..\Include\PGN\Utilities\SkeletalAnimation\SkeletonFactory.h" />
+    <ClInclude Include="..\..\Include\PGN\Utilities\SkeletalAnimation\SkeletonTemplate.h" />
+    <ClInclude Include="..\..\Include\PGN\Utilities\SkeletalAnimation\SkeletonTemplateFactory.h" />
     <ClInclude Include="..\..\Include\PGN\Utilities\Text.h" />
+    <ClInclude Include="LinearTransformations\sinCosTable.h" />
     <ClInclude Include="ResourceManager\ResourceHandle.h" />
     <ClInclude Include="ResourceManager\ResourceManager.h" />
+    <ClInclude Include="SkeletalAnimation\Anim.h" />
+    <ClInclude Include="SkeletalAnimation\Animation.h" />
+    <ClInclude Include="SkeletalAnimation\PNA.h" />
+    <ClInclude Include="SkeletalAnimation\PNAFactory.h" />
+    <ClInclude Include="SkeletalAnimation\Skeleton.h" />
+    <ClInclude Include="SkeletalAnimation\SkeletonTemplate.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{C3905797-D82C-44ED-A090-5E34019BC98C}</ProjectGuid>
@@ -159,7 +185,7 @@
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <ImportLibrary>..\..\Lib\$(Configuration)\$(TargetName).lib</ImportLibrary>
-      <AdditionalDependencies>PGN_FileStream.lib;PGN_Platform.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>PGN_FileStream.lib;PGN_Math.lib;PGN_Platform.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|PSVita'">
@@ -174,7 +200,7 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <ImportLibrary>
       </ImportLibrary>
-      <AdditionalDependencies>PGN_FileStream_stub.a;PGN_Platform_stub.a;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>PGN_FileStream_stub.a;PGN_Math_stub.a;PGN_Platform_stub.a;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalOptions>-prx-stub-output-dir="..\..\Lib\$(Configuration)\" %(AdditionalOptions)</AdditionalOptions>
     </Link>
   </ItemDefinitionGroup>
@@ -192,7 +218,7 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <ImportLibrary>..\..\Lib\$(Configuration)\$(TargetName).lib</ImportLibrary>
-      <AdditionalDependencies>PGN_FileStream.lib;PGN_Platform.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>PGN_FileStream.lib;PGN_Math.lib;PGN_Platform.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|PSVita'">
@@ -212,7 +238,7 @@
       <OptimizeReferences>true</OptimizeReferences>
       <ImportLibrary>
       </ImportLibrary>
-      <AdditionalDependencies>PGN_FileStream_stub.a;PGN_Platform_stub.a;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>PGN_FileStream_stub.a;PGN_Math_stub.a;PGN_Platform_stub.a;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalOptions>-prx-stub-output-dir="..\..\Lib\$(Configuration)\" %(AdditionalOptions)</AdditionalOptions>
     </Link>
   </ItemDefinitionGroup>
@@ -232,7 +258,7 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <ImportLibrary>..\..\Lib\$(Configuration)\$(TargetName).lib</ImportLibrary>
-      <AdditionalDependencies>PGN_FileStream.lib;PGN_Platform.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>PGN_FileStream.lib;PGN_Math.lib;PGN_Platform.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

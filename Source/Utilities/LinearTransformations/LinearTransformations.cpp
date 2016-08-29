@@ -1,5 +1,5 @@
 #define PGN_DLL_EXPORT
-#include <PGN/FatMan/LinearTransformations.h>
+#include <PGN/Utilities/LinearTransformations.h>
 #undef PGN_DLL_EXPORT
 
 #include "sinCosTable.h"

@@ -1,5 +1,7 @@
 #include <new>
+#define PGN_STATIC_IMPORT
 #include <PGN/Utilities/Pool.h>
+#undef PGN_STATIC_IMPORT
 #include "PNA.h"
 #include "PNAFactory.h"
 

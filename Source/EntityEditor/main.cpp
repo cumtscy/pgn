@@ -1,10 +1,4 @@
 #include <PGN/Platform/DebugHeap.h>
-#include <PGN/FatMan/LinearTransformations.h>
-#include <PGN/FatMan/SkeletalAnimation/Animation.h>
-#include <PGN/FatMan/SkeletalAnimation/AnimationFactory.h>
-#include <PGN/FatMan/SkeletalAnimation/Skeleton.h>
-#include <PGN/FatMan/SkeletalAnimation/SkeletonFactory.h>
-#include <PGN/FatMan/SkeletalAnimation/SkeletonTemplate.h>
 #include <PGN/FileStream/StdFileStream.h>
 #include <PGN/Graphics/Camera.h>
 #include <PGN/Graphics/Entity.h>
@@ -17,6 +11,12 @@
 #include <PGN/Math/Math.h>
 #include <PGN/Platform/Graphics/Window.h>
 #include <PGN/Utilities/Clock.h>
+#include <PGN/Utilities/LinearTransformations.h>
+#include <PGN/Utilities/SkeletalAnimation/Animation.h>
+#include <PGN/Utilities/SkeletalAnimation/AnimationFactory.h>
+#include <PGN/Utilities/SkeletalAnimation/Skeleton.h>
+#include <PGN/Utilities/SkeletalAnimation/SkeletonFactory.h>
+#include <PGN/Utilities/SkeletalAnimation/SkeletonTemplate.h>
 #include "MainForm.h"
 
 pgn::Float4x3 viewMat =

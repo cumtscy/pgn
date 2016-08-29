@@ -1,10 +1,12 @@
 #define PGN_DLL_EXPORT
-#include <PGN/FatMan/SkeletalAnimation/SkeletonFactory.h>
+#include <PGN/Utilities/SkeletalAnimation/SkeletonFactory.h>
 #undef PGN_DLL_EXPORT
 
 #include <PGN/Common/debug_new.h>
 #include <new>
+#define PGN_STATIC_IMPORT
 #include <PGN/Utilities/Pool.h>
+#undef PGN_STATIC_IMPORT
 #include "Skeleton.h"
 
 class SkeletonFactory : public pgn::SkeletonFactory

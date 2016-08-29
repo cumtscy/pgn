@@ -1,8 +1,10 @@
 #include <list>
-#include <PGN/FatMan/SkeletalAnimation/SkeletonTemplate.h>
 #include <PGN/Math/Math.h>
+#define PGN_STATIC_IMPORT
 #include <PGN/Utilities/Pool.h>
 #include <PGN/Utilities/PoolAllocator.h>
+#undef PGN_STATIC_IMPORT
+#include <PGN/Utilities/SkeletalAnimation/SkeletonTemplate.h>
 
 struct Bone
 {
