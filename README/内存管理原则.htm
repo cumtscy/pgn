@@ -1,0 +1,282 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=gb2312">
+<meta name=Generator content="Microsoft Word 15 (filtered)">
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:宋体;
+	panose-1:2 1 6 0 3 1 1 1 1 1;}
+@font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+@font-face
+	{font-family:Consolas;
+	panose-1:2 11 6 9 2 2 4 3 2 4;}
+@font-face
+	{font-family:"\@宋体";
+	panose-1:2 1 6 0 3 1 1 1 1 1;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:10.5pt;
+	font-family:"Calibri",sans-serif;}
+p.msochpdefault, li.msochpdefault, div.msochpdefault
+	{mso-style-name:msochpdefault;
+	margin-right:0cm;
+	margin-left:0cm;
+	font-size:10.0pt;
+	font-family:宋体;}
+.MsoChpDefault
+	{font-size:10.0pt;}
+@page WordSection1
+	{size:595.3pt 841.9pt;
+	margin:72.0pt 90.0pt 72.0pt 90.0pt;
+	layout-grid:15.6pt;}
+div.WordSection1
+	{page:WordSection1;}
+-->
+</style>
+
+</head>
+
+<body lang=ZH-CN style='text-justify-trim:punctuation'>
+
+<div class=WordSection1 style='layout-grid:15.6pt'>
+
+<p class=MsoNormal><span style='font-family:宋体'>内存管理原则</span></p>
+
+<p class=MsoNormal><span lang=EN-US>*</span><span style='font-family:宋体'>只有当所分配内存在整个运行期间不会被释放的情况下才使用</span><span
+lang=EN-US>new</span><span style='font-family:宋体'>。除此之外，尽量用</span><span
+lang=EN-US>Utilities</span><span style='font-family:宋体'>库的内存管理功能。</span></p>
+
+<p class=MsoNormal><span lang=EN-US>*</span><span style='font-family:宋体'>使用</span><span
+lang=EN-US>debug_new</span><span style='font-family:宋体'>替代</span><span
+lang=EN-US>new</span><span style='font-family:宋体'>，以便于检查内存泄漏。</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US>Pool</span><span style='font-family:宋体'>、</span><span
+lang=EN-US>Pool2</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-family:宋体'>内存池，分配固定大小的内存块。</span></p>
+
+<p class=MsoNormal><span lang=EN-US>Pool</span><span style='font-family:宋体'>用来分配小块内存。块大小不超过一个内存页（一般是</span><span
+lang=EN-US>4KB</span><span style='font-family:宋体'>）。</span></p>
+
+<p class=MsoNormal><span lang=EN-US>Pool2</span><span style='font-family:宋体'>用来分配较大块内存。块大小最大可达</span><span
+lang=EN-US>1MB</span><span style='font-family:宋体'>（依据实现）。</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US>PoolAllocator</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-family:宋体'>自定义的</span><span lang=EN-US>STL</span><span
+style='font-family:宋体'>分配器，用</span><span lang=EN-US>Pool</span><span
+style='font-family:宋体'>或</span><span lang=EN-US>Pool2</span><span
+style='font-family:宋体'>来为</span><span lang=EN-US>C++</span><span
+style='font-family:宋体'>对象分配内存。用例：</span></p>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse'>
+ <tr>
+  <td width=553 nowrap valign=top style='width:414.8pt;border:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal><span lang=EN-US style='font-size:9.5pt;font-family:Consolas;
+  color:black;background:white'>std::</span><span lang=EN-US style='font-size:
+  9.5pt;font-family:Consolas;color:#2B91AF;background:white'>list</span><span
+  lang=EN-US style='font-size:9.5pt;font-family:Consolas;color:black;
+  background:white'>&lt;</span><span lang=EN-US style='font-size:9.5pt;
+  font-family:Consolas;color:#2B91AF;background:white'>Model</span><span
+  lang=EN-US style='font-size:9.5pt;font-family:Consolas;color:black;
+  background:white'>*, pgn::</span><span lang=EN-US style='font-size:9.5pt;
+  font-family:Consolas;color:#2B91AF;background:white'>PoolAllocator</span><span
+  lang=EN-US style='font-size:9.5pt;font-family:Consolas;color:black;
+  background:white'>&lt;</span><span lang=EN-US style='font-size:9.5pt;
+  font-family:Consolas;color:#2B91AF;background:white'>Model</span><span
+  lang=EN-US style='font-size:9.5pt;font-family:Consolas;color:black;
+  background:white'>*, pgn::</span><span lang=EN-US style='font-size:9.5pt;
+  font-family:Consolas;color:#2B91AF;background:white'>Pool</span><span
+  lang=EN-US style='font-size:9.5pt;font-family:Consolas;color:black;
+  background:white'>&gt;&gt; pendingRemovals;</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US>Heap</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-family:宋体'>堆，分配任意大小的内存块，一次释放全部已分配的内存。</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US>HeapAllocator</span><span style='font-family:
+宋体'>、</span><span lang=EN-US>HeapAllocator2</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-family:宋体'>自定义的</span><span lang=EN-US>STL</span><span
+style='font-family:宋体'>分配器，用</span><span lang=EN-US>Heap</span><span
+style='font-family:宋体'>来为</span><span lang=EN-US>C++</span><span
+style='font-family:宋体'>对象分配内存。这两个分配器不会自己创建</span><span lang=EN-US>Heap</span><span
+style='font-family:宋体'>，要为它们指定</span><span lang=EN-US>Heap</span><span
+style='font-family:宋体'>。</span><span lang=EN-US>HeapAllocator2</span><span
+style='font-family:宋体'>可以随时改换所使用的</span><span lang=EN-US>Heap</span><span
+style='font-family:宋体'>。</span></p>
+
+<p class=MsoNormal><span lang=EN-US>HeapAllocator</span><span style='font-family:
+宋体'>用例：</span></p>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse'>
+ <tr>
+  <td width=866 nowrap valign=top style='width:649.8pt;border:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left;text-autospace:none'><span
+  lang=EN-US style='font-size:9.5pt;font-family:Consolas;color:black;
+  background:white'>pgn::</span><span lang=EN-US style='font-size:9.5pt;
+  font-family:Consolas;color:#2B91AF;background:white'>Heap</span><span
+  lang=EN-US style='font-size:9.5pt;font-family:Consolas;color:black;
+  background:white'>* tmpBuf = graphics-&gt;tmpBuf;</span></p>
+  <p class=MsoNormal align=left style='text-align:left;text-autospace:none'><span
+  lang=EN-US style='font-size:9.5pt;font-family:Consolas;color:black;
+  background:white'>&nbsp;</span></p>
+  <p class=MsoNormal align=left style='text-align:left;text-autospace:none'><span
+  lang=EN-US style='font-size:9.5pt;font-family:Consolas;color:blue;background:
+  white'>typedef</span><span lang=EN-US style='font-size:9.5pt;font-family:
+  Consolas;color:black;background:white'> pgn::</span><span lang=EN-US
+  style='font-size:9.5pt;font-family:Consolas;color:#2B91AF;background:white'>HeapAllocator</span><span
+  lang=EN-US style='font-size:9.5pt;font-family:Consolas;color:black;
+  background:white'>&lt;std::</span><span lang=EN-US style='font-size:9.5pt;
+  font-family:Consolas;color:#2B91AF;background:white'>pair</span><span
+  lang=EN-US style='font-size:9.5pt;font-family:Consolas;color:black;
+  background:white'>&lt;</span><span lang=EN-US style='font-size:9.5pt;
+  font-family:Consolas;color:#2B91AF;background:white'>Entity</span><span
+  lang=EN-US style='font-size:9.5pt;font-family:Consolas;color:black;
+  background:white'>*, </span><span lang=EN-US style='font-size:9.5pt;
+  font-family:Consolas;color:#2B91AF;background:white'>SceneEntityList</span><span
+  lang=EN-US style='font-size:9.5pt;font-family:Consolas;color:black;
+  background:white'>&gt;&gt; </span><span lang=EN-US style='font-size:9.5pt;
+  font-family:Consolas;color:#2B91AF;background:white'>SceneEntityGroupAllocator</span><span
+  lang=EN-US style='font-size:9.5pt;font-family:Consolas;color:black;
+  background:white'>;</span></p>
+  <p class=MsoNormal align=left style='text-align:left;text-autospace:none'><span
+  lang=EN-US style='font-size:9.5pt;font-family:Consolas;color:blue;background:
+  white'>typedef</span><span lang=EN-US style='font-size:9.5pt;font-family:
+  Consolas;color:black;background:white'> std::</span><span lang=EN-US
+  style='font-size:9.5pt;font-family:Consolas;color:#2B91AF;background:white'>map</span><span
+  lang=EN-US style='font-size:9.5pt;font-family:Consolas;color:black;
+  background:white'>&lt;</span><span lang=EN-US style='font-size:9.5pt;
+  font-family:Consolas;color:#2B91AF;background:white'>Entity</span><span
+  lang=EN-US style='font-size:9.5pt;font-family:Consolas;color:black;
+  background:white'>*, </span><span lang=EN-US style='font-size:9.5pt;
+  font-family:Consolas;color:#2B91AF;background:white'>SceneEntityList</span><span
+  lang=EN-US style='font-size:9.5pt;font-family:Consolas;color:black;
+  background:white'>, std::</span><span lang=EN-US style='font-size:9.5pt;
+  font-family:Consolas;color:#2B91AF;background:white'>less</span><span
+  lang=EN-US style='font-size:9.5pt;font-family:Consolas;color:black;
+  background:white'>&lt;</span><span lang=EN-US style='font-size:9.5pt;
+  font-family:Consolas;color:#2B91AF;background:white'>Entity</span><span
+  lang=EN-US style='font-size:9.5pt;font-family:Consolas;color:black;
+  background:white'>*&gt;, </span><span lang=EN-US style='font-size:9.5pt;
+  font-family:Consolas;color:#2B91AF;background:white'>SceneEntityGroupAllocator</span><span
+  lang=EN-US style='font-size:9.5pt;font-family:Consolas;color:black;
+  background:white'>&gt; </span><span lang=EN-US style='font-size:9.5pt;
+  font-family:Consolas;color:#2B91AF;background:white'>SceneEntityGroupMap</span><span
+  lang=EN-US style='font-size:9.5pt;font-family:Consolas;color:black;
+  background:white'>;</span></p>
+  <p class=MsoNormal><span lang=EN-US style='font-size:9.5pt;font-family:Consolas;
+  color:#2B91AF;background:white'>SceneEntityGroupMap</span><span lang=EN-US
+  style='font-size:9.5pt;font-family:Consolas;color:black;background:white'>*
+  _sceneEntityGroupMap = </span><span lang=EN-US style='font-size:9.5pt;
+  font-family:Consolas;color:blue;background:white'>new</span><span lang=EN-US
+  style='font-size:9.5pt;font-family:Consolas;color:black;background:white'>(tmpBuf-&gt;alloc(</span><span
+  lang=EN-US style='font-size:9.5pt;font-family:Consolas;color:blue;background:
+  white'>sizeof</span><span lang=EN-US style='font-size:9.5pt;font-family:Consolas;
+  color:black;background:white'>(</span><span lang=EN-US style='font-size:9.5pt;
+  font-family:Consolas;color:#2B91AF;background:white'>SceneEntityGroupMap</span><span
+  lang=EN-US style='font-size:9.5pt;font-family:Consolas;color:black;
+  background:white'>))) </span><span lang=EN-US style='font-size:9.5pt;
+  font-family:Consolas;color:#2B91AF;background:white'>SceneEntityGroupMap</span><span
+  lang=EN-US style='font-size:9.5pt;font-family:Consolas;color:black;
+  background:white'>(tmpBuf);</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><span style='font-family:宋体;background:white'>注意，</span><span
+lang=EN-US>HeapAllocator</span><span style='font-family:宋体;background:white'>用例中，</span><span
+lang=EN-US style='background:white'>new</span><span style='font-family:宋体;
+background:white'>本身并没有分配内存，所以没有使用</span><span lang=EN-US style='background:
+white'>debug_new</span><span style='font-family:宋体;background:white'>。</span></p>
+
+<p class=MsoNormal><span lang=EN-US>HeapAllocator2</span><span
+style='font-family:宋体'>的用法<span style='background:white'>参见</span></span><span
+lang=EN-US style='background:white'>Graphics</span><span style='font-family:
+宋体;background:white'>工程中的</span><span lang=EN-US>BatchGroup</span><span
+style='font-family:宋体'>。</span><span lang=EN-US>BatchGroup</span><span
+style='font-family:宋体'>其实就是一个</span><span lang=EN-US>std::list</span><span
+style='font-family:宋体'>。一个</span><span lang=EN-US>BatchGroup</span><span
+style='font-family:宋体'>对象一旦被创建，其本身就一直存在，而其中的元素每帧都会被全部删除并重新添加。所以在创建</span><span
+lang=EN-US>BatchGroup</span><span style='font-family:宋体'>对象的时候用了</span><span
+lang=EN-US>debug_new</span><span style='font-family:宋体'>，并为</span><span
+lang=EN-US>BatchGroup</span><span style='font-family:宋体'>对象指定了一个永远不会被清空的堆。</span><span
+lang=EN-US>BatchGroup</span><span style='font-family:宋体'>对象创建完毕后，又立即将其所使用的堆改为另一个每帧都会被清空一次的堆。</span></p>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse'>
+ <tr>
+  <td width=553 nowrap valign=top style='width:414.8pt;border:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=left style='text-align:left;text-autospace:none'><span
+  lang=EN-US style='font-size:9.5pt;font-family:Consolas;color:black;
+  background:white'>batchGroup = </span><span lang=EN-US style='font-size:9.5pt;
+  font-family:Consolas;color:#6F008A;background:white'>debug_new</span><span
+  lang=EN-US style='font-size:9.5pt;font-family:Consolas;color:black;
+  background:white'> </span><span lang=EN-US style='font-size:9.5pt;font-family:
+  Consolas;color:#2B91AF;background:white'>BatchGroup</span><span lang=EN-US
+  style='font-size:9.5pt;font-family:Consolas;color:black;background:white'>(heap);</span></p>
+  <p class=MsoNormal><span lang=EN-US style='font-size:9.5pt;font-family:Consolas;
+  color:black;background:white'>batchGroup-&gt;get_allocator().setPool(frameContext-&gt;heap);</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=EN-US>ManagedHeap</span></p>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-family:宋体'>能进行内存整理的堆。</span></p>
+
+</div>
+
+</body>
+
+</html>
