@@ -21,7 +21,7 @@ inline float dot(pgn::Float2& a, pgn::Float2& b)
 
 inline bool testSphereSphere(pgn::Float2& c1, float r1, pgn::Float2& c2, float r2, pgn::Float2& sepVec)
 {
-	pgn::Float2 d = c2 - c1;
+	pgn::Float2 d = c1 - c2;
 	float dist = sqrt(dot(d, d));
 	float depth = r1 + r2 - dist;
 	sepVec = d * (depth / dist);
