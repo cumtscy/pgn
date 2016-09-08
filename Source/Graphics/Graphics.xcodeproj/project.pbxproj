@@ -54,7 +54,6 @@
 		57CF2F7B18E12CAA00D96B3F /* libFileStream.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 57CF2F7A18E12C9300D96B3F /* libFileStream.a */; };
 		57CF2F8318E12D3D00D96B3F /* libGL.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 57CF2F8218E12D3300D96B3F /* libGL.a */; };
 		57CF2F8A18E12D7400D96B3F /* libiOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 57CF2F8918E12D6C00D96B3F /* libiOS.a */; };
-		57CF2F9818E137A600D96B3F /* libSkeletalAnimation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 57CF2F9718E1379D00D96B3F /* libSkeletalAnimation.a */; };
 		57CF2F9F18E137CC00D96B3F /* libMathC.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 57CF2F9E18E137BC00D96B3F /* libMathC.a */; };
 		C20433311CC369AA0083D29E /* lightIndexingPassesPS.glsl in Sources */ = {isa = PBXBuildFile; fileRef = C20433191CC368F60083D29E /* lightIndexingPassesPS.glsl */; };
 		C20433321CC369AA0083D29E /* lightIndexingPassesVS.glsl in Sources */ = {isa = PBXBuildFile; fileRef = C204331A1CC368F60083D29E /* lightIndexingPassesVS.glsl */; };
@@ -118,13 +117,6 @@
 			proxyType = 2;
 			remoteGlobalIDString = 57C688BA18D93612000417D9;
 			remoteInfo = iOS;
-		};
-		57CF2F9618E1379D00D96B3F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 57CF2F9218E1379D00D96B3F /* SkeletalAnimation.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 57EFEBC818E00C6D005F0C59;
-			remoteInfo = SkeletalAnimation;
 		};
 		57CF2F9D18E137BC00D96B3F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -288,7 +280,6 @@
 		57CF2F7518E12C9300D96B3F /* FileStream.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = FileStream.xcodeproj; path = ../FileStream/FileStream.xcodeproj; sourceTree = "<group>"; };
 		57CF2F7D18E12D3300D96B3F /* GL.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = GL.xcodeproj; path = ../GL/GL.xcodeproj; sourceTree = "<group>"; };
 		57CF2F8418E12D6C00D96B3F /* iOS.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = iOS.xcodeproj; path = ../iOS/iOS.xcodeproj; sourceTree = "<group>"; };
-		57CF2F9218E1379D00D96B3F /* SkeletalAnimation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SkeletalAnimation.xcodeproj; path = ../SkeletalAnimation/SkeletalAnimation.xcodeproj; sourceTree = "<group>"; };
 		57CF2F9918E137BC00D96B3F /* MathC.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = MathC.xcodeproj; path = ../MathC/MathC.xcodeproj; sourceTree = "<group>"; };
 		57EFEC1818E01DEB005F0C59 /* libGraphics.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libGraphics.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		C20432FF1CC368920083D29E /* IncludeDirectiveProcessor.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = IncludeDirectiveProcessor.xcodeproj; path = ../IncludeDirectiveProcessor/IncludeDirectiveProcessor.xcodeproj; sourceTree = "<group>"; };
@@ -328,7 +319,6 @@
 			files = (
 				57AAA6DB18E15669000045CF /* libUtilities.a in Frameworks */,
 				57CF2F9F18E137CC00D96B3F /* libMathC.a in Frameworks */,
-				57CF2F9818E137A600D96B3F /* libSkeletalAnimation.a in Frameworks */,
 				57CF2F8A18E12D7400D96B3F /* libiOS.a in Frameworks */,
 				57CF2F8318E12D3D00D96B3F /* libGL.a in Frameworks */,
 				57CF2F7B18E12CAA00D96B3F /* libFileStream.a in Frameworks */,
@@ -488,7 +478,6 @@
 				C20432FF1CC368920083D29E /* IncludeDirectiveProcessor.xcodeproj */,
 				57AAA6D018E1564B000045CF /* Utilities.xcodeproj */,
 				57CF2F9918E137BC00D96B3F /* MathC.xcodeproj */,
-				57CF2F9218E1379D00D96B3F /* SkeletalAnimation.xcodeproj */,
 				57CF2F8418E12D6C00D96B3F /* iOS.xcodeproj */,
 				57CF2F7D18E12D3300D96B3F /* GL.xcodeproj */,
 				57CF2F7518E12C9300D96B3F /* FileStream.xcodeproj */,
@@ -508,14 +497,6 @@
 			isa = PBXGroup;
 			children = (
 				57CF2F8918E12D6C00D96B3F /* libiOS.a */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		57CF2F9318E1379D00D96B3F /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				57CF2F9718E1379D00D96B3F /* libSkeletalAnimation.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -703,10 +684,6 @@
 					ProjectRef = 57CF2F9918E137BC00D96B3F /* MathC.xcodeproj */;
 				},
 				{
-					ProductGroup = 57CF2F9318E1379D00D96B3F /* Products */;
-					ProjectRef = 57CF2F9218E1379D00D96B3F /* SkeletalAnimation.xcodeproj */;
-				},
-				{
 					ProductGroup = C204330C1CC3689E0083D29E /* Products */;
 					ProjectRef = C204330B1CC3689E0083D29E /* Text2MachO.xcodeproj */;
 				},
@@ -749,13 +726,6 @@
 			fileType = archive.ar;
 			path = libiOS.a;
 			remoteRef = 57CF2F8818E12D6C00D96B3F /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		57CF2F9718E1379D00D96B3F /* libSkeletalAnimation.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libSkeletalAnimation.a;
-			remoteRef = 57CF2F9618E1379D00D96B3F /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		57CF2F9E18E137BC00D96B3F /* libMathC.a */ = {

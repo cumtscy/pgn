@@ -19,6 +19,17 @@
 		57EFEB5318DFE04F005F0C59 /* ResourceManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 57EFEB4818DFE04F005F0C59 /* ResourceManager.cpp */; };
 		57EFEB5418DFE04F005F0C59 /* Pool.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 57EFEB4A18DFE04F005F0C59 /* Pool.cpp */; };
 		57EFEB5518DFE04F005F0C59 /* Text.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 57EFEB4B18DFE04F005F0C59 /* Text.cpp */; };
+		C2C0ABCE1D81335D0034F6A8 /* BasicPrimitiveTests.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C2C0ABBA1D81335D0034F6A8 /* BasicPrimitiveTests.cpp */; };
+		C2C0ABCF1D81335D0034F6A8 /* LinearTransformations.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C2C0ABBC1D81335D0034F6A8 /* LinearTransformations.cpp */; };
+		C2C0ABD01D81335D0034F6A8 /* sinCosTable.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C2C0ABBD1D81335D0034F6A8 /* sinCosTable.cpp */; };
+		C2C0ABD11D81335D0034F6A8 /* Animation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C2C0ABC11D81335D0034F6A8 /* Animation.cpp */; };
+		C2C0ABD21D81335D0034F6A8 /* AnimationFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C2C0ABC31D81335D0034F6A8 /* AnimationFactory.cpp */; };
+		C2C0ABD31D81335D0034F6A8 /* PNA.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C2C0ABC41D81335D0034F6A8 /* PNA.cpp */; };
+		C2C0ABD41D81335D0034F6A8 /* PNAFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C2C0ABC61D81335D0034F6A8 /* PNAFactory.cpp */; };
+		C2C0ABD51D81335D0034F6A8 /* Skeleton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C2C0ABC81D81335D0034F6A8 /* Skeleton.cpp */; };
+		C2C0ABD61D81335D0034F6A8 /* SkeletonFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C2C0ABCA1D81335D0034F6A8 /* SkeletonFactory.cpp */; };
+		C2C0ABD71D81335D0034F6A8 /* SkeletonTemplate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C2C0ABCB1D81335D0034F6A8 /* SkeletonTemplate.cpp */; };
+		C2C0ABD81D81335D0034F6A8 /* SkeletonTemplateFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C2C0ABCD1D81335D0034F6A8 /* SkeletonTemplateFactory.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -65,6 +76,34 @@
 		57EFEB4918DFE04F005F0C59 /* ResourceManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResourceManager.h; sourceTree = "<group>"; };
 		57EFEB4A18DFE04F005F0C59 /* Pool.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Pool.cpp; sourceTree = "<group>"; };
 		57EFEB4B18DFE04F005F0C59 /* Text.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Text.cpp; sourceTree = "<group>"; };
+		C2C0ABAE1D8132C10034F6A8 /* BasicPrimitiveTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasicPrimitiveTests.h; sourceTree = "<group>"; };
+		C2C0ABAF1D8132C10034F6A8 /* HeapAllocator2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HeapAllocator2.h; path = ../../Include/PGN/Utilities/HeapAllocator2.h; sourceTree = "<group>"; };
+		C2C0ABB01D8132C10034F6A8 /* LinearTransformations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LinearTransformations.h; path = ../../Include/PGN/Utilities/LinearTransformations.h; sourceTree = "<group>"; };
+		C2C0ABB11D8132C10034F6A8 /* Queue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Queue.h; path = ../../Include/PGN/Utilities/Queue.h; sourceTree = "<group>"; };
+		C2C0ABB31D8132C10034F6A8 /* Animation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Animation.h; sourceTree = "<group>"; };
+		C2C0ABB41D8132C10034F6A8 /* AnimationFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnimationFactory.h; sourceTree = "<group>"; };
+		C2C0ABB51D8132C10034F6A8 /* Skeleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Skeleton.h; sourceTree = "<group>"; };
+		C2C0ABB61D8132C10034F6A8 /* SkeletonFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkeletonFactory.h; sourceTree = "<group>"; };
+		C2C0ABB71D8132C10034F6A8 /* SkeletonTemplate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkeletonTemplate.h; sourceTree = "<group>"; };
+		C2C0ABB81D8132C10034F6A8 /* SkeletonTemplateFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkeletonTemplateFactory.h; sourceTree = "<group>"; };
+		C2C0ABBA1D81335D0034F6A8 /* BasicPrimitiveTests.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BasicPrimitiveTests.cpp; sourceTree = "<group>"; };
+		C2C0ABBC1D81335D0034F6A8 /* LinearTransformations.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LinearTransformations.cpp; sourceTree = "<group>"; };
+		C2C0ABBD1D81335D0034F6A8 /* sinCosTable.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = sinCosTable.cpp; sourceTree = "<group>"; };
+		C2C0ABBE1D81335D0034F6A8 /* sinCosTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sinCosTable.h; sourceTree = "<group>"; };
+		C2C0ABC01D81335D0034F6A8 /* Anim.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Anim.h; sourceTree = "<group>"; };
+		C2C0ABC11D81335D0034F6A8 /* Animation.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Animation.cpp; sourceTree = "<group>"; };
+		C2C0ABC21D81335D0034F6A8 /* Animation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Animation.h; sourceTree = "<group>"; };
+		C2C0ABC31D81335D0034F6A8 /* AnimationFactory.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = AnimationFactory.cpp; sourceTree = "<group>"; };
+		C2C0ABC41D81335D0034F6A8 /* PNA.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PNA.cpp; sourceTree = "<group>"; };
+		C2C0ABC51D81335D0034F6A8 /* PNA.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PNA.h; sourceTree = "<group>"; };
+		C2C0ABC61D81335D0034F6A8 /* PNAFactory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PNAFactory.cpp; sourceTree = "<group>"; };
+		C2C0ABC71D81335D0034F6A8 /* PNAFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PNAFactory.h; sourceTree = "<group>"; };
+		C2C0ABC81D81335D0034F6A8 /* Skeleton.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Skeleton.cpp; sourceTree = "<group>"; };
+		C2C0ABC91D81335D0034F6A8 /* Skeleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Skeleton.h; sourceTree = "<group>"; };
+		C2C0ABCA1D81335D0034F6A8 /* SkeletonFactory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SkeletonFactory.cpp; sourceTree = "<group>"; };
+		C2C0ABCB1D81335D0034F6A8 /* SkeletonTemplate.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SkeletonTemplate.cpp; sourceTree = "<group>"; };
+		C2C0ABCC1D81335D0034F6A8 /* SkeletonTemplate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkeletonTemplate.h; sourceTree = "<group>"; };
+		C2C0ABCD1D81335D0034F6A8 /* SkeletonTemplateFactory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SkeletonTemplateFactory.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +137,9 @@
 		57EFEB2D18DFE015005F0C59 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				C2C0ABB91D81335D0034F6A8 /* CollisionDetection */,
+				C2C0ABBB1D81335D0034F6A8 /* LinearTransformations */,
+				C2C0ABBF1D81335D0034F6A8 /* SkeletalAnimation */,
 				57708D7919F9DF40003B74DB /* Blob.cpp */,
 				57EFEB3F18DFE04F005F0C59 /* CircularBuffer.cpp */,
 				57EFEB4018DFE04F005F0C59 /* Clock.cpp */,
@@ -115,6 +157,11 @@
 		57EFEB2E18DFE01D005F0C59 /* Include */ = {
 			isa = PBXGroup;
 			children = (
+				C2C0ABAD1D8132C10034F6A8 /* CollisionDetection */,
+				C2C0ABAF1D8132C10034F6A8 /* HeapAllocator2.h */,
+				C2C0ABB01D8132C10034F6A8 /* LinearTransformations.h */,
+				C2C0ABB11D8132C10034F6A8 /* Queue.h */,
+				C2C0ABB21D8132C10034F6A8 /* SkeletalAnimation */,
 				57EFEB2F18DFE02B005F0C59 /* CircularBuffer.h */,
 				57EFEB3018DFE02B005F0C59 /* Clock.h */,
 				57EFEB3118DFE02B005F0C59 /* Heap.h */,
@@ -154,6 +201,68 @@
 				57EFEB4918DFE04F005F0C59 /* ResourceManager.h */,
 			);
 			path = ResourceManager;
+			sourceTree = "<group>";
+		};
+		C2C0ABAD1D8132C10034F6A8 /* CollisionDetection */ = {
+			isa = PBXGroup;
+			children = (
+				C2C0ABAE1D8132C10034F6A8 /* BasicPrimitiveTests.h */,
+			);
+			name = CollisionDetection;
+			path = ../../Include/PGN/Utilities/CollisionDetection;
+			sourceTree = "<group>";
+		};
+		C2C0ABB21D8132C10034F6A8 /* SkeletalAnimation */ = {
+			isa = PBXGroup;
+			children = (
+				C2C0ABB31D8132C10034F6A8 /* Animation.h */,
+				C2C0ABB41D8132C10034F6A8 /* AnimationFactory.h */,
+				C2C0ABB51D8132C10034F6A8 /* Skeleton.h */,
+				C2C0ABB61D8132C10034F6A8 /* SkeletonFactory.h */,
+				C2C0ABB71D8132C10034F6A8 /* SkeletonTemplate.h */,
+				C2C0ABB81D8132C10034F6A8 /* SkeletonTemplateFactory.h */,
+			);
+			name = SkeletalAnimation;
+			path = ../../Include/PGN/Utilities/SkeletalAnimation;
+			sourceTree = "<group>";
+		};
+		C2C0ABB91D81335D0034F6A8 /* CollisionDetection */ = {
+			isa = PBXGroup;
+			children = (
+				C2C0ABBA1D81335D0034F6A8 /* BasicPrimitiveTests.cpp */,
+			);
+			path = CollisionDetection;
+			sourceTree = "<group>";
+		};
+		C2C0ABBB1D81335D0034F6A8 /* LinearTransformations */ = {
+			isa = PBXGroup;
+			children = (
+				C2C0ABBC1D81335D0034F6A8 /* LinearTransformations.cpp */,
+				C2C0ABBD1D81335D0034F6A8 /* sinCosTable.cpp */,
+				C2C0ABBE1D81335D0034F6A8 /* sinCosTable.h */,
+			);
+			path = LinearTransformations;
+			sourceTree = "<group>";
+		};
+		C2C0ABBF1D81335D0034F6A8 /* SkeletalAnimation */ = {
+			isa = PBXGroup;
+			children = (
+				C2C0ABC01D81335D0034F6A8 /* Anim.h */,
+				C2C0ABC11D81335D0034F6A8 /* Animation.cpp */,
+				C2C0ABC21D81335D0034F6A8 /* Animation.h */,
+				C2C0ABC31D81335D0034F6A8 /* AnimationFactory.cpp */,
+				C2C0ABC41D81335D0034F6A8 /* PNA.cpp */,
+				C2C0ABC51D81335D0034F6A8 /* PNA.h */,
+				C2C0ABC61D81335D0034F6A8 /* PNAFactory.cpp */,
+				C2C0ABC71D81335D0034F6A8 /* PNAFactory.h */,
+				C2C0ABC81D81335D0034F6A8 /* Skeleton.cpp */,
+				C2C0ABC91D81335D0034F6A8 /* Skeleton.h */,
+				C2C0ABCA1D81335D0034F6A8 /* SkeletonFactory.cpp */,
+				C2C0ABCB1D81335D0034F6A8 /* SkeletonTemplate.cpp */,
+				C2C0ABCC1D81335D0034F6A8 /* SkeletonTemplate.h */,
+				C2C0ABCD1D81335D0034F6A8 /* SkeletonTemplateFactory.cpp */,
+			);
+			path = SkeletalAnimation;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -207,18 +316,29 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C2C0ABD81D81335D0034F6A8 /* SkeletonTemplateFactory.cpp in Sources */,
+				C2C0ABD21D81335D0034F6A8 /* AnimationFactory.cpp in Sources */,
 				57EFEB4F18DFE04F005F0C59 /* Pool2.cpp in Sources */,
+				C2C0ABCF1D81335D0034F6A8 /* LinearTransformations.cpp in Sources */,
+				C2C0ABD61D81335D0034F6A8 /* SkeletonFactory.cpp in Sources */,
 				57EFEB5418DFE04F005F0C59 /* Pool.cpp in Sources */,
 				57708D7A19F9DF40003B74DB /* Blob.cpp in Sources */,
+				C2C0ABD71D81335D0034F6A8 /* SkeletonTemplate.cpp in Sources */,
 				5701BF841B86CC5300DAF382 /* ManagedHeap.cpp in Sources */,
+				C2C0ABD51D81335D0034F6A8 /* Skeleton.cpp in Sources */,
 				57EFEB4E18DFE04F005F0C59 /* Heap.cpp in Sources */,
 				57EFEB5018DFE04F005F0C59 /* Pipeline.cpp in Sources */,
+				C2C0ABD41D81335D0034F6A8 /* PNAFactory.cpp in Sources */,
 				57EFEB5518DFE04F005F0C59 /* Text.cpp in Sources */,
+				C2C0ABD31D81335D0034F6A8 /* PNA.cpp in Sources */,
 				57EFEB4D18DFE04F005F0C59 /* Clock.cpp in Sources */,
 				57EFEB4C18DFE04F005F0C59 /* CircularBuffer.cpp in Sources */,
 				57EFEB5118DFE04F005F0C59 /* AsyncLoader.cpp in Sources */,
+				C2C0ABD01D81335D0034F6A8 /* sinCosTable.cpp in Sources */,
 				57EFEB5218DFE04F005F0C59 /* ResourceHandle.cpp in Sources */,
 				57EFEB5318DFE04F005F0C59 /* ResourceManager.cpp in Sources */,
+				C2C0ABD11D81335D0034F6A8 /* Animation.cpp in Sources */,
+				C2C0ABCE1D81335D0034F6A8 /* BasicPrimitiveTests.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

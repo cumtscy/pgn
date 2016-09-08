@@ -10,11 +10,11 @@
 #include <PGN/Graphics/ScenePointLight.h>
 #include <PGN/Math/Math.h>
 #include <PGN/Platform/Graphics/Window.h>
-#include <PGN/SkeletalAnimation/Animation.h>
-#include <PGN/SkeletalAnimation/AnimationFactory.h>
-#include <PGN/SkeletalAnimation/Skeleton.h>
-#include <PGN/SkeletalAnimation/SkeletonFactory.h>
-#include <PGN/SkeletalAnimation/SkeletonTemplate.h>
+#include <PGN/Utilities/SkeletalAnimation/Animation.h>
+#include <PGN/Utilities/SkeletalAnimation/AnimationFactory.h>
+#include <PGN/Utilities/SkeletalAnimation/Skeleton.h>
+#include <PGN/Utilities/SkeletalAnimation/SkeletonFactory.h>
+#include <PGN/Utilities/SkeletalAnimation/SkeletonTemplate.h>
 #include <PGN/Utilities/Clock.h>
 #import <UIKit/UIKit.h>
 

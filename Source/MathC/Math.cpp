@@ -132,9 +132,9 @@ void pgn::sub(Float4* a, Float4* b, Float4* results, int count)
 	}
 }
 
-inline pgn::Float2 operator+(pgn::Float2& a, pgn::Float2& b)
+inline pgn::Float2 operator+(const pgn::Float2& a, const pgn::Float2& b)
 {
-	return pgn::Float2(a[0] + b[0], a[1] + b[1]);
+	return pgn::Float2(a.v[0] + b.v[0], a.v[1] + b.v[1]);
 }
 
 inline pgn::Float2 operator-(pgn::Float2& a, pgn::Float2& b)
@@ -152,9 +152,9 @@ inline float dot(pgn::Float2& a, pgn::Float2& b)
 	return a[0] * b[0] + a[1] * b[1];
 }
 
-inline float cross(pgn::Float2& a, pgn::Float2& b)
+inline float cross(const pgn::Float2& a, const pgn::Float2& b)
 {
-	return a[0] * b[1] - a[1] * b[0];
+	return a.v[0] * b.v[1] - a.v[1] * b.v[0];
 }
 
 inline float clamp(float n, float min, float max)

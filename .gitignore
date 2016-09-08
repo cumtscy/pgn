@@ -40,3 +40,5 @@ Source/SkeletalAnimation/SkeletalAnimation.xcodeproj/xcuserdata
 Source/Text2MachO/Text2MachO.xcodeproj/project.xcworkspace
 Source/Text2MachO/Text2MachO.xcodeproj/xcuserdata
 Source/Utilities/Utilities.xcodeproj/xcuserdata
+Tools/IncludeDirectiveProcessor
+Tools/Text2MachO
