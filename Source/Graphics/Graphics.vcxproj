@@ -208,33 +208,36 @@
     <TargetName>PGN_$(ProjectName)</TargetName>
     <IncludePath>..\..\Include;$(IncludePath)</IncludePath>
     <LibraryPath>..\..\Lib\$(Configuration)\;$(LibraryPath)</LibraryPath>
-    <OutDir>..\..\$(Configuration)\</OutDir>
+    <OutDir>..\..\Build\$(Platform)_$(Configuration)\</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|PSVita'">
     <TargetName>PGN_$(ProjectName)</TargetName>
     <IncludePath>..\..\Include;$(IncludePath)</IncludePath>
     <LibraryPath>..\..\Lib\$(Configuration)\;$(LibraryPath)</LibraryPath>
-    <OutDir>..\..\$(Configuration)\</OutDir>
+    <OutDir>..\..\Build\$(Platform)_$(Configuration)\</OutDir>
     <ExtensionsToDeleteOnClean>*.gxp;*.obj;$(ExtensionsToDeleteOnClean)</ExtensionsToDeleteOnClean>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <TargetName>PGN_$(ProjectName)</TargetName>
     <IncludePath>..\..\Include;$(IncludePath)</IncludePath>
     <LibraryPath>..\..\Lib\$(Configuration)\;$(LibraryPath)</LibraryPath>
-    <OutDir>..\..\$(Configuration)\</OutDir>
+    <OutDir>..\..\Build\$(Platform)_$(Configuration)\</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|PSVita'">
     <TargetName>PGN_$(ProjectName)</TargetName>
     <IncludePath>..\..\Include;$(IncludePath)</IncludePath>
     <LibraryPath>..\..\Lib\$(Configuration)\;$(LibraryPath)</LibraryPath>
-    <OutDir>..\..\$(Configuration)\</OutDir>
+    <OutDir>..\..\Build\$(Platform)_$(Configuration)\</OutDir>
     <ExtensionsToDeleteOnClean>*.gxp;*.obj;$(ExtensionsToDeleteOnClean)</ExtensionsToDeleteOnClean>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release_AsmOutput|x64'">
     <TargetName>PGN_$(ProjectName)</TargetName>
     <IncludePath>..\..\Include;$(IncludePath)</IncludePath>
     <LibraryPath>..\..\Lib\$(Configuration)\;$(LibraryPath)</LibraryPath>
-    <OutDir>..\..\$(Configuration)\</OutDir>
+    <OutDir>..\..\Build\$(Platform)_$(Configuration)\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release_AsmOutput|PSVita'">
+    <OutDir>..\..\Build\$(Platform)_$(Configuration)\</OutDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>

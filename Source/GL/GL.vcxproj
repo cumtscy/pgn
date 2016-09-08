@@ -56,19 +56,19 @@
     <IncludePath>..\..\Include;..\..\Extern;$(IncludePath)</IncludePath>
     <TargetName>PGN_RenderingSystem</TargetName>
     <LibraryPath>..\..\Lib\$(Configuration)\;$(LibraryPath)</LibraryPath>
-    <OutDir>..\..\$(Configuration)\</OutDir>
+    <OutDir>..\..\Build\$(Platform)_$(Configuration)\</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <IncludePath>..\..\Include;..\..\Extern;$(IncludePath)</IncludePath>
     <TargetName>PGN_RenderingSystem</TargetName>
     <LibraryPath>..\..\Lib\$(Configuration)\;$(LibraryPath)</LibraryPath>
-    <OutDir>..\..\$(Configuration)\</OutDir>
+    <OutDir>..\..\Build\$(Platform)_$(Configuration)\</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release_AsmOutput|x64'">
     <IncludePath>..\..\Include;..\..\Extern;$(IncludePath)</IncludePath>
     <TargetName>PGN_RenderingSystem</TargetName>
     <LibraryPath>..\..\Lib\$(Configuration)\;$(LibraryPath)</LibraryPath>
-    <OutDir>..\..\$(Configuration)\</OutDir>
+    <OutDir>..\..\Build\$(Platform)_$(Configuration)\</OutDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
