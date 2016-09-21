@@ -1,6 +1,7 @@
 #include <list>
 #include <PGN/Graphics/Scene.h>
 #include <vector>
+#include "SceneDirectionalLight.h"
 #include "SceneEntity.h"
 #include "ScenePointLight.h"
 
@@ -15,6 +16,7 @@ public:
 
 	SceneEntity::StdList sceneEntities;
 	ScenePointLight::StdList scenePointLights;
+	SceneDirectionalLight::StdList sceneDirLights;
 
 	static const int numLightDisjointSets = 4;
 	std::vector<ScenePointLight*> lightDisjointSets[numLightDisjointSets];
@@ -28,6 +30,9 @@ public:
 
 	virtual pgn::ScenePointLight* add(pgn::PointLight* light);
 	virtual void remove(pgn::ScenePointLight* scenePointLight);
+
+	virtual pgn::SceneDirectionalLight* add(pgn::DirectionalLight* light);
+	virtual void remove(pgn::SceneDirectionalLight* sceneDirLight);
 
 	virtual void commit(pgn::Camera* camera);
 

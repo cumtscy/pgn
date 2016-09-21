@@ -5,6 +5,7 @@
 #include <PGN/Utilities/SkeletalAnimation/Skeleton.h>
 #include <PGN/Utilities/SkeletalAnimation/SkeletonTemplate.h>
 #include "Camera.h"
+#include "DirectionalLight.h"
 #include "Entity.h"
 #include "Graphics.h"
 #include "Model.h"
@@ -61,6 +62,20 @@ void Scene::remove(pgn::ScenePointLight* _scenePointLight)
 {
 	ScenePointLight* scenePointLight = (ScenePointLight*)_scenePointLight;
 	scenePointLights.erase(scenePointLight->it);
+}
+
+pgn::SceneDirectionalLight* Scene::add(pgn::DirectionalLight* light)
+{
+	sceneDirLights.emplace_front((DirectionalLight*)light);
+	SceneDirectionalLight* sceneDirLight = &sceneDirLights.front();
+	sceneDirLight->it = sceneDirLights.begin();
+	return sceneDirLight;
+}
+
+void Scene::remove(pgn::SceneDirectionalLight* _sceneDirLight)
+{
+	SceneDirectionalLight* sceneDirLight = (SceneDirectionalLight*)_sceneDirLight;
+	sceneDirLights.erase(sceneDirLight->it);
 }
 
 struct SceneEntityListItem
@@ -132,6 +147,22 @@ void Scene::commit(pgn::Camera* _camera)
 
 	tmpBuf->clear();
 
+	for (int i = 0; i < FrameContext::maxNumDirLights; i++)
+		frameContext->wDirLights[i].dir_enabled[3] = 0.0f;
+
+	assert(sceneDirLights.size() <= FrameContext::maxNumDirLights);
+
+	{
+		int i = 0;
+		for (auto& sceneDirLight : sceneDirLights)
+		{
+			frameContext->wDirLights[i].intensity_spec = sceneDirLight.dirLight->intensity_spec;
+			frameContext->wDirLights[i].dir_enabled = sceneDirLight.dir;
+			frameContext->wDirLights[i].dir_enabled[3] = 1.0f;
+			i++;
+		}
+	}
+
 	ScenePointLight* scenePointLightArray[FrameContext::maxNumPointLights];
 	_aligned(16, float pos[3][FrameContext::maxNumPointLights]);
 	_aligned(16, float r[FrameContext::maxNumPointLights]);
@@ -146,69 +177,71 @@ void Scene::commit(pgn::Camera* _camera)
 	float* minZ = z;
 	float* maxZ = z + FrameContext::maxNumPointLights;
 
-	int i = 0;
-	for (auto& scenePointLight : scenePointLights)
 	{
-		if (i >= FrameContext::maxNumPointLights)
-			break;
-
-		scenePointLightArray[i] = &scenePointLight;
-		pos[0][i] = scenePointLight.pos[0];
-		pos[1][i] = scenePointLight.pos[1];
-		pos[2][i] = scenePointLight.pos[2];
-		r[i] = scenePointLight.pointLight->radius;
-		i++;
-	}
-
-	int numScenePointLights = i;
-
-	int n = numScenePointLights / 4;
-	if (numScenePointLights % 4) n++;
-
-	pgn::sub((pgn::Float4*)pos[0], (pgn::Float4*)r, (pgn::Float4*)minX, n);
-	pgn::add((pgn::Float4*)pos[0], (pgn::Float4*)r, (pgn::Float4*)maxX, n);
-	pgn::sub((pgn::Float4*)pos[1], (pgn::Float4*)r, (pgn::Float4*)minY, n);
-	pgn::add((pgn::Float4*)pos[1], (pgn::Float4*)r, (pgn::Float4*)maxY, n);
-	pgn::sub((pgn::Float4*)pos[2], (pgn::Float4*)r, (pgn::Float4*)minZ, n);
-	pgn::add((pgn::Float4*)pos[2], (pgn::Float4*)r, (pgn::Float4*)maxZ, n);
-
-	for (auto& set : lightDisjointSets)
-		set.clear();
-
-	unsigned char disjointSetMasks[FrameContext::maxNumPointLights];
-	memset(disjointSetMasks, 0, sizeof(disjointSetMasks));
-
-	for (int a = 0; a < numScenePointLights; a++)
-	{
-		unsigned char mask = 0;
-
-		for (int i = 0; i < 4; i++)
+		int i = 0;
+		for (auto& scenePointLight : scenePointLights)
 		{
-			if ((disjointSetMasks[a] & (1 << i)) == 0)
-			{
-				lightDisjointSets[i].push_back(scenePointLightArray[a]);
-				mask = 1 << i;
+			if (i >= FrameContext::maxNumPointLights)
 				break;
-			}
+
+			scenePointLightArray[i] = &scenePointLight;
+			pos[0][i] = scenePointLight.pos[0];
+			pos[1][i] = scenePointLight.pos[1];
+			pos[2][i] = scenePointLight.pos[2];
+			r[i] = scenePointLight.pointLight->radius;
+			i++;
 		}
 
-		//if (!mask) continue;
+		int numScenePointLights = i;
 
-		for (int b = a + 1; b < numScenePointLights; b++)
+		int n = numScenePointLights / 4;
+		if (numScenePointLights % 4) n++;
+
+		pgn::sub((pgn::Float4*)pos[0], (pgn::Float4*)r, (pgn::Float4*)minX, n);
+		pgn::add((pgn::Float4*)pos[0], (pgn::Float4*)r, (pgn::Float4*)maxX, n);
+		pgn::sub((pgn::Float4*)pos[1], (pgn::Float4*)r, (pgn::Float4*)minY, n);
+		pgn::add((pgn::Float4*)pos[1], (pgn::Float4*)r, (pgn::Float4*)maxY, n);
+		pgn::sub((pgn::Float4*)pos[2], (pgn::Float4*)r, (pgn::Float4*)minZ, n);
+		pgn::add((pgn::Float4*)pos[2], (pgn::Float4*)r, (pgn::Float4*)maxZ, n);
+
+		for (auto& set : lightDisjointSets)
+			set.clear();
+
+		unsigned char disjointSetMasks[FrameContext::maxNumPointLights];
+		memset(disjointSetMasks, 0, sizeof(disjointSetMasks));
+
+		for (int a = 0; a < numScenePointLights; a++)
 		{
-			if (minX[a] > maxX[b] || maxX[a] < minX[b])	continue;
-			if (minY[a] > maxY[b] || maxY[a] < minY[b])	continue;
-			if (minZ[a] > maxZ[b] || maxZ[a] < minZ[b])	continue;
+			unsigned char mask = 0;
 
-			float dx = pos[0][a] - pos[0][b];
-			float dy = pos[1][a] - pos[1][b];
-			float dz = pos[2][a] - pos[2][b];
-			float R = r[a] + r[b];
+			for (int i = 0; i < 4; i++)
+			{
+				if ((disjointSetMasks[a] & (1 << i)) == 0)
+				{
+					lightDisjointSets[i].push_back(scenePointLightArray[a]);
+					mask = 1 << i;
+					break;
+				}
+			}
 
-			if (dx*dx + dy*dy + dz*dz > R*R)
-				continue;
+			//if (!mask) continue;
 
-			disjointSetMasks[b] |= mask;
+			for (int b = a + 1; b < numScenePointLights; b++)
+			{
+				if (minX[a] > maxX[b] || maxX[a] < minX[b])	continue;
+				if (minY[a] > maxY[b] || maxY[a] < minY[b])	continue;
+				if (minZ[a] > maxZ[b] || maxZ[a] < minZ[b])	continue;
+
+				float dx = pos[0][a] - pos[0][b];
+				float dy = pos[1][a] - pos[1][b];
+				float dz = pos[2][a] - pos[2][b];
+				float R = r[a] + r[b];
+
+				if (dx*dx + dy*dy + dz*dz > R*R)
+					continue;
+
+				disjointSetMasks[b] |= mask;
+			}
 		}
 	}
 
@@ -217,49 +250,51 @@ void Scene::commit(pgn::Camera* _camera)
 	batch.geom = (Geometry*)graphics->renderer.geomMgr->peekResource("sphere");
 	batch.textureInfo = 0;
 
-	i = 0;
-
-	for (int j = 0; j < numLightDisjointSets; j++)
 	{
-		auto& set = lightDisjointSets[j];
-		auto it = set.begin();
+		int i = 0;
 
-		for (int count = (int)set.size(); count > 0; count -= batch.instanceCount)
+		for (int j = 0; j < numLightDisjointSets; j++)
 		{
-			struct PointLightVolumnInstance
+			auto& set = lightDisjointSets[j];
+			auto it = set.begin();
+
+			for (int count = (int)set.size(); count > 0; count -= batch.instanceCount)
 			{
-				pgn::Float4 pos_scale;
-				int lightIndex;
-			};
+				struct PointLightVolumnInstance
+				{
+					pgn::Float4 pos_scale;
+					int lightIndex;
+				};
 
-			batch.instanceCount = min(count, maxInstanceCount);
-			PointLightVolumnInstance* instances = (PointLightVolumnInstance*)cbufAllocator->alloc(sizeof(PointLightVolumnInstance) * batch.instanceCount, &batch.instanceCBlockBuf);
+				batch.instanceCount = min(count, maxInstanceCount);
+				PointLightVolumnInstance* instances = (PointLightVolumnInstance*)cbufAllocator->alloc(sizeof(PointLightVolumnInstance) * batch.instanceCount, &batch.instanceCBlockBuf);
 
-			for (int k = 0; k < batch.instanceCount; k++)
-			{
-				ScenePointLight* scenePointLight = *it++;
-				PointLight* light = scenePointLight->pointLight;
+				for (int k = 0; k < batch.instanceCount; k++)
+				{
+					ScenePointLight* scenePointLight = *it++;
+					PointLight* light = scenePointLight->pointLight;
 
-				instances[k].pos_scale = scenePointLight->pos;
-				instances[k].pos_scale[3] = light->radius;
-				instances[k].lightIndex = i;
+					instances[k].pos_scale = scenePointLight->pos;
+					instances[k].pos_scale[3] = light->radius;
+					instances[k].lightIndex = i;
 
-				frameContext->wPointLights[i].intensity_spec = light->intensity_spec;
-				frameContext->wPointLights[i].pos_att = scenePointLight->pos;
-				frameContext->wPointLights[i].pos_att[3] = light->att;
+					frameContext->wPointLights[i].intensity_spec = light->intensity_spec;
+					frameContext->wPointLights[i].pos_att = scenePointLight->pos;
+					frameContext->wPointLights[i].pos_att[3] = light->att;
 
-				i++;
+					i++;
+				}
+
+				int pass = (LIGHT_VOLUME_BACK_FACE_PASS_2 - LIGHT_VOLUME_BACK_FACE_PASS_1) * j;
+
+				graphics->renderer.submit((PassEnum)(LIGHT_VOLUME_BACK_FACE_PASS_1 + pass), LIGHT_INDEXING_TECH, &batch);
+				graphics->renderer.submit((PassEnum)(LIGHT_VOLUME_FRONT_FACE_PASS_1 + pass), LIGHT_INDEXING_TECH, &batch);
+				graphics->renderer.submit((PassEnum)(LIGHT_INDEXING_PASS_1 + pass), LIGHT_INDEXING_TECH, &batch);
 			}
-
-			int pass = (LIGHT_VOLUME_BACK_FACE_PASS_2 - LIGHT_VOLUME_BACK_FACE_PASS_1) * j;
-
-			graphics->renderer.submit((PassEnum)(LIGHT_VOLUME_BACK_FACE_PASS_1 + pass), LIGHT_INDEXING_TECH, &batch);
-			graphics->renderer.submit((PassEnum)(LIGHT_VOLUME_FRONT_FACE_PASS_1 + pass), LIGHT_INDEXING_TECH, &batch);
-			graphics->renderer.submit((PassEnum)(LIGHT_INDEXING_PASS_1 + pass), LIGHT_INDEXING_TECH, &batch);
 		}
-	}
 
-	frameContext->numPointLights = i;
+		frameContext->numPointLights = i;
+	}
 
 	batch.geom = (Geometry*)graphics->renderer.geomMgr->peekResource("screen-aligned quad");
 	batch.textureInfo = 0;

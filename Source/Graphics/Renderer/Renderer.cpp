@@ -203,6 +203,8 @@ Renderer::Renderer(pgn::Display displayPrototype, pgn::FileStream* assetStream, 
 	envConsts[INV_PROJ].size = sizeof(pgn::Float4x4);
 	envConsts[W_POINT_LIGHT].size = sizeof(((FrameContext*)0)->wPointLights);
 	envConsts[V_POINT_LIGHT].size = sizeof(((FrameContext*)0)->vPointLights);
+	envConsts[W_DIR_LIGHT].size = sizeof(((FrameContext*)0)->wDirLights);
+	envConsts[V_DIR_LIGHT].size = sizeof(((FrameContext*)0)->vDirLights);
 }
 
 Renderer::~Renderer()
@@ -1069,12 +1071,29 @@ void Renderer::render(FrameContext* frameContext)
 		vpos[2] = wpos[0] * view[2][0] + wpos[1] * view[2][1] + wpos[2] * view[2][2] + view[2][3];
 	}
 
+	for (int i = 0; i < FrameContext::maxNumDirLights; i++)
+	{
+		if (frameContext->wDirLights[i].dir_enabled[3] == 0.0f) continue;
+
+		frameContext->vDirLights[i].intensity_spec = frameContext->wDirLights[i].intensity_spec;
+		frameContext->vDirLights[i].dir_enabled[3] = frameContext->wDirLights[i].dir_enabled[3];
+
+		pgn::Float3 wdir = frameContext->wDirLights[i].dir_enabled.float3;
+		pgn::Float3& vdir = frameContext->vDirLights[i].dir_enabled.float3;
+
+		vdir[0] = wdir[0] * view[0][0] + wdir[1] * view[0][1] + wdir[2] * view[0][2];
+		vdir[1] = wdir[0] * view[1][0] + wdir[1] * view[1][1] + wdir[2] * view[1][2];
+		vdir[2] = wdir[0] * view[2][0] + wdir[1] * view[2][1] + wdir[2] * view[2][2];
+	}
+
 	envConsts[CAM_POS].p = &camPos;
 	envConsts[VIEW].p = &modView.float4x3;
 	envConsts[VIEW_PROJ].p = &viewProj;
 	envConsts[INV_PROJ].p = &invProj;
 	envConsts[W_POINT_LIGHT].p = frameContext->wPointLights;
 	envConsts[V_POINT_LIGHT].p = frameContext->vPointLights;
+	envConsts[W_DIR_LIGHT].p = frameContext->wDirLights;
+	envConsts[V_DIR_LIGHT].p = frameContext->vDirLights;
 
 	enum BindingPoint
 	{

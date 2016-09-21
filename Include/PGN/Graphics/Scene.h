@@ -3,8 +3,10 @@
 namespace pgn {
 
 class Camera;
+class DirectionalLight;
 class Entity;
 class PointLight;
+class SceneDirectionalLight;
 class SceneEntity;
 class ScenePointLight;
 
@@ -16,6 +18,9 @@ public:
 
 	virtual ScenePointLight* add(PointLight* light) = 0;
 	virtual void remove(ScenePointLight* scenePointLight) = 0;
+
+	virtual SceneDirectionalLight* add(DirectionalLight* light) = 0;
+	virtual void remove(SceneDirectionalLight* sceneDirLight) = 0;
 
 	virtual void commit(Camera* camera) = 0;
 };

@@ -5,6 +5,7 @@ static unsigned constEnums[] =
 {
 	  INV_PROJ
 	, V_POINT_LIGHT
+	, V_DIR_LIGHT
 };
 
 static EnvDesc desc =

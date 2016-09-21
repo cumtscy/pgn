@@ -15,6 +15,7 @@ public:
 	TextureSetAllocator texSetAllocator;
 	pgn::Pool* entityPool;
 	pgn::Pool* pointLightPool;
+	pgn::Pool* dirLightPool;
 	pgn::Heap* tmpBuf;
 	std::list<Model*, pgn::PoolAllocator<Model*, pgn::Pool>> pendingRemovals;
 
@@ -26,6 +27,7 @@ public:
 	virtual pgn::Model* createModel();
 	virtual pgn::Entity* createEntity();
 	virtual pgn::PointLight* createPointLight();
+	virtual pgn::DirectionalLight* createDirectionalLight();
 	virtual void beginDraw(pgn::Window* wnd);
 	virtual void endDraw();
 	void performPendingRemovals();

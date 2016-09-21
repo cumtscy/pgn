@@ -7,6 +7,7 @@ static unsigned constEnums[] =
 	  CAM_POS
 	, VIEW_PROJ
 	, W_POINT_LIGHT
+	, W_DIR_LIGHT
 };
 
 static EnvDesc desc =

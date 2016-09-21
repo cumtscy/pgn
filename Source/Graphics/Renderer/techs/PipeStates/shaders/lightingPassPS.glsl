@@ -1,10 +1,12 @@
 #include "CommonPS.h"
+#include "DirectionalLight.h"
 #include "PointLight.h"
 
 uniform EnvCBlock@0 // enum BindingPoint
 {
 	highp mat4 invProj;
 	PointLight vPointLights[256];
+	DirectionalLight vDirLights[8];
 };
 
 uniform sampler2D gbuf0#0;
@@ -51,6 +53,22 @@ void main()
 		lowp float att = 1.0 / (light.pos_att.w * dist*dist*dist*dist + 1.0);
 
 		I.rgb += (diffuse_Ks.rgb * NdotL + diffuse_Ks.a * pow(VdotR, shininess) * light.intensity_spec.a) * att * light.intensity_spec.rgb;
+	}
+
+	for (int i = 0; i < 4; i++)
+	{
+		DirectionalLight light = vDirLights[i];
+
+		if (light.dir_enabled.w == 0.0) continue;
+
+		lowp vec3 L = -light.dir_enabled.xyz;
+		lowp float NdotL = max(0.0, dot(N,L));
+		lowp vec3 R = 2.0 * NdotL * N - L;
+		lowp vec3 V = normalize(-pos);
+		lowp float VdotR = max(0.0, dot(V,R));
+		mediump float shininess = normal_shininess.w * 100.0;
+		//I.rgb += (diffuse_Ks.rgb * NdotL + diffuse_Ks.a * pow(VdotR, shininess) * light.intensity_spec.a) * light.intensity_spec.rgb;
+		I.rgb += (diffuse_Ks.rgb * NdotL + diffuse_Ks.a * pow(VdotR, shininess) * light.intensity_spec.a) * light.intensity_spec.rgb;
 	}
 
 	color[0] = I;

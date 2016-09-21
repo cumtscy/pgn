@@ -156,6 +156,15 @@ public:
 	PointLight vPointLights[maxNumPointLights];
 	int numPointLights;
 
+	struct DirectionalLight
+	{
+		pgn::Float4 intensity_spec;
+		pgn::Float4 dir_enabled;
+	};
+	static const int maxNumDirLights = 8;
+	DirectionalLight wDirLights[maxNumDirLights];
+	DirectionalLight vDirLights[maxNumDirLights];
+
 	pgn::Float4x3 view;
 	pgn::Float4x4 proj;
 	Viewport viewport;

@@ -1,11 +1,13 @@
 #include <PGN/Platform/DebugHeap.h>
 #include <PGN/FileStream/StdFileStream.h>
 #include <PGN/Graphics/Camera.h>
+#include <PGN/Graphics/DirectionalLight.h>
 #include <PGN/Graphics/Entity.h>
 #include <PGN/Graphics/Graphics.h>
 #include <PGN/Graphics/Model.h>
 #include <PGN/Graphics/PointLight.h>
 #include <PGN/Graphics/Scene.h>
+#include <PGN/Graphics/SceneDirectionalLight.h>
 #include <PGN/Graphics/SceneEntity.h>
 #include <PGN/Graphics/ScenePointLight.h>
 #include <PGN/Math/Math.h>
@@ -62,6 +64,11 @@ pgn::Float3 pos4 =
 	-3, 2, 2
 };
 
+pgn::Float3 dir =
+{
+	0, 0, 1
+};
+
 int __stdcall WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow)
 {
 	_beginDebugHeap();
@@ -105,6 +112,11 @@ int __stdcall WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdL
 	light4->setRadius(10);
 	pgn::ScenePointLight* sceneLight4 = scene->add(light4);
 	sceneLight4->setPosition(&pos4);
+
+	pgn::DirectionalLight* dirLight = graphics->createDirectionalLight();
+	dirLight->setIntensity(1.0f, 1.0f, 1.0f, 1.0f);
+	pgn::SceneDirectionalLight* sceneDirLight = scene->add(dirLight);
+	sceneDirLight->setDirection(&dir);
 
 	pgn::Camera* camera = graphics->createCamera();
 	camera->setFrustumFovLH(60.0f/180.0f*3.14f, 4.0f/3.0f, 0.01f, 1024);
@@ -212,6 +224,7 @@ int __stdcall WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdL
 	scene->remove(sceneLight2);
 	scene->remove(sceneLight3);
 	scene->remove(sceneLight4);
+	scene->remove(sceneDirLight);
 	scene->remove(sceneEntity);
 	scene->remove(sceneEntity2);
 	scene->remove(sceneEntity3);
@@ -220,6 +233,7 @@ int __stdcall WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdL
 	light2->destroy();
 	light3->destroy();
 	light4->destroy();
+	dirLight->destroy();
 	camera->destroy();
 	entity->destroy();
 	model->destroy();

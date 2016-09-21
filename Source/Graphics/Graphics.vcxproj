@@ -28,14 +28,17 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Include\PGN\Graphics\Camera.h" />
+    <ClInclude Include="..\..\Include\PGN\Graphics\DirectionalLight.h" />
     <ClInclude Include="..\..\Include\PGN\Graphics\Graphics.h" />
     <ClInclude Include="..\..\Include\PGN\Graphics\PointLight.h" />
     <ClInclude Include="..\..\Include\PGN\Graphics\Model.h" />
     <ClInclude Include="..\..\Include\PGN\Graphics\Entity.h" />
     <ClInclude Include="..\..\Include\PGN\Graphics\Scene.h" />
+    <ClInclude Include="..\..\Include\PGN\Graphics\SceneDirectionalLight.h" />
     <ClInclude Include="..\..\Include\PGN\Graphics\SceneEntity.h" />
     <ClInclude Include="..\..\Include\PGN\Graphics\ScenePointLight.h" />
     <ClInclude Include="Camera.h" />
+    <ClInclude Include="DirectionalLight.h" />
     <ClInclude Include="Graphics.h" />
     <ClInclude Include="Light.h" />
     <ClInclude Include="Matrix.h" />
@@ -75,6 +78,7 @@
     <ClInclude Include="Renderer\techs\PipeStates\shaders\CommonVS3D.h" />
     <ClInclude Include="Renderer\techs\PipeStates\shaders\CommonVS3DInput.h" />
     <ClInclude Include="Renderer\techs\PipeStates\shaders\CommonVSOutput.h" />
+    <ClInclude Include="Renderer\techs\PipeStates\shaders\DirectionalLight.h" />
     <ClInclude Include="Renderer\techs\PipeStates\shaders\ForwardShadingPassEnvCBlock.h" />
     <ClInclude Include="Renderer\techs\PipeStates\shaders\PointLight.h" />
     <ClInclude Include="Renderer\techs\PipeStates\shaders\PointLightVolumnInstanceCBlock.h" />
@@ -97,12 +101,14 @@
     <ClInclude Include="Renderer\Renderer.h" />
     <ClInclude Include="Renderer\VertexFormat.h" />
     <ClInclude Include="Scene.h" />
+    <ClInclude Include="SceneDirectionalLight.h" />
     <ClInclude Include="SceneEntity.h" />
     <ClInclude Include="ScenePointLight.h" />
     <ClInclude Include="Viewport.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Camera.cpp" />
+    <ClCompile Include="DirectionalLight.cpp" />
     <ClCompile Include="Graphics.cpp" />
     <ClCompile Include="Light.cpp" />
     <ClCompile Include="Matrix.cpp" />
@@ -143,6 +149,7 @@
     <ClCompile Include="Renderer\techs\techs.cpp" />
     <ClCompile Include="Renderer\VertexFormat.cpp" />
     <ClCompile Include="Scene.cpp" />
+    <ClCompile Include="SceneDirectionalLight.cpp" />
     <ClCompile Include="SceneEntity.cpp">
     </ClCompile>
     <ClCompile Include="ScenePointLight.cpp" />

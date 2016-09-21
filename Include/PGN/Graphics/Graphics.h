@@ -5,6 +5,7 @@
 namespace pgn {
 
 class Camera;
+class DirectionalLight;
 class Entity;
 class FileStream;
 class Model;
@@ -22,6 +23,7 @@ public:
 	virtual Model* createModel() = 0;
 	virtual Entity* createEntity() = 0;
 	virtual PointLight* createPointLight() = 0;
+	virtual DirectionalLight* createDirectionalLight() = 0;
 	virtual void beginDraw(pgn::Window* wnd) = 0;
 	virtual void endDraw() = 0;
 };

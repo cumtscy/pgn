@@ -255,6 +255,21 @@
     <ClInclude Include="Renderer\techs\PipeStates\shaders\CommonVSOutput.h">
       <Filter>Source Files\Renderer\techs\PipeStates\shaders</Filter>
     </ClInclude>
+    <ClInclude Include="Renderer\techs\PipeStates\shaders\DirectionalLight.h">
+      <Filter>Source Files\Renderer\techs\PipeStates\shaders</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Include\PGN\Graphics\DirectionalLight.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Include\PGN\Graphics\SceneDirectionalLight.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneDirectionalLight.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DirectionalLight.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Model.cpp">
@@ -385,6 +400,12 @@
     </ClCompile>
     <ClCompile Include="Renderer\techs\PipeStates\staticMeshZOnlyPassPipeStateDesc.cpp">
       <Filter>Source Files\Renderer\techs\PipeStates</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneDirectionalLight.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DirectionalLight.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

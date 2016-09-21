@@ -1,6 +1,7 @@
 #include <PGN/Assets/PNM.h>
 #include <PGN/Common/debug_new.h>
 #include <PGN/Utilities/Heap.h>
+#include "DirectionalLight.h"
 #include "Entity.h"
 #include "Graphics.h"
 #include "Model.h"
@@ -12,6 +13,7 @@ Graphics::Graphics(pgn::Display displayPrototype, pgn::FileStream* assetStream, 
 	modelPool = pgn::Pool::create(sizeof(Model));
 	entityPool = pgn::Pool::create(sizeof(Entity));
 	pointLightPool = pgn::Pool::create(sizeof(PointLight));
+	dirLightPool = pgn::Pool::create(sizeof(DirectionalLight));
 	tmpBuf = pgn::Heap::create();
 }
 
@@ -20,6 +22,7 @@ void Graphics::dispose()
 	modelPool->destroy();
 	entityPool->destroy();
 	pointLightPool->destroy();
+	dirLightPool->destroy();
 	tmpBuf->destroy();
 }
 
@@ -35,6 +38,7 @@ void Graphics::_free()
 
 void Graphics::beginDraw(pgn::Window* wnd)
 {
+	//renderer.beginDraw(wnd, &lightIndexedDeferredRendering);
 	renderer.beginDraw(wnd, &lightIndexedForwardRendering);
 }
 

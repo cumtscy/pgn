@@ -37,5 +37,19 @@ void main()
 		I.rgb += (diffuse * NdotL + Ks * pow(VdotR, shininess) * light.intensity_spec.a) * att * light.intensity_spec.rgb;
 	}
 
+	for (int i = 0; i < 4; i++)
+	{
+		DirectionalLight light = wDirLights[i];
+
+		if (light.dir_enabled.w == 0.0) continue;
+
+		lowp vec3 L = -light.dir_enabled.xyz;
+		lowp float NdotL = max(0.0, dot(n,L));
+		lowp vec3 R = 2.0 * NdotL * n - L;
+		lowp vec3 V = normalize(-wpos);
+		lowp float VdotR = max(0.0, dot(V,R));
+		I.rgb += (diffuse * NdotL + Ks * pow(VdotR, shininess) * light.intensity_spec.a) * light.intensity_spec.rgb;
+	}
+
 	color[0] = I;
 }
