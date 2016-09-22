@@ -67,7 +67,6 @@ void main()
 		lowp vec3 V = normalize(-pos);
 		lowp float VdotR = max(0.0, dot(V,R));
 		mediump float shininess = normal_shininess.w * 100.0;
-		//I.rgb += (diffuse_Ks.rgb * NdotL + diffuse_Ks.a * pow(VdotR, shininess) * light.intensity_spec.a) * light.intensity_spec.rgb;
 		I.rgb += (diffuse_Ks.rgb * NdotL + diffuse_Ks.a * pow(VdotR, shininess) * light.intensity_spec.a) * light.intensity_spec.rgb;
 	}
 
