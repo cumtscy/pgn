@@ -18,7 +18,7 @@ BOOL WINAPI DllMain(HINSTANCE hinstDLL,ULONG fdwReason,LPVOID /*lpvReserved*/)
 
 const TCHAR* LibDescription()
 {
-	return L"PGN Resource File (.pnm, .pna) Exporter";
+	return L"PGN Asset File (.pnm, .pna) Exporter";
 }
 
 ClassDesc* classDescs[] =
