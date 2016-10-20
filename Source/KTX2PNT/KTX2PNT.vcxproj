@@ -59,19 +59,19 @@
     <TargetName>ktx2pnt</TargetName>
     <IncludePath>..\..\Include;$(IncludePath)</IncludePath>
     <LibraryPath>..\..\Lib\$(Configuration)\;$(LibraryPath)</LibraryPath>
-    <OutDir>..\..\$(Configuration)\</OutDir>
+    <OutDir>..\..\Build\$(Platform)_$(Configuration)\</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <TargetName>ktx2pnt</TargetName>
     <IncludePath>..\..\Include;$(IncludePath)</IncludePath>
     <LibraryPath>..\..\Lib\$(Configuration)\;$(LibraryPath)</LibraryPath>
-    <OutDir>..\..\$(Configuration)\</OutDir>
+    <OutDir>..\..\Build\$(Platform)_$(Configuration)\</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release_AsmOutput|x64'">
     <TargetName>ktx2pnt</TargetName>
     <IncludePath>..\..\Include;$(IncludePath)</IncludePath>
     <LibraryPath>..\..\Lib\$(Configuration)\;$(LibraryPath)</LibraryPath>
-    <OutDir>..\..\$(Configuration)\</OutDir>
+    <OutDir>..\..\Build\$(Platform)_$(Configuration)\</OutDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
