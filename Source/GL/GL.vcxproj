@@ -53,19 +53,19 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>..\..\Include;..\..\Extern;$(IncludePath)</IncludePath>
+    <IncludePath>..\..\Include;..\..\Extern\Include;$(IncludePath)</IncludePath>
     <TargetName>PGN_RenderingSystem</TargetName>
     <LibraryPath>..\..\Lib\$(Configuration)\;$(LibraryPath)</LibraryPath>
     <OutDir>..\..\Build\$(Platform)_$(Configuration)\</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <IncludePath>..\..\Include;..\..\Extern;$(IncludePath)</IncludePath>
+    <IncludePath>..\..\Include;..\..\Extern\Include;$(IncludePath)</IncludePath>
     <TargetName>PGN_RenderingSystem</TargetName>
     <LibraryPath>..\..\Lib\$(Configuration)\;$(LibraryPath)</LibraryPath>
     <OutDir>..\..\Build\$(Platform)_$(Configuration)\</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release_AsmOutput|x64'">
-    <IncludePath>..\..\Include;..\..\Extern;$(IncludePath)</IncludePath>
+    <IncludePath>..\..\Include;..\..\Extern\Include;$(IncludePath)</IncludePath>
     <TargetName>PGN_RenderingSystem</TargetName>
     <LibraryPath>..\..\Lib\$(Configuration)\;$(LibraryPath)</LibraryPath>
     <OutDir>..\..\Build\$(Platform)_$(Configuration)\</OutDir>
