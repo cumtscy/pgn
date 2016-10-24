@@ -1,0 +1,191 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|PSVita">
+      <Configuration>Debug</Configuration>
+      <Platform>PSVita</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|PSVita">
+      <Configuration>Release</Configuration>
+      <Platform>PSVita</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\Include\zconf.h" />
+    <ClInclude Include="..\..\Include\zlib.h" />
+    <ClInclude Include="crc32.h" />
+    <ClInclude Include="deflate.h" />
+    <ClInclude Include="gzguts.h" />
+    <ClInclude Include="inffast.h" />
+    <ClInclude Include="inffixed.h" />
+    <ClInclude Include="inflate.h" />
+    <ClInclude Include="inftrees.h" />
+    <ClInclude Include="trees.h" />
+    <ClInclude Include="zutil.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="adler32.c" />
+    <ClCompile Include="compress.c" />
+    <ClCompile Include="crc32.c" />
+    <ClCompile Include="deflate.c" />
+    <ClCompile Include="gzclose.c" />
+    <ClCompile Include="gzlib.c" />
+    <ClCompile Include="gzread.c" />
+    <ClCompile Include="gzwrite.c" />
+    <ClCompile Include="infback.c" />
+    <ClCompile Include="inffast.c" />
+    <ClCompile Include="inflate.c" />
+    <ClCompile Include="inftrees.c" />
+    <ClCompile Include="trees.c" />
+    <ClCompile Include="uncompr.c" />
+    <ClCompile Include="zutil.c" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{40F4740B-360C-45E0-B201-E749097B239D}</ProjectGuid>
+    <RootNamespace>zlib</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|PSVita'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|PSVita'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|PSVita'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|PSVita'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <TargetName>$(ProjectName)</TargetName>
+    <IncludePath>..\..\Include;$(IncludePath)</IncludePath>
+    <LibraryPath>..\..\Lib\$(Configuration)\;$(LibraryPath)</LibraryPath>
+    <OutDir>..\..\..\Build\$(Platform)_$(Configuration)\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|PSVita'">
+    <TargetName>$(ProjectName)</TargetName>
+    <IncludePath>..\..\Include;$(IncludePath)</IncludePath>
+    <LibraryPath>..\..\Lib\$(Configuration)\;$(LibraryPath)</LibraryPath>
+    <OutDir>..\..\..\Build\$(Platform)_$(Configuration)\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <TargetName>$(ProjectName)</TargetName>
+    <IncludePath>..\..\Include;$(IncludePath)</IncludePath>
+    <LibraryPath>..\..\Lib\$(Configuration)\;$(LibraryPath)</LibraryPath>
+    <OutDir>..\..\..\Build\$(Platform)_$(Configuration)\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|PSVita'">
+    <TargetName>$(ProjectName)</TargetName>
+    <IncludePath>..\..\Include;$(IncludePath)</IncludePath>
+    <LibraryPath>..\..\Lib\$(Configuration)\;$(LibraryPath)</LibraryPath>
+    <OutDir>..\..\..\Build\$(Platform)_$(Configuration)\</OutDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>ZLIB_DLL;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ImportLibrary>..\..\Lib\$(Configuration)\$(TargetName).lib</ImportLibrary>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|PSVita'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <CppLanguageStd>Cpp11</CppLanguageStd>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ImportLibrary>
+      </ImportLibrary>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalOptions>-prx-stub-output-dir="..\..\Lib\$(Configuration)\" %(AdditionalOptions)</AdditionalOptions>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;ZLIB_DLL;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <ImportLibrary>..\..\Lib\$(Configuration)\$(TargetName).lib</ImportLibrary>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|PSVita'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <CppLanguageStd>Cpp11</CppLanguageStd>
+      <OptimizationLevel>Level3</OptimizationLevel>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <ImportLibrary>
+      </ImportLibrary>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalOptions>-prx-stub-output-dir="..\..\Lib\$(Configuration)\" %(AdditionalOptions)</AdditionalOptions>
+    </Link>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

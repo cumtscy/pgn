@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.40629.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "zlib", "zlib.vcxproj", "{40F4740B-360C-45E0-B201-E749097B239D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|PSVita = Debug|PSVita
+		Debug|x64 = Debug|x64
+		Release|PSVita = Release|PSVita
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{40F4740B-360C-45E0-B201-E749097B239D}.Debug|PSVita.ActiveCfg = Debug|PSVita
+		{40F4740B-360C-45E0-B201-E749097B239D}.Debug|PSVita.Build.0 = Debug|PSVita
+		{40F4740B-360C-45E0-B201-E749097B239D}.Debug|x64.ActiveCfg = Debug|x64
+		{40F4740B-360C-45E0-B201-E749097B239D}.Debug|x64.Build.0 = Debug|x64
+		{40F4740B-360C-45E0-B201-E749097B239D}.Release|PSVita.ActiveCfg = Release|PSVita
+		{40F4740B-360C-45E0-B201-E749097B239D}.Release|PSVita.Build.0 = Release|PSVita
+		{40F4740B-360C-45E0-B201-E749097B239D}.Release|x64.ActiveCfg = Release|x64
+		{40F4740B-360C-45E0-B201-E749097B239D}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
