@@ -1,0 +1,23 @@
+
+EXPORTS
+   zipOpen
+   zipOpen64
+   zipOpen2
+   zipOpen2_64
+   zipOpen3
+   zipOpen3_64
+   zipOpenNewFileInZip
+   zipOpenNewFileInZip64
+   zipOpenNewFileInZip2
+   zipOpenNewFileInZip2_64
+   zipOpenNewFileInZip3
+   zipOpenNewFileInZip3_64
+   zipOpenNewFileInZip4
+   zipOpenNewFileInZip4_64
+   zipWriteInFileInZip
+   zipCloseFileInZip
+   zipCloseFileInZipRaw
+   zipCloseFileInZipRaw64
+   zipClose
+   zipClose_64
+   zipClose2_64
