@@ -284,31 +284,31 @@ int main(int argc, char *argv[])
     else if (opt_overwrite == 0)
     {
         /* If ask the user what to do because append and overwrite args not set */
-        if (check_file_exists(zipfilename) != 0)
-        {
-            char rep = 0;
-            do
-            {
-                char answer[128];
-                printf("The file %s exists. Overwrite ? [y]es, [n]o, [a]ppend : ", zipfilename);
-                if (scanf("%1s", answer) != 1)
-                    exit(EXIT_FAILURE);
-                rep = answer[0];
+        //if (check_file_exists(zipfilename) != 0)
+        //{
+        //    char rep = 0;
+        //    do
+        //    {
+        //        char answer[128];
+        //        printf("The file %s exists. Overwrite ? [y]es, [n]o, [a]ppend : ", zipfilename);
+        //        if (scanf("%1s", answer) != 1)
+        //            exit(EXIT_FAILURE);
+        //        rep = answer[0];
 
-                if ((rep >= 'a') && (rep <= 'z'))
-                    rep -= 0x20;
-            }
-            while ((rep != 'Y') && (rep != 'N') && (rep != 'A'));
+        //        if ((rep >= 'a') && (rep <= 'z'))
+        //            rep -= 0x20;
+        //    }
+        //    while ((rep != 'Y') && (rep != 'N') && (rep != 'A'));
 
-            if (rep == 'A')
-                opt_overwrite = 2;
-            else if (rep == 'N')
-            {
-                do_help();
-                free(buf);
-                return 0;
-            }
-        }
+        //    if (rep == 'A')
+        //        opt_overwrite = 2;
+        //    else if (rep == 'N')
+        //    {
+        //        do_help();
+        //        free(buf);
+        //        return 0;
+        //    }
+        //}
     }
 
 #ifdef USEWIN32IOAPI
