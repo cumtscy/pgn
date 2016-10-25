@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+	<PropertyGroup>
+		<!-- Select a Product Configuration -->
+		<InstallShieldProductConfiguration>Express</InstallShieldProductConfiguration>
+		<!-- Select a Visual Studio Configuration / InstallShield Release -->
+		<Configuration>Debug</Configuration>
+		<InstallShieldRelease>$(Configuration)</InstallShieldRelease>
+	</PropertyGroup>
+	<ItemGroup>
+		<!-- The InstallShieldProject item selects the project to build -->
+		<InstallShieldProject Include="$(MSBuildProjectDirectory)\$(MSBuildProjectName).isl"/>
+		<!-- The InstallShieldReleaseFlags sets Release Flags -->
+		<!--<InstallShieldReleaseFlags Include=""/>-->
+		<!-- The InstallShieldMergeModulePath specifies what directories are
+		searched for Merge Modules -->
+		<!--<InstallShieldMergeModulePath Include=""/>-->
+	</ItemGroup>
+	<ItemGroup>
+		<!-- The ProjectReference items refer to any Visual Studio solutions you want to automatically probe for Project Output Groups.  -->
+	</ItemGroup>
+	<ItemGroup>
+		<!-- The TaggedOutputs items allow you to explicitly add extra files to output groups. Each item must include both Name and OutputGroup, as well as TargetPath metadata values. -->
+		<!--<TaggedOutputs Include="C:\My Test Exe.exe">
+			<Name>My Test Project</Name>
+			<OutputGroup>Primary output</OutputGroup>
+			<TargetPath>My Test Exe.exe</TargetPath>
+		</TaggedOutputs> -->
+	</ItemGroup>
+	<Import Project="$(MSBuildExtensionsPath32)\InstallShield\2015Limited\InstallShield.targets"/>
+	<ItemGroup>
+		<ProjectReference Include="..\KTX2PNT\KTX2PNT.vcxproj">
+			<Name>KTX2PNT</Name>
+			<Project>{202F45E6-82E1-4541-9A82-66492A6014AB}</Project>
+		</ProjectReference>
+		<ProjectReference Include=".\ShellExt.vcxproj">
+			<Name>ShellExt</Name>
+			<Project>{40F4740B-360C-45E0-B201-E749097B239D}</Project>
+		</ProjectReference>
+		<ProjectReference Include="..\..\Extern\Source\minizip\minizip.vcxproj">
+			<Name>minizip</Name>
+			<Project>{7B25BA08-B2A6-456C-91F3-CCCB01D14539}</Project>
+		</ProjectReference>
+		<ProjectReference Include="..\..\Extern\Source\miniziplib\miniziplib.vcxproj">
+			<Name>miniziplib</Name>
+			<Project>{75973275-C2B4-4B53-BB54-3533E76E84B2}</Project>
+		</ProjectReference>
+		<ProjectReference Include="..\..\Extern\Source\zlib\zlib.vcxproj">
+			<Name>zlib</Name>
+			<Project>{B14D77D3-640F-43E0-8AA3-BC3FBE456450}</Project>
+		</ProjectReference>
+	</ItemGroup>
+</Project>

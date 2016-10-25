@@ -1,0 +1,83 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.40629.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ShellExt", "ShellExt.vcxproj", "{40F4740B-360C-45E0-B201-E749097B239D}"
+	ProjectSection(ProjectDependencies) = postProject
+		{7B25BA08-B2A6-456C-91F3-CCCB01D14539} = {7B25BA08-B2A6-456C-91F3-CCCB01D14539}
+	EndProjectSection
+EndProject
+Project("{911E67C6-3D85-4FCE-B560-20A9C3E3FF48}") = "explorer", "..\..\..\..\..\..\Windows\explorer.exe", "{CB150849-04A8-451A-8C18-3F9511C2A5AC}"
+	ProjectSection(DebuggerProjectSystem) = preProject
+		PortSupplier = 00000000-0000-0000-0000-000000000000
+		Executable = C:\Windows\explorer.exe
+		RemoteMachine = WK-TF
+		StartingDirectory = C:\Windows
+		Environment = Default
+		LaunchingEngine = 00000000-0000-0000-0000-000000000000
+		UseLegacyDebugEngines = No
+		LaunchSQLEngine = No
+		AttachLaunchAction = No
+	EndProjectSection
+EndProject
+Project("{6141683F-8A12-4E36-9623-2EB02B2C2303}") = "Setup", "Setup.isproj", "{7F68AC0C-5B5E-408E-A84B-88D9C790460B}"
+	ProjectSection(ProjectDependencies) = postProject
+		{7B25BA08-B2A6-456C-91F3-CCCB01D14539} = {7B25BA08-B2A6-456C-91F3-CCCB01D14539}
+		{40F4740B-360C-45E0-B201-E749097B239D} = {40F4740B-360C-45E0-B201-E749097B239D}
+		{75973275-C2B4-4B53-BB54-3533E76E84B2} = {75973275-C2B4-4B53-BB54-3533E76E84B2}
+		{B14D77D3-640F-43E0-8AA3-BC3FBE456450} = {B14D77D3-640F-43E0-8AA3-BC3FBE456450}
+		{202F45E6-82E1-4541-9A82-66492A6014AB} = {202F45E6-82E1-4541-9A82-66492A6014AB}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "KTX2PNT", "..\KTX2PNT\KTX2PNT.vcxproj", "{202F45E6-82E1-4541-9A82-66492A6014AB}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "zlib", "..\..\Extern\Source\zlib\zlib.vcxproj", "{B14D77D3-640F-43E0-8AA3-BC3FBE456450}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "miniziplib", "..\..\Extern\Source\miniziplib\miniziplib.vcxproj", "{75973275-C2B4-4B53-BB54-3533E76E84B2}"
+	ProjectSection(ProjectDependencies) = postProject
+		{B14D77D3-640F-43E0-8AA3-BC3FBE456450} = {B14D77D3-640F-43E0-8AA3-BC3FBE456450}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "minizip", "..\..\Extern\Source\minizip\minizip.vcxproj", "{7B25BA08-B2A6-456C-91F3-CCCB01D14539}"
+	ProjectSection(ProjectDependencies) = postProject
+		{75973275-C2B4-4B53-BB54-3533E76E84B2} = {75973275-C2B4-4B53-BB54-3533E76E84B2}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{40F4740B-360C-45E0-B201-E749097B239D}.Debug|x64.ActiveCfg = Debug|x64
+		{40F4740B-360C-45E0-B201-E749097B239D}.Debug|x64.Build.0 = Debug|x64
+		{40F4740B-360C-45E0-B201-E749097B239D}.Release|x64.ActiveCfg = Release|x64
+		{40F4740B-360C-45E0-B201-E749097B239D}.Release|x64.Build.0 = Release|x64
+		{CB150849-04A8-451A-8C18-3F9511C2A5AC}.Debug|x64.ActiveCfg = Debug|x64
+		{CB150849-04A8-451A-8C18-3F9511C2A5AC}.Release|x64.ActiveCfg = Debug|x64
+		{7F68AC0C-5B5E-408E-A84B-88D9C790460B}.Debug|x64.ActiveCfg = SingleImage
+		{7F68AC0C-5B5E-408E-A84B-88D9C790460B}.Debug|x64.Build.0 = SingleImage
+		{7F68AC0C-5B5E-408E-A84B-88D9C790460B}.Release|x64.ActiveCfg = SingleImage
+		{7F68AC0C-5B5E-408E-A84B-88D9C790460B}.Release|x64.Build.0 = SingleImage
+		{202F45E6-82E1-4541-9A82-66492A6014AB}.Debug|x64.ActiveCfg = Debug|x64
+		{202F45E6-82E1-4541-9A82-66492A6014AB}.Debug|x64.Build.0 = Debug|x64
+		{202F45E6-82E1-4541-9A82-66492A6014AB}.Release|x64.ActiveCfg = Release|x64
+		{202F45E6-82E1-4541-9A82-66492A6014AB}.Release|x64.Build.0 = Release|x64
+		{B14D77D3-640F-43E0-8AA3-BC3FBE456450}.Debug|x64.ActiveCfg = Debug|x64
+		{B14D77D3-640F-43E0-8AA3-BC3FBE456450}.Debug|x64.Build.0 = Debug|x64
+		{B14D77D3-640F-43E0-8AA3-BC3FBE456450}.Release|x64.ActiveCfg = Release|x64
+		{B14D77D3-640F-43E0-8AA3-BC3FBE456450}.Release|x64.Build.0 = Release|x64
+		{75973275-C2B4-4B53-BB54-3533E76E84B2}.Debug|x64.ActiveCfg = Debug|x64
+		{75973275-C2B4-4B53-BB54-3533E76E84B2}.Debug|x64.Build.0 = Debug|x64
+		{75973275-C2B4-4B53-BB54-3533E76E84B2}.Release|x64.ActiveCfg = Release|x64
+		{75973275-C2B4-4B53-BB54-3533E76E84B2}.Release|x64.Build.0 = Release|x64
+		{7B25BA08-B2A6-456C-91F3-CCCB01D14539}.Debug|x64.ActiveCfg = Debug|x64
+		{7B25BA08-B2A6-456C-91F3-CCCB01D14539}.Debug|x64.Build.0 = Debug|x64
+		{7B25BA08-B2A6-456C-91F3-CCCB01D14539}.Release|x64.ActiveCfg = Release|x64
+		{7B25BA08-B2A6-456C-91F3-CCCB01D14539}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
