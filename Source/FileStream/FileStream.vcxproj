@@ -85,8 +85,9 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <TargetName>PGN_$(ProjectName)</TargetName>
-    <IncludePath>..\..\Include;$(IncludePath)</IncludePath>
+    <IncludePath>..\..\Include;..\..\Extern\Include;$(IncludePath)</IncludePath>
     <OutDir>..\..\Build\$(Platform)_$(Configuration)\</OutDir>
+    <LibraryPath>..\..\Extern\Lib\$(Configuration)\;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|PSVita'">
     <TargetName>PGN_$(ProjectName)</TargetName>
@@ -95,8 +96,9 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <TargetName>PGN_$(ProjectName)</TargetName>
-    <IncludePath>..\..\Include;$(IncludePath)</IncludePath>
+    <IncludePath>..\..\Include;..\..\Extern\Include;$(IncludePath)</IncludePath>
     <OutDir>..\..\Build\$(Platform)_$(Configuration)\</OutDir>
+    <LibraryPath>..\..\Extern\Lib\$(Configuration)\;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|PSVita'">
     <TargetName>PGN_$(ProjectName)</TargetName>
@@ -105,8 +107,9 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release_AsmOutput|x64'">
     <TargetName>PGN_$(ProjectName)</TargetName>
-    <IncludePath>..\..\Include;$(IncludePath)</IncludePath>
+    <IncludePath>..\..\Include;..\..\Extern\Include;$(IncludePath)</IncludePath>
     <OutDir>..\..\Build\$(Platform)_$(Configuration)\</OutDir>
+    <LibraryPath>..\..\Extern\Lib\$(Configuration)\;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release_AsmOutput|PSVita'">
     <OutDir>..\..\Build\$(Platform)_$(Configuration)\</OutDir>
@@ -121,6 +124,7 @@
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <ImportLibrary>..\..\Lib\$(Configuration)\$(TargetName).lib</ImportLibrary>
+      <AdditionalDependencies>miniziplib.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|PSVita'">
@@ -152,6 +156,7 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <ImportLibrary>..\..\Lib\$(Configuration)\$(TargetName).lib</ImportLibrary>
+      <AdditionalDependencies>miniziplib.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|PSVita'">
@@ -190,14 +195,17 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <ImportLibrary>..\..\Lib\$(Configuration)\$(TargetName).lib</ImportLibrary>
+      <AdditionalDependencies>miniziplib.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Include\PGN\FileStream\FileStream.h" />
     <ClInclude Include="..\..\Include\PGN\FileStream\StdFileStream.h" />
+    <ClInclude Include="..\..\Include\PGN\FileStream\ZipFileStream.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="StdFileStream.cpp" />
+    <ClCompile Include="ZipFileStream.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -21,9 +21,15 @@
     <ClInclude Include="..\..\Include\PGN\FileStream\StdFileStream.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\Include\PGN\FileStream\ZipFileStream.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="StdFileStream.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ZipFileStream.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

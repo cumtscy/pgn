@@ -68,10 +68,7 @@ public:
 
 			if (f->isOpen())
 			{
-				f->seekg(0, pgn::FileStream::end);
-				entry->sizeRawData = (int)f->tellg();
-				f->seekg(0, pgn::FileStream::begin);
-
+				entry->sizeRawData = (int)f->getSize();
 				entry->rawData = rawDataBuf->alloc(entry->sizeRawData);
 				f->read(entry->rawData, entry->sizeRawData);
 				f->close();

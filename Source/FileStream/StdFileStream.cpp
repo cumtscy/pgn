@@ -19,13 +19,9 @@ public:
 	virtual void open(const char fileName[], OpenMode mode);
 	virtual bool isOpen();
 	virtual void close();
+	virtual long long getSize();
 	virtual void read(void* buf, std::streamsize numBytes);
 	virtual void write(void* buf, std::streamsize numBytes);
-	virtual void flush();
-	virtual long long tellg();
-	virtual long long tellp();
-	virtual void seekg(long long offset, SeekOrigin origin);
-	virtual void seekp(long long offset, SeekOrigin origin);
 };
 
 StdFileStream::StdFileStream(const char workingDir[])
@@ -72,6 +68,17 @@ void StdFileStream::close()
 	f.close();
 }
 
+long long StdFileStream::getSize()
+{
+	long long size;
+
+	f.seekg(0, std::ios_base::end);
+	size = f.tellg();
+	f.seekg(0, std::ios_base::beg);
+
+	return size;
+}
+
 void StdFileStream::read(void* buf, std::streamsize numBytes)
 {
 	f.read((char*)buf, numBytes);
@@ -80,38 +87,6 @@ void StdFileStream::read(void* buf, std::streamsize numBytes)
 void StdFileStream::write(void* buf, std::streamsize numBytes)
 {
 	f.write((char*)buf, numBytes);
-}
-
-void StdFileStream::flush()
-{
-	f.flush();
-}
-
-long long StdFileStream::tellg()
-{
-	return f.tellg();
-}
-
-long long StdFileStream::tellp()
-{
-	return f.tellp();
-}
-
-std::ios_base::seekdir ways[] =
-{
-	std::ios_base::beg,
-	std::ios_base::cur,
-	std::ios_base::end
-};
-
-void StdFileStream::seekg(long long offset, SeekOrigin origin)
-{
-	f.seekg(offset, ways[origin]);
-}
-
-void StdFileStream::seekp(long long offset, SeekOrigin origin)
-{
-	f.seekp(offset, ways[origin]);
 }
 
 pgn::FileStream* pgn::createStdFileStream(const char workingDir[])

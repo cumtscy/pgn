@@ -803,12 +803,9 @@ void Renderer::beginDraw(pgn::Window* wnd, RendererConfig* _cfg)
 
 		if (cacheStream->isOpen())
 		{
-			cacheStream->seekg(0, pgn::FileStream::end);
-			long long cacheFileSize = cacheStream->tellg();
-
+			long long cacheFileSize = cacheStream->getSize();
 			char* cacheFileBuf = debug_new char[cacheFileSize];
 
-			cacheStream->seekg(0, pgn::FileStream::begin);
 			cacheStream->read(cacheFileBuf, cacheFileSize);
 			cacheStream->close();
 
