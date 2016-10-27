@@ -159,7 +159,7 @@ public:
 
 	AsyncLoader(pgn::RenderingContext* rc = 0, pgn::RenderingSystem* rs = 0, pgn::Display display = 0);
 	~AsyncLoader();
-	virtual bool load(pgn::FileStream* f, char name[], pgn::Asset* asset);
+	virtual bool load(pgn::FileStream* f, const char name[], pgn::Asset* asset);
 	virtual bool unload(pgn::Asset* asset);
 	virtual pgn::Asset* getGarbage(int maxTry);
 	virtual void finish();
@@ -189,7 +189,7 @@ AsyncLoader::~AsyncLoader()
 	rawDataBuf->destroy();
 }
 
-bool AsyncLoader::load(pgn::FileStream* f, char name[], pgn::Asset* asset)
+bool AsyncLoader::load(pgn::FileStream* f, const char name[], pgn::Asset* asset)
 {
 	Entry entry;
 	entry.f = f;

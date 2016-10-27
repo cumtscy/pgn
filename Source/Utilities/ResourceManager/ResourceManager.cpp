@@ -41,7 +41,7 @@ pgn::ResourceHandle* ResourceManager::getResource(char name[])
 		resHandle->asset = asset;
 		resHandle->name = name;
 
-		while (!loader->load(f, name, asset))
+		while (!loader->load(f, resHandle->name.c_str(), asset))
 		{
 			pgn::sleep(10);
 			collectGarbage(1);
