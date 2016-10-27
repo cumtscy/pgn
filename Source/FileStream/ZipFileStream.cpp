@@ -57,7 +57,7 @@ void ZipFileStream::open(const char fileName[], OpenMode mode)
 	size_t len = strlen(name);
 	for (int i = 0; i < len; i++)
 	{
-		if (name[i] == ':')
+		if (name[i] == '>')
 		{
 			strcpy(buf, name);
 			buf[i] = 0;
