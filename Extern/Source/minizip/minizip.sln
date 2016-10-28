@@ -6,12 +6,19 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "minizip", "minizip.vcxproj", "{7B25BA08-B2A6-456C-91F3-CCCB01D14539}"
 	ProjectSection(ProjectDependencies) = postProject
 		{75973275-C2B4-4B53-BB54-3533E76E84B2} = {75973275-C2B4-4B53-BB54-3533E76E84B2}
+		{B14D77D3-640F-43E0-8AA3-BC3FBE456450} = {B14D77D3-640F-43E0-8AA3-BC3FBE456450}
 	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "zlib", "..\zlib\zlib.vcxproj", "{B14D77D3-640F-43E0-8AA3-BC3FBE456450}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "miniziplib", "..\miniziplib\miniziplib.vcxproj", "{75973275-C2B4-4B53-BB54-3533E76E84B2}"
 	ProjectSection(ProjectDependencies) = postProject
+		{B14D77D3-640F-43E0-8AA3-BC3FBE456450} = {B14D77D3-640F-43E0-8AA3-BC3FBE456450}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "miniunz", "miniunz.vcxproj", "{40F4740B-360C-45E0-B201-E749097B239D}"
+	ProjectSection(ProjectDependencies) = postProject
+		{75973275-C2B4-4B53-BB54-3533E76E84B2} = {75973275-C2B4-4B53-BB54-3533E76E84B2}
 		{B14D77D3-640F-43E0-8AA3-BC3FBE456450} = {B14D77D3-640F-43E0-8AA3-BC3FBE456450}
 	EndProjectSection
 EndProject
@@ -33,6 +40,10 @@ Global
 		{75973275-C2B4-4B53-BB54-3533E76E84B2}.Debug|x64.Build.0 = Debug|x64
 		{75973275-C2B4-4B53-BB54-3533E76E84B2}.Release|x64.ActiveCfg = Release|x64
 		{75973275-C2B4-4B53-BB54-3533E76E84B2}.Release|x64.Build.0 = Release|x64
+		{40F4740B-360C-45E0-B201-E749097B239D}.Debug|x64.ActiveCfg = Debug|x64
+		{40F4740B-360C-45E0-B201-E749097B239D}.Debug|x64.Build.0 = Debug|x64
+		{40F4740B-360C-45E0-B201-E749097B239D}.Release|x64.ActiveCfg = Release|x64
+		{40F4740B-360C-45E0-B201-E749097B239D}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
