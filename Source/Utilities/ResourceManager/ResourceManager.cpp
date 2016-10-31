@@ -33,15 +33,16 @@ pgn::ResourceHandle* ResourceManager::getResource(char name[])
 {
 	collectGarbage(1);
 
-	ResourceHandle* resHandle = &resourceMap[name];
+	std::string _name(name);
+	ResourceHandle* resHandle = &resourceMap[_name];
 
 	if (resHandle->refCount == 0)
 	{
 		pgn::Asset* asset = factory->create();
 		resHandle->asset = asset;
-		resHandle->name = name;
+		resHandle->it = resourceMap.find(_name);
 
-		while (!loader->load(f, resHandle->name.c_str(), asset))
+		while (!loader->load(f, name, asset))
 		{
 			pgn::sleep(10);
 			collectGarbage(1);
@@ -65,7 +66,7 @@ void ResourceManager::releaseResource(pgn::ResourceHandle* _resHandle)
 			pgn::sleep(10);
 			collectGarbage(1);
 		}
-		resourceMap.erase(resHandle->name);
+		resourceMap.erase(resHandle->it);
 	}
 }
 
@@ -75,7 +76,7 @@ pgn::ResourceHandle* ResourceManager::addResource(const char name[], void* core)
 {
 	ResourceHandle* resHandle = &resourceMap[name];
 
-	resHandle->name = name;
+	resHandle->it = resourceMap.find(name);
 	resHandle->_core = core;
 
 	if (resHandle->refCount == 0)
@@ -90,7 +91,7 @@ void ResourceManager::removeResource(pgn::ResourceHandle* _resHandle)
 
 	assert(resHandle->refCount == internalResInitialRefCount);
 
-	resourceMap.erase(resHandle->name);
+	resourceMap.erase(resHandle->it);
 }
 
 void* ResourceManager::peekResource(char name[])

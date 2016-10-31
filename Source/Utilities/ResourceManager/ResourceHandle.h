@@ -1,3 +1,4 @@
+#include <map>
 #include <PGN/Utilities/ResourceManager/ResourceHandle.h>
 #include <string>
 
@@ -8,7 +9,7 @@ namespace pgn {
 class ResourceHandle : public pgn::ResourceHandle
 {
 public:
-	std::string name;
+	std::map<std::string, ResourceHandle>::iterator it;
 	void* _core;
 	pgn::Asset* asset;
 	int refCount;
