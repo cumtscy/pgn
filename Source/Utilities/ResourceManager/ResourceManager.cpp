@@ -39,7 +39,7 @@ pgn::ResourceHandle* ResourceManager::getResource(char name[])
 	{
 		pgn::Asset* asset = factory->create();
 		resHandle->asset = asset;
-		resHandle->name = resourceMap.find(name)->first;
+		resHandle->name = name;
 
 		while (!loader->load(f, resHandle->name.c_str(), asset))
 		{
