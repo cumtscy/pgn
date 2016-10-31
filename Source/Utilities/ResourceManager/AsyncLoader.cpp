@@ -16,6 +16,7 @@
 #include <PGN/FileStream/FileStream.h>
 #include <PGN/FileStream/StdFileStream.h>
 #include <PGN/Platform/Graphics/RenderingContext.h>
+#include <PGN/Platform/outputDebugInfo.h>
 #define PGN_STATIC_IMPORT
 #include <PGN/Utilities/CircularBuffer.h>
 #include <PGN/Utilities/Pipeline.h>
@@ -32,7 +33,7 @@ enum LoadingStatus
 struct Entry
 {
 	pgn::FileStream* f;
-	const char* name;
+	char name[256];
 	pgn::Asset* asset;
 	LoadingStatus status;
 	void* rawData;
@@ -177,7 +178,7 @@ AsyncLoader::AsyncLoader(pgn::RenderingContext* rc, pgn::RenderingSystem* rs, pg
 		readingStage, cookingStage, submittingStage
 	};
 
-	pipeline = pgn::Pipeline::create(sizeof(Entry), 1024, sizeof(stages) / sizeof(pgn::PipelineStage*), stages, false);
+	pipeline = pgn::Pipeline::create(sizeof(Entry), 128, sizeof(stages) / sizeof(pgn::PipelineStage*), stages, false);
 }
 
 AsyncLoader::~AsyncLoader()
@@ -191,9 +192,17 @@ AsyncLoader::~AsyncLoader()
 
 bool AsyncLoader::load(pgn::FileStream* f, const char name[], pgn::Asset* asset)
 {
+	if (strlen(name) >= sizeof(((Entry*)0)->name))
+	{
+		char buf[512];
+		sprintf(buf, "文件路径过长%s\n", name);
+		pgn::outputDebugInfo(buf);
+		return true;
+	}
+
 	Entry entry;
 	entry.f = f;
-	entry.name = name;
+	strcpy(entry.name, name);
 	entry.asset = asset;
 	entry.status = loading;
 	return pipeline->put(&entry);
