@@ -16,6 +16,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="DebugHeap.cpp" />
+    <ClCompile Include="FileStream.cpp" />
     <ClCompile Include="Graphics\RenderingContext.cpp" />
     <ClCompile Include="Graphics\WGL.cpp" />
     <ClCompile Include="pageAlloc.cpp" />
@@ -30,6 +31,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Include\PGN\Platform\DebugHeap.h" />
+    <ClInclude Include="..\..\Include\PGN\Platform\FileStream.h" />
     <ClInclude Include="..\..\Include\PGN\Platform\pageAlloc.h" />
     <ClInclude Include="..\..\Include\PGN\Platform\Thread\Semaphore.h" />
     <ClInclude Include="..\..\Include\PGN\Platform\Time.h" />

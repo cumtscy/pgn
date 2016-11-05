@@ -63,6 +63,9 @@
     <ClCompile Include="SystemInfo.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="FileStream.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Include\PGN\Platform\Thread\Mutex.h">
@@ -108,6 +111,9 @@
       <Filter>Header Files\Thread</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Include\PGN\Platform\SystemInfo.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Include\PGN\Platform\FileStream.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

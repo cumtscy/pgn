@@ -6,6 +6,7 @@
 #include <fstream>
 #include <PGN/Common/debug_new.h>
 #include <PGN/FileStream/FileStream.h>
+#include <PGN/Platform/FileStream.h>
 
 class StdFileStream : public pgn::FileStream
 {
@@ -36,15 +37,19 @@ void StdFileStream::open(const char fileName[], OpenMode mode)
 {
 	const char* name;
 
-	if (fileName[0] == '^') // ¾ø¶ÔÂ·¾¶
+	if (fileName[0] == '^')
 	{
 		name = fileName + 1;
 	}
-	else
+	else if (!pgn::isAbsolutePath(fileName))
 	{
 		assert(workingDirStrLen + strlen(fileName) <= maxNameLen);
 		strcpy(subNameBaseAddr, fileName);
 		name = fullName;
+	}
+	else
+	{
+		name = fileName;
 	}
 
 	std::ios_base::openmode _mode = std::ios_base::binary;

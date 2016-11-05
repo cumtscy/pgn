@@ -87,7 +87,7 @@
     <TargetName>PGN_$(ProjectName)</TargetName>
     <IncludePath>..\..\Include;..\..\Extern\Include;$(IncludePath)</IncludePath>
     <OutDir>..\..\Build\$(Platform)_$(Configuration)\</OutDir>
-    <LibraryPath>..\..\Extern\Lib\$(Configuration)\;$(LibraryPath)</LibraryPath>
+    <LibraryPath>..\..\Extern\Lib\$(Configuration)\;..\..\Lib\$(Configuration)\;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|PSVita'">
     <TargetName>PGN_$(ProjectName)</TargetName>
@@ -98,7 +98,7 @@
     <TargetName>PGN_$(ProjectName)</TargetName>
     <IncludePath>..\..\Include;..\..\Extern\Include;$(IncludePath)</IncludePath>
     <OutDir>..\..\Build\$(Platform)_$(Configuration)\</OutDir>
-    <LibraryPath>..\..\Extern\Lib\$(Configuration)\;$(LibraryPath)</LibraryPath>
+    <LibraryPath>..\..\Extern\Lib\$(Configuration)\;..\..\Lib\$(Configuration)\;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|PSVita'">
     <TargetName>PGN_$(ProjectName)</TargetName>
@@ -109,7 +109,7 @@
     <TargetName>PGN_$(ProjectName)</TargetName>
     <IncludePath>..\..\Include;..\..\Extern\Include;$(IncludePath)</IncludePath>
     <OutDir>..\..\Build\$(Platform)_$(Configuration)\</OutDir>
-    <LibraryPath>..\..\Extern\Lib\$(Configuration)\;$(LibraryPath)</LibraryPath>
+    <LibraryPath>..\..\Extern\Lib\$(Configuration)\;..\..\Lib\$(Configuration)\;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release_AsmOutput|PSVita'">
     <OutDir>..\..\Build\$(Platform)_$(Configuration)\</OutDir>
@@ -124,7 +124,7 @@
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <ImportLibrary>..\..\Lib\$(Configuration)\$(TargetName).lib</ImportLibrary>
-      <AdditionalDependencies>miniziplib.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>miniziplib.lib;PGN_Platform.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|PSVita'">
@@ -156,7 +156,7 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <ImportLibrary>..\..\Lib\$(Configuration)\$(TargetName).lib</ImportLibrary>
-      <AdditionalDependencies>miniziplib.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>miniziplib.lib;PGN_Platform.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|PSVita'">
@@ -195,7 +195,7 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <ImportLibrary>..\..\Lib\$(Configuration)\$(TargetName).lib</ImportLibrary>
-      <AdditionalDependencies>miniziplib.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>miniziplib.lib;PGN_Platform.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
