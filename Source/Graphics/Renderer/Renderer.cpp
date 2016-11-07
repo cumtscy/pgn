@@ -841,9 +841,15 @@ void Renderer::beginDraw(pgn::Window* wnd, RendererConfig* _cfg)
 
 void Renderer::endDraw()
 {
-	finish();
 	backEnd->destroy();
 	delete renderingStage;
+
+	while (!retired.empty())
+	{
+		FrameContext* frameContext = retired.front();
+		freeList.push_back(frameContext);
+		retired.pop();
+	}
 
 	for (auto frameContext : freeList)
 	{
@@ -934,11 +940,11 @@ FrameContext* Renderer::beginSubmit()
 	FrameContext** ppFrameContext = (FrameContext**)backEnd->get();
 
 	if (ppFrameContext)
-		queue.push(*ppFrameContext);
+		retired.push(*ppFrameContext);
 
-	while (!queue.empty())
+	while (!retired.empty())
 	{
-		FrameContext* frameContext = queue.front();
+		FrameContext* frameContext = retired.front();
 
 		if (!rs->checkSyncPoint(frameContext->sync))
 			break;
@@ -946,7 +952,7 @@ FrameContext* Renderer::beginSubmit()
 		freeList.push_back(frameContext);
 		finishCount++;
 
-		queue.pop();
+		retired.pop();
 	}
 
 	if (freeList.empty())

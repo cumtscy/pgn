@@ -212,7 +212,7 @@ public:
 
 	static const int maxNumPrerenderedFrames = 3;
 	std::vector<FrameContext*> freeList;
-	pgn::Queue<FrameContext*, maxNumPrerenderedFrames> queue;
+	pgn::Queue<FrameContext*, maxNumPrerenderedFrames> retired;
 	FrameContext* frameContext;
 
 	RenderingStage* renderingStage;
