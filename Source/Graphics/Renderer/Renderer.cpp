@@ -1258,8 +1258,6 @@ void Renderer::finish()
 	{
 		FrameContext* frameContext = retired.front();
 
-		while (!rs->checkSyncPoint(frameContext->sync));
-
 		freeList.push_back(frameContext);
 		finishCount++;
 
