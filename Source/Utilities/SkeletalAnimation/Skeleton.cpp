@@ -211,3 +211,8 @@ void Skeleton::updatePose(int dt, pgn::SkeletonTemplate* _templ, pgn::Float4x3* 
 		numAnimLayers = numActiveLayers;
 	}
 }
+
+void Skeleton::stopAll()
+{
+	numAnimLayers = 0;
+}

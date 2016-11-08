@@ -30,4 +30,5 @@ public:
 	virtual void _free();
 	virtual void playAnimation(pgn::Animation* anim, int transitionTime, pgn::TransitionFunc transitionFunc, float rate, int startTime);
 	virtual void updatePose(int dt, pgn::SkeletonTemplate* templ, pgn::Float4x3* boneMats);
+	virtual void stopAll();
 };
