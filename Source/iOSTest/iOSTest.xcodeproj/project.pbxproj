@@ -20,6 +20,7 @@
 		57EFECBE18E02A8B005F0C59 /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 57EFECBD18E02A8B005F0C59 /* AppDelegate.mm */; };
 		57EFECC018E02A8B005F0C59 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57EFECBF18E02A8B005F0C59 /* Images.xcassets */; };
 		57EFED2B18E10DA1005F0C59 /* logicThreadFunc.mm in Sources */ = {isa = PBXBuildFile; fileRef = 57EFED2A18E10DA1005F0C59 /* logicThreadFunc.mm */; };
+		C272986F1DD8986F003B1E25 /* casual02_f_25.PNT.zip in Resources */ = {isa = PBXBuildFile; fileRef = C272986E1DD8986F003B1E25 /* casual02_f_25.PNT.zip */; };
 		C2B8F9A51C5CF2F900611855 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2B8F9A41C5CF2F900611855 /* Launch Screen.storyboard */; };
 /* End PBXBuildFile section */
 
@@ -52,6 +53,7 @@
 		57EFECBF18E02A8B005F0C59 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		57EFED2A18E10DA1005F0C59 /* logicThreadFunc.mm */ = {isa = PBXFileReference; fileEncoding = 2147483673; lastKnownFileType = sourcecode.cpp.objcpp; path = logicThreadFunc.mm; sourceTree = "<group>"; };
 		57EFED2C18E10DE8005F0C59 /* logicThreadFunc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = logicThreadFunc.h; sourceTree = "<group>"; };
+		C272986E1DD8986F003B1E25 /* casual02_f_25.PNT.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = casual02_f_25.PNT.zip; sourceTree = "<group>"; };
 		C2B8F9A41C5CF2F900611855 /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -81,6 +83,7 @@
 		57E9C35618EA5EC100C28586 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				C272986E1DD8986F003B1E25 /* casual02_f_25.PNT.zip */,
 				57CB897E1AA454BD0006DC01 /* box_normal_flipped.PNM */,
 				57D52B7C1A8B39A0007FCA0A /* casual02_f_25.PNT */,
 				57D52B7D1A8B39A0007FCA0A /* casual02_f_highpoly.PNM */,
@@ -169,11 +172,11 @@
 		57EFECA218E02A8B005F0C59 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0510;
+				LastUpgradeCheck = 0810;
 				ORGANIZATIONNAME = "Pixel Soft";
 				TargetAttributes = {
 					57EFECA918E02A8B005F0C59 = {
-						DevelopmentTeam = F9EN3H3L6L;
+						DevelopmentTeam = 2A33F3JGJ4;
 					};
 				};
 			};
@@ -219,6 +222,7 @@
 				57CB897F1AA454BD0006DC01 /* box_normal_flipped.PNM in Resources */,
 				57D52B7F1A8B39A0007FCA0A /* casual02_f_25.PNT in Resources */,
 				57EFECB818E02A8B005F0C59 /* InfoPlist.strings in Resources */,
+				C272986F1DD8986F003B1E25 /* casual02_f_25.PNT.zip in Resources */,
 				57EFECC018E02A8B005F0C59 /* Images.xcassets in Resources */,
 				57D52B801A8B39A0007FCA0A /* casual02_f_highpoly.PNM in Resources */,
 				C2B8F9A51C5CF2F900611855 /* Launch Screen.storyboard in Resources */,
@@ -265,13 +269,19 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -290,7 +300,7 @@
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					"$(SRCROOT)/../../Include",
 				);
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SYMROOT = "$(SRCROOT)/../../Build";
@@ -311,13 +321,18 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					NDEBUG,
 					PGN_STATIC_BUILD,
@@ -333,7 +348,7 @@
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					"$(SRCROOT)/../../Include",
 				);
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				SDKROOT = iphoneos;
 				SYMROOT = "$(SRCROOT)/../../Build";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -351,6 +366,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iOSTest/iOSTest-Prefix.pch";
 				INFOPLIST_FILE = "iOSTest/iOSTest-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				PRODUCT_BUNDLE_IDENTIFIER = PGN.iOSTest1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -368,6 +384,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iOSTest/iOSTest-Prefix.pch";
 				INFOPLIST_FILE = "iOSTest/iOSTest-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				PRODUCT_BUNDLE_IDENTIFIER = PGN.iOSTest1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";

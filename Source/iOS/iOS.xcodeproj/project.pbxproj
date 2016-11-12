@@ -20,6 +20,7 @@
 		575912B31A383D7C001B1CCD /* Signal.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 575912A61A383D7C001B1CCD /* Signal.cpp */; };
 		575912B51A383D7C001B1CCD /* Time.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 575912A81A383D7C001B1CCD /* Time.cpp */; };
 		57698BBC1A6CEEFF00BF2621 /* sleep.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 57698BBB1A6CEEFF00BF2621 /* sleep.cpp */; };
+		C2CFC21B1DD76FA900BC11A3 /* FileStream.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C2CFC21A1DD76FA900BC11A3 /* FileStream.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -71,6 +72,8 @@
 		575912A81A383D7C001B1CCD /* Time.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Time.cpp; sourceTree = "<group>"; };
 		57698BBB1A6CEEFF00BF2621 /* sleep.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = sleep.cpp; sourceTree = "<group>"; };
 		57C688BA18D93612000417D9 /* libiOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libiOS.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		C2CFC2191DD76F9B00BC11A3 /* FileStream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FileStream.h; path = ../../Include/PGN/Platform/FileStream.h; sourceTree = "<group>"; };
+		C2CFC21A1DD76FA900BC11A3 /* FileStream.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FileStream.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,6 +170,7 @@
 		57C688E318D936B4000417D9 /* Include */ = {
 			isa = PBXGroup;
 			children = (
+				C2CFC2191DD76F9B00BC11A3 /* FileStream.h */,
 				5759127F1A383D5A001B1CCD /* DebugHeap.h */,
 				575912811A383D5A001B1CCD /* Graphics */,
 				575912861A383D5A001B1CCD /* Input */,
@@ -182,6 +186,7 @@
 		57C688FB18D936E8000417D9 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				C2CFC21A1DD76FA900BC11A3 /* FileStream.cpp */,
 				575912971A383D7C001B1CCD /* DebugHeap.h */,
 				575912981A383D7C001B1CCD /* DebugHeap.cpp */,
 				575912991A383D7C001B1CCD /* Graphics */,
@@ -247,6 +252,7 @@
 				575912AC1A383D7C001B1CCD /* GLInfo.mm in Sources */,
 				575912AB1A383D7C001B1CCD /* GL.cpp in Sources */,
 				575912A91A383D7C001B1CCD /* DebugHeap.cpp in Sources */,
+				C2CFC21B1DD76FA900BC11A3 /* FileStream.cpp in Sources */,
 				575912AE1A383D7C001B1CCD /* Window.mm in Sources */,
 				575912B01A383D7C001B1CCD /* pageAlloc.cpp in Sources */,
 				575912AA1A383D7C001B1CCD /* CAEAGLLayerEX.m in Sources */,

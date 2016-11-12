@@ -42,6 +42,13 @@
 #  define close _close
 #endif
 
+#ifdef __APPLE__
+#include <TargetConditionals.h>
+#ifdef TARGET_OS_IPHONE
+#include <unistd.h>
+#endif
+#endif
+
 #ifdef NO_DEFLATE       /* for compatibility with old definition */
 #  define NO_GZCOMPRESS
 #endif

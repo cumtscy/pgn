@@ -1,5 +1,6 @@
 #include <PGN/Platform/DebugHeap.h>
 #include <PGN/FileStream/StdFileStream.h>
+#include <PGN/FileStream/ZipFileStream.h>
 #include <PGN/Graphics/Camera.h>
 #include <PGN/Graphics/Entity.h>
 #include <PGN/Graphics/Graphics.h>
@@ -67,7 +68,7 @@ void logicThreadFunc(UIWindow* uiWnd)
 	pgn::Window* wnd = pgn::Window::create(8, 8, 8, 8, 24, 8, 1, uiWnd);
     
     NSBundle* appBundle = [NSBundle mainBundle];
-	pgn::FileStream* assetStream1 = pgn::createStdFileStream([[[appBundle resourcePath] stringByAppendingString:@"/"] UTF8String]);
+	pgn::FileStream* assetStream1 = pgn::createZipFileStream([[[appBundle resourcePath] stringByAppendingString:@"/"] UTF8String]);
     NSArray* paths = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
     NSString* cachesDir = paths[0];
 	pgn::FileStream* cacheStream = pgn::createStdFileStream([[cachesDir stringByAppendingString:@"/"] UTF8String]);
@@ -109,7 +110,7 @@ void logicThreadFunc(UIWindow* uiWnd)
 
     pgn::Model* model = graphics->createModel();
     model->setMesh("casual02_f_highpoly.PNM");
-    model->setDiffuseMap(0, "casual02_f_25.PNT");
+    model->setDiffuseMap(0, "casual02_f_25.PNT.zip>casual02_f_25.PNT");
     //model->setDiffuseMap(0, "gray");
     entity->setModel(model);
 

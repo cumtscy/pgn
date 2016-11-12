@@ -26,6 +26,8 @@
 *.tlog
 *.user
 Build
+Extern/Source/miniziplib/miniziplib.xcodeproj/xcuserdata
+Extern/Source/zlib/zlib.xcodeproj/xcuserdata
 Source/FileStream/FileStream.xcodeproj/xcuserdata
 Source/GL/GL.xcodeproj/xcuserdata
 Source/Graphics/Graphics.xcodeproj/xcuserdata

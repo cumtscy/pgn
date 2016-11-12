@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		57632605196E7BFB00A0C830 /* StdFileStream.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 57632604196E7BFB00A0C830 /* StdFileStream.cpp */; };
+		C272986D1DD895B1003B1E25 /* ZipFileStream.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C272986C1DD895B1003B1E25 /* ZipFileStream.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -27,6 +28,7 @@
 		57632604196E7BFB00A0C830 /* StdFileStream.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = StdFileStream.cpp; sourceTree = "<group>"; };
 		57EFEA9618DFD217005F0C59 /* libFileStream.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libFileStream.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		57EFEAC118DFD2D2005F0C59 /* FileStream.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = FileStream.h; path = ../../Include/PGN/FileStream/FileStream.h; sourceTree = "<group>"; };
+		C272986C1DD895B1003B1E25 /* ZipFileStream.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ZipFileStream.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 		57EFEABF18DFD2C0005F0C59 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				C272986C1DD895B1003B1E25 /* ZipFileStream.cpp */,
 				57632604196E7BFB00A0C830 /* StdFileStream.cpp */,
 			);
 			name = Source;
@@ -126,6 +129,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				57632605196E7BFB00A0C830 /* StdFileStream.cpp in Sources */,
+				C272986D1DD895B1003B1E25 /* ZipFileStream.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -168,6 +172,7 @@
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					"$(SRCROOT)/../../Include",
+					"$(SRCROOT)/../../Extern/Include",
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				ONLY_ACTIVE_ARCH = YES;
@@ -209,6 +214,7 @@
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					"$(SRCROOT)/../../Include",
+					"$(SRCROOT)/../../Extern/Include",
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				SDKROOT = iphoneos;

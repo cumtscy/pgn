@@ -73,6 +73,10 @@
 		C20433401CC369AA0083D29E /* staticMeshShadingPassVS.glsl in Sources */ = {isa = PBXBuildFile; fileRef = C204332A1CC368F60083D29E /* staticMeshShadingPassVS.glsl */; };
 		C20433411CC369AA0083D29E /* staticMeshZOnlyPassPS.glsl in Sources */ = {isa = PBXBuildFile; fileRef = C204332B1CC368F60083D29E /* staticMeshZOnlyPassPS.glsl */; };
 		C20433421CC369AA0083D29E /* staticMeshZOnlyPassVS.glsl in Sources */ = {isa = PBXBuildFile; fileRef = C204332C1CC368F60083D29E /* staticMeshZOnlyPassVS.glsl */; };
+		C21EE1DA1DD88872000B7F1A /* libzlib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C21EE1CF1DD87524000B7F1A /* libzlib.a */; };
+		C272984F1DD892F3003B1E25 /* libminiziplib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C272984C1DD892E5003B1E25 /* libminiziplib.a */; };
+		C2CFC2141DD7649900BC11A3 /* DirectionalLight.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C2CFC2101DD7649900BC11A3 /* DirectionalLight.cpp */; };
+		C2CFC2151DD7649900BC11A3 /* SceneDirectionalLight.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C2CFC2121DD7649900BC11A3 /* SceneDirectionalLight.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXBuildRule section */
@@ -152,6 +156,20 @@
 			proxyType = 1;
 			remoteGlobalIDString = C2A76B2F1CBF9C3900874E42;
 			remoteInfo = IncludeDirectiveProcessor;
+		};
+		C21EE1CE1DD87524000B7F1A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C21EE1C51DD87524000B7F1A /* zlib.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = C21EE17D1DD8643C000B7F1A;
+			remoteInfo = zlib;
+		};
+		C272984B1DD892E5003B1E25 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C27298431DD892E5003B1E25 /* miniziplib.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = C27298371DD89286003B1E25;
+			remoteInfo = miniziplib;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -310,6 +328,15 @@
 		C204332A1CC368F60083D29E /* staticMeshShadingPassVS.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = staticMeshShadingPassVS.glsl; sourceTree = "<group>"; };
 		C204332B1CC368F60083D29E /* staticMeshZOnlyPassPS.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = staticMeshZOnlyPassPS.glsl; sourceTree = "<group>"; };
 		C204332C1CC368F60083D29E /* staticMeshZOnlyPassVS.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = staticMeshZOnlyPassVS.glsl; sourceTree = "<group>"; };
+		C21EE1C51DD87524000B7F1A /* zlib.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = zlib.xcodeproj; path = ../../Extern/Source/zlib/zlib.xcodeproj; sourceTree = "<group>"; };
+		C27298431DD892E5003B1E25 /* miniziplib.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = miniziplib.xcodeproj; path = ../../Extern/Source/miniziplib/miniziplib.xcodeproj; sourceTree = "<group>"; };
+		C2CFC2091DD7647C00BC11A3 /* DirectionalLight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DirectionalLight.h; path = ../../Include/PGN/Graphics/DirectionalLight.h; sourceTree = "<group>"; };
+		C2CFC20A1DD7647C00BC11A3 /* SceneDirectionalLight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SceneDirectionalLight.h; path = ../../Include/PGN/Graphics/SceneDirectionalLight.h; sourceTree = "<group>"; };
+		C2CFC2101DD7649900BC11A3 /* DirectionalLight.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = DirectionalLight.cpp; sourceTree = "<group>"; };
+		C2CFC2111DD7649900BC11A3 /* DirectionalLight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DirectionalLight.h; sourceTree = "<group>"; };
+		C2CFC2121DD7649900BC11A3 /* SceneDirectionalLight.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SceneDirectionalLight.cpp; sourceTree = "<group>"; };
+		C2CFC2131DD7649900BC11A3 /* SceneDirectionalLight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SceneDirectionalLight.h; sourceTree = "<group>"; };
+		C2CFC2171DD764D000BC11A3 /* DirectionalLight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DirectionalLight.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -317,6 +344,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C272984F1DD892F3003B1E25 /* libminiziplib.a in Frameworks */,
+				C21EE1DA1DD88872000B7F1A /* libzlib.a in Frameworks */,
 				57AAA6DB18E15669000045CF /* libUtilities.a in Frameworks */,
 				57CF2F9F18E137CC00D96B3F /* libMathC.a in Frameworks */,
 				57CF2F8A18E12D7400D96B3F /* libiOS.a in Frameworks */,
@@ -474,6 +503,8 @@
 		57CF2F7C18E12D1B00D96B3F /* Dependencies */ = {
 			isa = PBXGroup;
 			children = (
+				C27298431DD892E5003B1E25 /* miniziplib.xcodeproj */,
+				C21EE1C51DD87524000B7F1A /* zlib.xcodeproj */,
 				C204330B1CC3689E0083D29E /* Text2MachO.xcodeproj */,
 				C20432FF1CC368920083D29E /* IncludeDirectiveProcessor.xcodeproj */,
 				57AAA6D018E1564B000045CF /* Utilities.xcodeproj */,
@@ -530,6 +561,10 @@
 		57EFEC4118E01E30005F0C59 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				C2CFC2101DD7649900BC11A3 /* DirectionalLight.cpp */,
+				C2CFC2111DD7649900BC11A3 /* DirectionalLight.h */,
+				C2CFC2121DD7649900BC11A3 /* SceneDirectionalLight.cpp */,
+				C2CFC2131DD7649900BC11A3 /* SceneDirectionalLight.h */,
 				57C1F4D91ABAC2B500899920 /* Camera.cpp */,
 				57C1F4DA1ABAC2B500899920 /* Camera.h */,
 				57C1F4DB1ABAC2B500899920 /* Entity.cpp */,
@@ -559,6 +594,8 @@
 		57EFEC4218E01E3A005F0C59 /* Include */ = {
 			isa = PBXGroup;
 			children = (
+				C2CFC2091DD7647C00BC11A3 /* DirectionalLight.h */,
+				C2CFC20A1DD7647C00BC11A3 /* SceneDirectionalLight.h */,
 				57C5E9251A4013D400F5CD0E /* SceneEntity.h */,
 				57C5E9261A4013D400F5CD0E /* ScenePointLight.h */,
 				576E8F4819457F7600FDC5EE /* Camera.h */,
@@ -590,6 +627,7 @@
 		C20433121CC368F60083D29E /* shaders */ = {
 			isa = PBXGroup;
 			children = (
+				C2CFC2171DD764D000BC11A3 /* DirectionalLight.h */,
 				C20433131CC368F60083D29E /* CommonPS.h */,
 				C20433141CC368F60083D29E /* CommonVS2D.h */,
 				C20433151CC368F60083D29E /* CommonVS3D.h */,
@@ -618,6 +656,22 @@
 				C204332C1CC368F60083D29E /* staticMeshZOnlyPassVS.glsl */,
 			);
 			path = shaders;
+			sourceTree = "<group>";
+		};
+		C21EE1C61DD87524000B7F1A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C21EE1CF1DD87524000B7F1A /* libzlib.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C27298441DD892E5003B1E25 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C272984C1DD892E5003B1E25 /* libminiziplib.a */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -684,12 +738,20 @@
 					ProjectRef = 57CF2F9918E137BC00D96B3F /* MathC.xcodeproj */;
 				},
 				{
+					ProductGroup = C27298441DD892E5003B1E25 /* Products */;
+					ProjectRef = C27298431DD892E5003B1E25 /* miniziplib.xcodeproj */;
+				},
+				{
 					ProductGroup = C204330C1CC3689E0083D29E /* Products */;
 					ProjectRef = C204330B1CC3689E0083D29E /* Text2MachO.xcodeproj */;
 				},
 				{
 					ProductGroup = 57AAA6D118E1564B000045CF /* Products */;
 					ProjectRef = 57AAA6D018E1564B000045CF /* Utilities.xcodeproj */;
+				},
+				{
+					ProductGroup = C21EE1C61DD87524000B7F1A /* Products */;
+					ProjectRef = C21EE1C51DD87524000B7F1A /* zlib.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -749,6 +811,20 @@
 			remoteRef = C204330F1CC3689E0083D29E /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
+		C21EE1CF1DD87524000B7F1A /* libzlib.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libzlib.a;
+			remoteRef = C21EE1CE1DD87524000B7F1A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		C272984C1DD892E5003B1E25 /* libminiziplib.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libminiziplib.a;
+			remoteRef = C272984B1DD892E5003B1E25 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 /* End PBXReferenceProxy section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -766,6 +842,7 @@
 				C20433381CC369AA0083D29E /* skinnedMeshGeometryPassVS.glsl in Sources */,
 				C20433391CC369AA0083D29E /* skinnedMeshShadingPassPS.glsl in Sources */,
 				C204333A1CC369AA0083D29E /* skinnedMeshShadingPassVS.glsl in Sources */,
+				C2CFC2151DD7649900BC11A3 /* SceneDirectionalLight.cpp in Sources */,
 				C204333B1CC369AA0083D29E /* skinnedMeshZOnlyPassPS.glsl in Sources */,
 				C204333C1CC369AA0083D29E /* skinnedMeshZOnlyPassVS.glsl in Sources */,
 				C204333D1CC369AA0083D29E /* staticMeshGeometryPassPS.glsl in Sources */,
@@ -783,6 +860,7 @@
 				57C1F5481ABAC2B500899920 /* Model.cpp in Sources */,
 				5790F3201C898705007B4AC2 /* staticMeshShadingPassPipeStateDesc.cpp in Sources */,
 				57C1F5491ABAC2B500899920 /* PointLight.cpp in Sources */,
+				C2CFC2141DD7649900BC11A3 /* DirectionalLight.cpp in Sources */,
 				57C1F54C1ABAC2B500899920 /* Texture.cpp in Sources */,
 				57C1F5431ABAC2B500899920 /* Camera.cpp in Sources */,
 				5790F3191C898705007B4AC2 /* lightIndexingPassesPipeStateDescs.cpp in Sources */,
