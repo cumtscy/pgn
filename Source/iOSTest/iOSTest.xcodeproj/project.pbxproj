@@ -47,7 +47,6 @@
 		57EFECB518E02A8B005F0C59 /* iOSTest-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "iOSTest-Info.plist"; sourceTree = "<group>"; };
 		57EFECB718E02A8B005F0C59 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		57EFECB918E02A8B005F0C59 /* main.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = main.mm; sourceTree = "<group>"; };
-		57EFECBB18E02A8B005F0C59 /* iOSTest-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "iOSTest-Prefix.pch"; sourceTree = "<group>"; };
 		57EFECBC18E02A8B005F0C59 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		57EFECBD18E02A8B005F0C59 /* AppDelegate.mm */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; path = AppDelegate.mm; sourceTree = "<group>"; };
 		57EFECBF18E02A8B005F0C59 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -130,7 +129,6 @@
 				57EFECB518E02A8B005F0C59 /* iOSTest-Info.plist */,
 				57EFECB618E02A8B005F0C59 /* InfoPlist.strings */,
 				57EFECB918E02A8B005F0C59 /* main.mm */,
-				57EFECBB18E02A8B005F0C59 /* iOSTest-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -364,7 +362,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_BITCODE = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "iOSTest/iOSTest-Prefix.pch";
+				GCC_PREFIX_HEADER = "";
 				INFOPLIST_FILE = "iOSTest/iOSTest-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				PRODUCT_BUNDLE_IDENTIFIER = PGN.iOSTest1;
@@ -382,7 +380,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_BITCODE = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "iOSTest/iOSTest-Prefix.pch";
+				GCC_PREFIX_HEADER = "";
 				INFOPLIST_FILE = "iOSTest/iOSTest-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				PRODUCT_BUNDLE_IDENTIFIER = PGN.iOSTest1;
